@@ -55,3 +55,49 @@ var sum=(num1,num2)=>num1+num2;
 var sum=function(num1,num2){
 	return num1+num2;
 }
+
+function log(x,y=123){
+	console.log(x,y);
+}
+
+log(3)
+
+let x=1;
+function f(y=x){
+	let x=2;
+	console.log(y);
+}
+
+f();
+
+
+var x=1;
+function foo(x,y=function(){x=2;}){
+	var x=3;
+	y();
+	console.log(x);
+}
+
+
+
+function throwIfMissing(){
+	throw new Error('Missing parameter');
+}
+
+function foo(mustBeProvided = throwIfMissing()){
+	return mustBeProvided;
+}
+foo();
+
+
+function add(...values){
+	let sum=0;
+	for(var val of values){
+		sum += val;
+	}
+	return sum;
+}
+
+add(2,5,3);
+
+
