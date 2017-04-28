@@ -55,3 +55,32 @@ console.log(obj[a]);
 for(var i in obj){
 	console.log(i);
 }
+
+Reflect.ownKeys(obj);
+
+
+var size=Symbol('size');
+class Collection{
+	constructor(){
+		this[size]=0;
+	}
+	add(item){
+		this[this[size]]=item;
+		this[size]++;
+	}
+
+	static sizeOf(instance){
+		return instance[size];
+	}
+}
+
+var x=new Collection();
+
+
+function a(){
+	this.foo='hello';
+}
+if(!global._foo){
+	global._foo=new a();
+}
+module.exports=global._foo;
