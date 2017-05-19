@@ -1,4 +1,6 @@
 
 
 webpack/www/node_modules/
+webpack/www/build/
 webpack/new_webpack/node_modules/
+webpack/new_webpack/assets/
