@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>箭头函数</title>
+</head>
+<body>
+	
+	<script type="text/javascript">
+		//es6能够使用默认值。在es5中我们定义默认值时这样定义
+		function test(x,y){
+			y=y||100;
+			return x+y;
+		}
+		console.log(test(3));
+		//es6中定义如果参数值绝对等于“===”undefined;那么默认值才会起效
+		function test1(x,y=100){
+			return x+y;
+		}
+		console.log(test1(1,null))
+
+
+		var e=(x,y=100)=>{return x+y};
+		//等同于
+		var e=function(x,y=100){
+			return x+y;
+		}
+	</script>
+	
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>模板字符串</title>
+</head>
+
+<body>
+    <script type="text/javascript">
+    // 常用的字符串的拼接方法
+    // 1 。+=符号拼接
+    var str1 = "abc";
+    str1 += "zhangqinghao123";
+    console.log(str1);
+    //在旧浏览器。由于字符串的长度不可更改，因此使用该方法效率比较低；但现在浏览器配置较高。无性能区分
+    // 2 利用数组的join();方法；[].join();
+    var arr1 = [];
+    arr1.push('123');
+    arr1.push('345');
+    var str2 = arr1.join("");
+    console.log(str2);
+    // 3. 利用\美化字符串解构
+    var str3 = "<div>\
+				<span></span>\
+			</div>"
+
+	//4.利用模板字符,模板字符串能够通过${}添加变量
+	var n=4;
+	var str4=`<div>${n}</div>`;
+	console.log(str4);
+    </script>
+</body>
+
+</html>

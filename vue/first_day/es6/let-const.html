@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>let和const的作用域</title>
+</head>
+
+<body>
+    <script>
+    // es6中不存在变量提升，一次变量必须先声明再使用
+    // console.log(a);
+    // var a=10;//变量提升，打印undefined
+    // let a=10;//报错，变量未定义，不存在变量提升
+
+
+
+
+
+    //具有块的概念,es5会造成全局变量污染。获取for的某一个值时需要使用闭包；es6具有块的概念。能够直接使用
+    // var a = [];
+    // for (var b = 0; b < 10; b++) {
+    //     a[b] = (function(b) {
+    //         // console.log(b);
+    //         return function() {
+    //         	console.log(b);
+    //         	return b;
+    //         };
+    //     })(b)
+    // }
+    // a[5]();
+
+
+    // var a= [];
+    // for(let b=0;b<10;b++){
+    // 	a[b]=function(){
+    // 		return b;}
+    // }
+    // console.log(a[5]());//5
+
+
+
+
+
+
+
+    //let 和const定义后不可重复定义。const定义后不可重复赋值
+    let a=10;
+    // let a=100;//error
+    const b=100;
+    // b=101;//error,Assignment to constant variable.常量声明后边不可重复赋值，但是如果常量定义的是一个指向性变量，则内部属性可以更改，不能更改的是该变量的指向性
+    const c={};
+    c.a=100;
+    console.log(c);
+    
+    
+
+    </script>
+</body>
+
+</html>
