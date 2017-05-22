@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>躁动的小球</title>
+    <style type="text/css">
+    body {
+        background: rgba(0, 0, 0, 0.8);
+    }
+    </style>
+</head>
+
+<body>
+    <canvas height="800" width="900"></canvas>
+    <script type="text/javascript">
+    var canvas = document.querySelector("canvas");
+    var ctx = canvas.getContext('2d');
+
+    function getRandom(min, max) {
+        return parseInt(Math.random() * (max - min) + min);
+        //改返回值大于等于最小值;小于最大值
+    }
+
+    function getColor() {
+        return "rgba(" + getRandom(0, 255) + ',' + getRandom(0, 255) + ',' + getRandom(0, 255) + ',' + Math.random().toFixed(2) + ')'
+    }
+    class Ball {
+        constructor(x, y, r, color, spx, xpy) {
+            //x,y是圆心坐标，r是半径，color是颜色，spx,spy是移动的速度
+            this.r = r || getRandom(0, 30);
+            this.x = x || getRandom(0, canvas.width - this.r);
+            this.y = y || getRandom(0, canvas.height - this.r);
+            this.color = color || getColor();
+            this.spx = getRandom(5, 10);
+            this.spy = getRandom(5, 10);
+            while (this.r==0) {
+                this.r = r || getRandom(0, 30);
+            }
+        }
+        draw() {
+            ctx.fillStyle = this.color;
+            ctx.beginPath();
+            ctx.arc(this.x, this.y, this.r, 0, 2 * Math.PI);
+            ctx.closePath();
+            ctx.fill();
+        }
+        move() {
+            this.x += this.spx;
+            this.y += this.spy;
+            if (this.x > canvas.width - this.r || this.x < this.r) {
+                this.spx = -this.spx
+            }
+            if (this.y > canvas.height - this.r || this.y < this.r) {
+                this.spy = -this.spy
+            }
+
+            this.draw();
+        }
+    }
+    let balls = [];
+    for (var i = 0; i < 50; i++) {
+        let ball = new Ball();
+        balls.push(ball);
+    }
+    setInterval(function() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        for (var j = 0; j < 50; j++) {
+            balls[j].move();
+        }
+    }, 16)
+    </script>
+</body>
+
+</html>

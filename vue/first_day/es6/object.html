@@ -11,7 +11,28 @@
 		var o=new Object();
 		var obj={a:2,b:3,c:4};
 		console.log(Object.keys(obj));
+		var obj2={c:6,e:6};
+		var obj3=Object.assign({},obj,obj2);
+		//对象的assign方法是将两个对象进行合并
+		console.log(obj3);
+		console.log(obj);
 
+
+		function Parent(name){
+			this.name=name;
+		}
+		function Child(age){
+			this.age=age;
+
+		}
+
+		Child.prototype=Object.create(Parent.prototype);
+		Child.prototype.getAge=function(){
+			alert(this.age)
+		}
+		var p=new Parent('yztc');
+		//p.getAge is not a function
+		// console.log(p.getAge());
 	</script>
 </body>
 

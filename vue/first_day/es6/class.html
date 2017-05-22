@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>class</title>
+</head>
+
+<body>
+    <script type="text/javascript">
+    	class Point{
+    		constructor(x,y,color){
+    			this.x=x;
+    			this.y=y;
+    		}
+    		getX(){
+    			return this.x;
+    		}
+    		getY(){
+    			return this.y;
+    		}
+    	}
+
+    	class ColorPoint extends Point{
+    		constructor(x,y,color){
+    			super(x,y);//继承时一定要写，而且要写前边
+    			this.color=color;
+    		}
+    		toString(){
+    			return this.color+' '+super.toString();
+    		}
+    	}
+    	var p=new Point(1,2);
+    	console.log(p.getX());
+    	var x=new ColorPoint(1,2,"red");
+    	console.log(x.toString());
+    </script>
+</body>
+
+</html>
