@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script type="text/javascript" src="js/vue.js"></script>
+</head>
+<body>
+	<div id="app">
+		{{msg}}
+		<button @click="changeText">点我一下</button>
+	</div>
+	<script type="text/javascript">
+		var vm = new Vue({
+			el:'#app',
+			data:{
+				msg:'hello vue!'
+			},
+			methods:{
+				changeText:function(){
+					this.msg = "this is a book!"
+				}
+			}
+		});
+
+		console.log(vm.msg);
+	</script>
+</body>
+</html>

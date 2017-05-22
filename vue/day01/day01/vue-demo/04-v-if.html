@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script type="text/javascript" src="js/vue.js"></script>
+</head>
+<body>
+	<div id="app">
+		<span v-if="seen">
+			this is a test!
+		</span>
+	</div>
+	<script type="text/javascript">
+		new Vue({
+			el:'#app',
+			data:{
+				seen:false
+			}
+		})
+	</script>
+</body>
+</html>

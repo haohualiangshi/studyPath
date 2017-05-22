@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		*{
+			padding:0;
+			margin:0;
+		}
+		.nomal{
+			font-size: 30px;
+			font-weight: 700;
+		}
+		.active{
+			color:red;
+		}
+	</style>
+	<script type="text/javascript" src="js/vue.js"></script>
+</head>
+<body>
+	<div id="app">
+		<div class="nomal" :class="{active:number % 2 == 1}">abcdefg</div>
+		<button @click="number+=1;">快点我吧</button>
+	</div>
+	<script type="text/javascript">
+		new Vue({
+			el:'#app',
+			data:{
+				isActive:false,
+				number:1,
+			}
+		})
+	</script>
+</body>
+</html>

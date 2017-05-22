@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<script type="text/javascript">
+	var o = new Object();
+
+	var obj = {a:1,b:2,c:3};
+
+	console.log(Object.keys(obj));
+
+	var obj2 = {d:4,e:5};
+
+
+	var obj3 = Object.assign({},obj,obj2);
+
+	console.log(obj3);
+	console.log(obj);
+
+	function Parent(name){
+		this.name = name;
+	}
+
+	function Child(age){
+		this.age = age;
+	}
+
+	
+
+	Child.prototype = Object.create(Parent.prototype);
+
+	Child.prototype.getAge =function(){
+		alert(this.age);
+	}
+
+	var p = new Parent('yztc');
+
+	console.log(p.getAge())
+
+
+</script>
+</body>
+</html>

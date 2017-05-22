@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript" src="lib/vue.js"></script>
+</head>
+<body>
+	<div id="app">
+		{{message}}
+		<todo-item v-for='(item,index) in productList' v-bind:todo="item" :index="index"></todo-item>
+	</div>
+	<script type="text/javascript">
+		Vue.component('todo-item',{
+			props:['todo','index'],
+			template:'<div>{{index}} .this is a {{todo.text}}!</div>'
+		})
+		new Vue({
+			el:"#app",
+			data:{
+				message:'hello',
+				productList:[]
+			}
+		})
+	</script>
+</body>
+</html>

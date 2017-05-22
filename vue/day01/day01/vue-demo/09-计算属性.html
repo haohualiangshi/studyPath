@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script type="text/javascript" src="js/vue.js"></script>
+</head>
+<body>
+<div id="app">
+<p>{{msg1}}</p>
+<p>1.{{msg}}</p>
+<p>2.{{reverseMsg()}}---->{{now()}}</p>
+<p>3.{{reserveMessage}}---->{{now2}}</p>
+<button @click="reverse">点我吧</button>
+</div>
+<script type="text/javascript">
+	new Vue({
+		el:'#app',
+		data:{
+			msg:'this is a book!',
+			msg1:'111'
+		},
+		methods:{
+			reverse:function(){
+				this.msg = '点击改变msg的值'
+			},
+			reverseMsg:function(){
+				return this.msg.split("").reverse().join("");
+			},
+			now:function(){
+				return this.msg+","+Date.now()
+			}
+		},
+		computed:{
+			reserveMessage:function(){
+				return this.msg.split("").reverse().join("");
+			},
+			now2:function() {
+				//var a = this.msg;
+				return Date.now();
+		  	}
+		}
+
+	})
+</script>
+</body>
+</html>

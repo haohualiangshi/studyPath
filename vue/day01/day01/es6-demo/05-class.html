@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<script type="text/javascript">
+	
+	// function Point(x,y){
+	// 	this.x = x;
+	// 	this.y = y;
+	// }
+
+	// Point.prototype.getX =function(){
+	// 	return this.x;
+	// }
+
+	// var p = new Point(1,2);
+	// console.log(p.getX());
+
+	class Point{
+		constructor(x,y){
+			this.x = x;
+			this.y = y;
+		}
+		getX(){
+			return this.x
+		}
+		getY(){
+			return this.y
+		}
+	}
+
+	class ColorPoint extends Point {
+	  constructor(x, y, color) {
+	  	
+	    super(x, y); // 调用父类的constructor(x, y)
+	    this.color = color;
+	    
+	  }
+
+	  toString() {
+	    return this.color + ' ' + super.toString(); // 调用父类的toString()
+	  }
+	}
+
+	var p = new Point(1,2);
+	console.log(p.getX());
+
+	var x = new ColorPoint(1,2,'red');
+	console.log(x.toString())
+	
+
+	//class 的静态方法 static
+	// class Foo {
+	//   static classMethod() {
+	//     return 'hello';
+	//   }
+	// }
+
+	// Foo.classMethod() // 'hello'
+
+	// var foo = new Foo();
+	// foo.classMethod()
+
+	function P(x,y){
+		this.x = x;
+		this.y = y;
+	}
+
+	P.test = function(){
+		console.log('test')
+	}
+
+	var p = new P(1,2);
+	console.log(P.test())
+	console.log(p.test())
+</script>
+</body>
+</html>

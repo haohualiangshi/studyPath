@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script type="text/javascript" src="js/vue.js"></script>
+</head>
+<body>
+	<div id="app">{{msg}}
+	<button :title="msg" @click="changeText">点击</button>
+	</div>
+	<script type="text/javascript">
+		new Vue({
+			el:'#app',
+			data:{
+				msg:'hello!'
+			},
+			methods:{
+				changeText:function(){
+					this.msg = "这个是一个测试"
+				}
+			}			
+		})
+	</script>
+</body>
+</html>

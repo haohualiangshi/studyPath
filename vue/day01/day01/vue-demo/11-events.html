@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+	<script type="text/javascript" src="js/vue.js"></script>
+</head>
+<body>
+	<div id="app">
+		<div @click="outer">
+			outer
+			<div @click="middle">
+				middle
+				<div @click.stop="inner">
+					inner
+				</div>
+			</div>
+		</div>
+		<div>
+			<a href="http://www.baidu.com" @click.prevent='redirect'>baidu</a>
+		</div>
+		<div>
+			<button  @keyup.enter="enterFunc">enter</button>
+		</div>
+	</div>
+	<script type="text/javascript">
+		new Vue({
+			el:'#app',
+			data:{
+
+			},
+			methods:{
+				enterFunc:function(){
+					alert('enter!');
+				},
+				redirect:function(){
+					console.log('redirect');
+				},
+				outer:function(event){
+					console.log('outer');
+				},
+				middle:function(event){
+
+					console.log('middle');
+				},
+				inner:function(event){
+					console.log('inner');
+				}
+			}
+		})
+	</script>
+</body>
+</html>

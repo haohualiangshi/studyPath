@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<script type="text/javascript">
+	//1. str+=
+
+	var a = 'abc';
+	a+='def';
+	console.log(a);
+
+	//2. [].join('')
+
+	var b = [];
+
+	b.push('123');
+	b.push('456');
+	console.log(b.join(''));
+
+	//3.\
+	var c = '<div>\
+				<span>123</span>456\
+			</div>';
+
+	console.log(c);
+
+	//4.`
+
+	var d = 
+			`
+				<div>
+					<span>456</span>
+				</div>
+			`
+	console.log(d);
+	//5.jquery
+		$(`<div>
+			</div>`)
+
+</script>
+</body>
+</html>

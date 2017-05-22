@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<script type="text/javascript">
+	// let a = 100;
+	// let b = 101;
+	// let c = 102;
+
+	// let [a,b,c] = [100,[101,103,104],102];
+	// console.log(a,b,c);
+
+	var obj = {
+		func:function(){
+			console.log('func')
+		},
+		func2:function(){
+			console.log('fun2');
+		}
+	}
+	// console.log(obj.func());
+	// let {func,func2} = obj;
+	// console.log(func());
+	// console.log(func2());
+
+
+	function test({func}){
+		func && func();
+	}
+
+	test(obj);
+
+	function add([x, y]){
+	  return x + y;
+	}
+	var c =add([1, 2]);
+
+	var d = [function(){alert(1)},1,'3'];
+
+	console.log(c);
+	console.log(d[0]())
+
+</script>
+</body>
+</html>

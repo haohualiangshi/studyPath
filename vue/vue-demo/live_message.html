@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>留言板</title>
+	<script type="text/javascript" src="lib/vue.js"></script>
+	<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+		}
+	</style>
+</head>
+<body>
+	<div id="app">
+		<h3>留言板</h3>
+		<p>name:<input type="text" v-model="name" name=""></p>
+		<p>msg:<textarea v-model="msg"></textarea></p>
+		<p>submit:<button @click="submit">提交</button></p>
+	
+	<div>
+		<h3>评论</h3>
+		<template v-for='item in list'>
+			<p>name:{{item.name}}</p>
+			<p>msg:{{item.msg}}</p>
+			<!-- <a href="#" @click="del(index)">删除</a> -->
+		</template>
+	</div>
+	</div>
+	<script type="text/javascript">
+		new Vue({
+			el:'#app',
+			data:{
+				name:'',
+				msg:'',
+				list:[]
+			},
+			methods:{
+				submit:function(){
+					this.list.push({
+						name:this.name,
+						msg:this.msg
+					});
+					console.log(this.list);
+					// this.name="";
+					// this.msg="";
+				},
+				del:function(){
+					this.list.splice(index,1);
+				}
+			}
+		})
+	</script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<script type="text/javascript">
+	//1.function params
+
+	// function add(x,y){
+	// 	y =  y||100;
+	// 	return x+y;
+	// }
+
+	// console.log(add(3));
+
+	var e = (x,y=100)=>{
+		return x+y;
+	}
+
+	// console.log(add(3,4));
+
+	// var a = add(3,4);
+
+	var a = (x,y) =>  x+y;
+	var c = (x,y) => { return x+y}
+	console.log(a(3,4))
+	console.log(c(3,4))
+	console.log(e(3))
+</script>
+</body>
+</html>

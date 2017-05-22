@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript" src="lib/vue.js"></script>
+</head>
+<body>
+<div id="app">
+	
+</div>
+	<script type="text/javascript">
+		var vm=new Vue({
+			el:'#app',
+			data:{
+				price:9.9,
+				bunber:99,
+				totalPrice:0
+			},
+			watch:{
+				price:function(val){
+					this.totalPrice=val*this.number;
+				},
+				number:function(val){
+					this.totalPrice=val*this.price;
+				}
+			},
+			computed:{
+				total:function(){
+					return this.price*this.number;
+				}
+			}
+		})
+
+	</script>
+</body>
+</html>
