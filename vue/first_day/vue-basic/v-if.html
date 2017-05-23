@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>vue中的if语句</title>
+	<script type="text/javascript" src="lib/vue.js"></script>
+</head>
+<body>
+	<div id="app">
+		<span v-if="seen">
+			this is a test!
+		</span>
+	</div>
+	<script type="text/javascript">
+		new Vue({
+			el:'#app',
+			data:{
+				seen :true
+			}
+		})
+	</script>
+</body>
+</html>

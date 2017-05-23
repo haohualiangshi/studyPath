@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>组件化</title>
+    <script type="text/javascript" src="./lib/vue.js"></script>
+</head>
+
+<body>
+	<div id="app">
+		{{message}}
+		<br>
+		<ol>
+            <todo-item v-for="item in lists" v-bind:todo="item">    </todo-item>         
+        </ol>
+	</div>
+    <script type="text/javascript">
+    //定义一个组件
+        Vue.component("todo-item",{
+            props:['todo'],
+            template:'<li>食物都有：{{todo.text}}</li>'
+        });
+    	var app=new Vue({
+    		el:"#app",
+    		data:{
+    			message:'hello vue',
+                lists:[
+                    {text:'蔬菜'},
+                    {text:'rice'},
+                    {text:'juice'}
+                ]
+    		}
+    	})
+    </script>
+</body>
+
+</html>

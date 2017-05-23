@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>vue的数据更改</title>
+    <script type="text/javascript" src="lib/vue.js"></script>
+</head>
+
+<body>
+<div id="app">
+	{{msg}}
+	<button :title="msg" @click="changeText"> click effct</button>
+</div>
+<script type="text/javascript">
+	new Vue({
+		el:'#app',
+		data:{
+			msg:'hello vue'
+		},
+		methods:{
+			changeText:function(){
+				this.msg="this is a test str";
+			}
+		}
+	})
+</script>
+</body>
+
+</html>

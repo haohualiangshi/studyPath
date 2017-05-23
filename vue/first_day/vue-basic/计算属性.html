@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>计算属性</title>
+    <script type="text/javascript" src="./lib/vue.js"></script>
+</head>
+
+<body>
+	<div id="app">
+		<p>{{msg1}}</p>
+        <p>1.{{msg}}</p>
+        <p>2.{{reverseMsg()}}-------> {{now()}}</p>
+        <p>3.{{reserveMessage}}---->{{now2}}</p>
+        <button @click='reverse'>点我吧</button>
+	</div>
+    <script type="text/javascript">
+    	var app=new Vue({
+    		el:"#app",
+    		data:{
+    			msg:'this is a book!',
+                msg1:'study vue'
+    		},
+            methods:{
+               reverse:function(){
+                    this.msg='点击改变msg的值'
+               },
+               reverseMsg:function(){
+                return this.msg.split("").reverse().join("");
+               },
+               now:function(){
+                return Date.now();
+               }
+            },
+            // computed中的方法与method中的方法的区别是：method是每次数据发生更改时都会重新执行该里边的方法；computed中的方法是只在其内部依赖的数据发生更改时其才会重新计算
+            computed:{
+                reserveMessage:function(){
+                    return this.msg.split("").reverse().join("");
+                },
+                now2:function(){
+                    return Date.now();
+                }
+            }
+    	})
+    </script>
+</body>
+
+</html>

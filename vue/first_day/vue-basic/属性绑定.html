@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>vue的属性绑定</title>
+    <script type="text/javascript" src="lib/vue.js"></script>
+</head>
+
+<body>
+<div id="app">
+	{{msg}}
+	<button :title="msg" @click="changeText"> click effct</button>
+	<img :src="imgsrc">
+</div>
+<script type="text/javascript">
+	new Vue({
+		el:'#app',
+		data:{
+			msg:'hello vue',
+			imgsrc:'imgs/tangxiangrong.jpg'
+		},
+		methods:{
+			changeText:function(){
+				this.msg="this is a test str";
+			}
+		}
+	})
+	// 寻找共同拼车的朋友：本周六（5.27）晚上8左右出发，家是白道口的下堤的；寻找四间房、白道口、八里营回家的朋友一起拼车；27号晚下班晚8点左右出发，30号下午三点左右回北京；电话：17600666097 张庆豪
+</script>
+</body>
+
+</html>
