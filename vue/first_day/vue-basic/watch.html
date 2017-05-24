@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>watch</title>
+    <script type="text/javascript" src="./lib/vue.js"></script>
+</head>
+
+<body>
+	<div id="app">
+		<p>
+			price:<input type="text" name="" v-model="price">
+		</p>
+		<p>
+			number:<input type="text" name="" v-model="number">
+		</p>
+		{{total}}
+	</div>
+    <script type="text/javascript">
+    	new Vue({
+    		el:"#app",
+    		data:{
+    			price:9,
+    			number:9
+    		},
+    		computed:{
+    			total:function(){
+    				return this.price*this.number;
+    			}
+    		}
+    	})
+    </script>
+</body>
+
+</html>
