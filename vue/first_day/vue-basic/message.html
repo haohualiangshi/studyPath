@@ -6,51 +6,76 @@
     <title>留言板</title>
     <script type="text/javascript" src="lib/vue.js"></script>
     <style type="text/css">
-    	*{
-    		margin: 0;
-    		padding: 0;
-    	}
-    	
-    	.desc{
-    		height: 200px;
-    		width: 300px;
-    		background-color: #dfdfdf;
-    		display: none;
-    	}
-    	.active{
-    		background: blue;
-
-    	}
-    	.isActive{
-    		display: block;
-    	}
+    * {
+        margin: 0;
+        padding: 0;
+    }
+    
+    #app {
+        width: 500px;
+        margin: 0 auto;
+        margin-top: 50px;
+    }
+    
+    button {
+        height: 30px;
+        width: 80px;
+        border: 0;
+        background: yellow;
+    }
+    
+    #app p {
+        margin: 10px 0px;
+    }
     </style>
 </head>
 
 <body>
     <div id="app">
-    	<span v-for="(item,index) in arr" :class="{active:isShow==index}" @click="changeText(index)">tab-{{index}}</span>
-    	<div class="desc" v-for="(item,index) in arr" :class="{isActive:isShow==index}">
-    		{{item.text}}
-    	</div>
+        <h4>留言板</h4>
+        <div>
+            <p>name:
+                <input type="text" name="" v-model="name">
+            </p>
+            <p>
+                msg:
+                <input type="text" name="" v-model="msg">
+            </p>
+            <button @click="submit">提交</button>
+        </div>
+        <div>
+            <h4>评论</h4>
+            <template v-for="(item,index) in list">
+
+                <p>name:{{item.name}}</p>
+                <p>msg:{{item.msg}}</p>
+                <p><a href="#" @click="del(index)">删除</a></p>
+            </template>
+        </div>
     </div>
     <script type="text/javascript">
-    	new Vue({
-    		el:"#app",
-    		data:{
-    			isShow:0,
-    			arr:[
-    				{text:'this is the first tab'},
-    				{text:'this is the sec tab'},
-    				{text:'this is the third tab'}
-    			]
-    		},
-    		methods:{
-    			changeText:function(index){
-    				this.isShow=index;
-    			}
-    		}
-    	})
+    new Vue({
+        el: "#app",
+        data: {
+            name: "",
+            msg: "",
+            list: []
+        },
+        methods: {
+            submit: function() {
+                this.list.push({
+                    name: this.name,
+                    msg: this.msg
+                });
+                this.name = '';
+                this.msg="";
+            },
+            del:function(index){
+                this.list.splice(index,1);
+            }
+        }
+
+    })
     </script>
 </body>
 
