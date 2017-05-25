@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>tab 切换</title>
+    <script type="text/javascript" src="lib/vue.js"></script>
+    <style type="text/css">
+    	*{
+    		margin: 0;
+    		padding: 0;
+    	}
+    	
+    	.desc{
+    		height: 200px;
+    		width: 300px;
+    		background-color: #dfdfdf;
+    		display: none;
+    	}
+    	.active{
+    		background: blue;
+
+    	}
+    	.isActive{
+    		display: block;
+    	}
+    </style>
+</head>
+
+<body>
+    <div id="app">
+    	<span v-for="(item,index) in arr" :class="{active:isShow==index}" @click="changeText(index)">tab-{{index}}</span>
+    	<div class="desc" v-for="(item,index) in arr" :class="{isActive:isShow==index}">
+    		{{item.text}}
+    	</div>
+    </div>
+    <script type="text/javascript">
+    	new Vue({
+    		el:"#app",
+    		data:{
+    			isShow:0,
+    			arr:[
+    				{text:'this is the first tab'},
+    				{text:'this is the sec tab'},
+    				{text:'this is the third tab'}
+    			]
+    		},
+    		methods:{
+    			changeText:function(index){
+    				this.isShow=index;
+    			}
+    		}
+    	})
+    </script>
+</body>
+
+</html>

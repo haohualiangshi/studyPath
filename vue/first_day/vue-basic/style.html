@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>绑定样式</title>
+    <script type="text/javascript" src="lib/vue.js"></script>
+    <style type="text/css">
+    .active {
+        display: none;
+    }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+    <!-- 在使用vue绑定样式时应使用js的样式，而不是css的样式 -->
+        <div :style="{color:color,backgroundColor:bgc}" :class="{active:number}">a a b c</div>
+        <button @click="toggle">消失</button>
+    </div>
+    <script type="text/javascript">
+    new Vue({
+        el: "#app",
+        data: {
+            color: 'red',
+            bgc: 'blue',
+            number: true
+        },
+        methods: {
+            toggle: function() {
+                if (this.number == true) {
+                    this.number = false;
+                } else {
+                    this.number = true;
+                }
+            }
+        }/*,
+        computed: {
+            toggle: function() {
+                if (this.number == true) {
+                    this.number = false;
+                } else {
+                    this.number = true;
+                }
+            }
+        }*/
+        /*method方法可以在内部更改依赖，但是计算属性只能够在依赖发生更改后执行，而不能用于先执行再更改依赖*/
+    })
+    </script>
+</body>
+
+</html>
