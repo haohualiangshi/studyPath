@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>排序算法-冒泡</title>
+    <style type="text/css">
+    	table{
+    		border: 1px solid #777;
+    		/* border-spacing: 0; */
+    		border-collapse: collapse;
+    	}
+    	th{
+    		border: 1px solid #777;
+
+    	}
+    </style>
+</head>
+
+<body>
+    <p>冒泡排序是稳定的排序方法</p>
+    <p>两层循环嵌套，可以有四种实现方式</p>
+    <table>
+        <thead>
+            <tr>
+                <th>方案</th>
+                <th>外层循环</th>
+                <th>内层循环</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th>1</th>
+                <th>正序</th>
+                <th>正序</th>
+            </tr>
+            <tr>
+                <th>2</th>
+                <th>正序</th>
+                <th>逆序</th>
+            </tr>
+            <tr>
+                <th>3</th>
+                <th>逆序</th>
+                <th>正序</th>
+            </tr>
+            <tr>
+                <th>4</th>
+                <th>逆序</th>
+                <th>逆序</th>
+            </tr>
+        </tbody>
+    </table>
+    <table>
+    	<thead>
+    		<tr>
+    			<th>平均时间复杂度</th>
+    			<th>最好情况</th>
+    			<th>最坏情况</th>
+    			<th>空间复杂度</th>
+    		</tr>
+    	</thead>
+    	<tbody>
+    		<tr>
+    			<th>O(n²)</th>
+    			<th>O(n)</th>
+    			<th>O(n²)</th>
+    			<th>O(1)</th>
+    		</tr>
+    	</tbody>
+    </table>
+    <p>冒泡排序是最容易实现的排序, 最坏的情况是每次都需要交换, 共需遍历并交换将近n²/2次, 时间复杂度为O(n²). 最佳的情况是内循环遍历一次后发现排序是对的, 因此退出循环, 时间复杂度为O(n). 平均来讲, 时间复杂度为O(n²). 由于冒泡排序中只有缓存的temp变量需要内存空间, 因此空间复杂度为常量O(1).</p>
+    <script type="text/javascript">
+    //冒泡排序
+    //借鉴网站https://juejin.im/post/58c9d5fb1b69e6006b686bce
+    /*方案一*/
+    /*将交换元素的部分抽取出来*/
+    var arr_test = [1, 5, 3, 4, 2, 8, 4, 11, 88, 99]
+
+    function swap(i, j, array) {
+        var temp = array[j];
+        array[j] = array[i];
+        array[i] = temp;
+    }
+    /*两个正序排列的循环*/
+    function bubbleSort1(array) {
+        var length = array.length;
+        var isSwap = false;
+        for (var i = 0; i < length; i++) {
+            isSwap = false;
+            for (var j = 0; j < length - 1 - i; j++) {
+                array[j] > array[j + 1] && (isSwap = true) && swap(j, j++, array);
+            }
+            if (!isSwap) {
+                // 不明白为什么要加一层判断
+                break;
+            }
+        }
+        return array;
+    }
+    console.log(bubbleSort1(arr_test)); //[1, 5, 3, 4, 2, 8, 4, 11, 88, 99]
+
+
+
+
+    /*方案2*/
+    /*外层循环正序，内层循环逆序，靠前的元素先确定*/
+    function bubbleSort2(array) {
+        var length = array.length,
+            isSwap;
+        for (var i = 0; i < length; i++) {
+            isSwap = false;
+            for (var j = length - 1; j > i + 1; j--) {
+                array[j] < array[j - 1] && (isSwap = true) && swap(j, j - 1, array);
+            }
+            if (!isSwap) {
+                break;
+            }
+        }
+        return array;
+
+    }
+    console.log(bubbleSort2(arr_test));
+
+
+    /* 方案3  外层循环逆序；内层循环正序;靠后的元素先确定*/
+    function bubbleSort3(array) {
+        var length = array.length,
+            isSwap;
+        for (var i = length - 1; i >= 0; i--) {
+            isSwap = false;
+            for (var j = 0; j < i; j++) {
+                array[j] > array[j + 1] && (isSwap = true) && swap(j, j + 1, array);
+            }
+            if (!isSwap) {
+                break;
+            }
+        }
+        return array;
+    }
+
+    console.log(bubbleSort3(arr_test));
+
+    /*方案4  内外层都是逆序  靠前的元素先确定*/
+    function bubbleSort4(array) {
+        var length = array.length,
+            isSwap;
+        for (var i = length - 1; i >= 0; i++) {
+            isSwap = false;
+            for (var j = length - 1; j >= length - 1; j--) {
+                array[j] < array[j - 1] && (isSwap = true) && swap(j, j - 1, array);
+            }
+            if (!isSwap) {
+                breaak;
+            }
+
+        }
+        return array;
+    }
+    console.log(bubbleSort3(arr_test));
+    </script>
+</body>
+
+</html>
