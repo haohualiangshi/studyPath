@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>排序-归并排序</title>
+</head>
+<body>
+	<p>归并排序建立在归并操作之上, 它采取分而治之的思想, 将数组拆分为两个子数组, 分别排序, 最后才将两个子数组合并; 拆分的两个子数组, 再继续递归拆分为更小的子数组, 进而分别排序, 直到数组长度为1, 直接返回该数组为止.</p>
+	<p>Tips: 归并排序严格按照从左往右(或从右往左)的顺序去合并子数组, 它并不会改变相同元素之间的相对顺序, 因此它也是一种稳定的排序算法.</p>
+	<ul>
+		<li>归并排序可通过两种方式实现:</li>
+		<li>自上而下的递归</li>
+		<li>自下而上的迭代</li>
+
+	</ul>
+	<p>长度为n的数组, 最终会调用mergeSort函数2n-1次. 通过自上而下的递归实现的归并排序, 将存在堆栈溢出的风险. </p>
+	<script type="text/javascript">
+		/*方式1：递归*/
+		function mergeSort(array){
+			var length=array.length;
+			if(length<2){
+				return array;
+			}
+			var m=(length>>1),left=array.slice(0,m),right=array.slice(m);
+			return merge(mergeSort(left),mergeSort(right));
+		}
+		function merge(left,right){
+			var result=[];
+			while(left.length&&right.length){
+				var item=left[0]<=right[0]?left.shift():right.shift();
+				result.push(item);
+			}
+			return result.concat(left.length?left:right);
+		}
+	</script>
+</body>
+</html>
