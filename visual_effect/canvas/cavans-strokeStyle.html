@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>strokeStyle</title>
+</head>
+<body>
+	<canvas id="canvas1" width="300px" height="300px"></canvas>
+	<canvas id="canvas2" width="300px" height="300px"></canvas>
+	<canvas id="canvas3" width="300px" height="300px"></canvas>
+	<canvas id="canvas4" width="300px" height="300px"></canvas>
+	<canvas id="canvas5" width="300px" height="300px"></canvas>
+	<script type="text/javascript">
+		var canvas1=document.getElementById("canvas1");
+		var ctx1=canvas1.getContext("2d");
+		ctx1.strokeStyle="#00f";
+		ctx1.strokeRect(20,20,200,200);
+
+		var canvas2=document.getElementById("canvas2");
+		var ctx2=canvas2.getContext("2d");
+		var setGradient2=ctx2.createLinearGradient(0,0,170,0);
+		setGradient2.addColorStop("0","#0f0");
+		setGradient2.addColorStop("0.5","blue");
+		setGradient2.addColorStop("1","red");
+		ctx2.strokeStyle=setGradient2;
+		ctx2.lineWidth=5;
+		ctx2.strokeRect(20,20,150,150);
+
+
+
+		var canvas3=document.getElementById("canvas3");
+		var ctx3=canvas3.getContext("2d");
+		ctx3.font="30px Verdana";
+		var setGradient3=ctx3.createLinearGradient(0,0,canvas3.width,0);
+		setGradient3.addColorStop(0,"#0f0");
+		setGradient3.addColorStop(0.5,"blue");
+		setGradient3.addColorStop(1,"red");
+		ctx3.strokeStyle=setGradient3;
+		ctx3.strokeText("zhang qinghao",10,50);
+
+	</script>
+</body>
+</html>

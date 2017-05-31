@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>fillStyle的使用</title>
+</head>
+
+<body>
+    <p>
+        fillStyle 属性设置或返回用于填充绘画的颜色、渐变或模式。
+    </p>
+    <canvas width="300px" height="300px" id="canvas1"></canvas>
+    <canvas width="300px" height="300px" id="canvas2"></canvas>
+    <canvas width="300px" height="300px" id="canvas3"></canvas>
+    <canvas width="300px" height="300px" id="canvas4"></canvas>
+    <script type="text/javascript">
+    /*设置颜色*/
+    var c1 = document.getElementById("canvas1");
+    var ctx1 = c1.getContext("2d");
+    ctx1.fillStyle = "#0000ff";
+    ctx1.fillRect(20, 20, 150, 100);
+    // console.log(ctx.fillStyle);
+    // 
+   	
+   	/*设置渐变-从上到下*/
+   	var c2=document.getElementById("canvas2");
+   	var ctx2=c2.getContext("2d");
+   	var my_gradient=ctx2.createLinearGradient(0,0,0,250);
+   	my_gradient.addColorStop(0,"#000");
+   	my_gradient.addColorStop(1,"#fff");
+   	ctx2.fillStyle=my_gradient;
+   	ctx2.fillRect(20,20,200,200);
+   	/*设置渐变-从左到右*/
+   	var c3=document.getElementById("canvas3");
+   	var ctx3=c3.getContext("2d");
+   	var setGradient3=ctx3.createLinearGradient(0,0,250,0);
+   	setGradient3.addColorStop(0,"#000");
+   	setGradient3.addColorStop(1,"#fff");
+   	ctx3.fillStyle=setGradient3;
+   	ctx3.fillRect(20,20,200,200)
+    </script>
+</body>
+
+</html>
