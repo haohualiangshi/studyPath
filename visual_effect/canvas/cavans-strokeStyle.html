@@ -3,6 +3,11 @@
 <head>
 	<meta charset="UTF-8">
 	<title>strokeStyle</title>
+	<style type="text/css">
+		canvas{
+			border: 1px solid #000;
+		}
+	</style>
 </head>
 <body>
 	<canvas id="canvas1" width="300px" height="300px"></canvas>
@@ -31,13 +36,25 @@
 		var canvas3=document.getElementById("canvas3");
 		var ctx3=canvas3.getContext("2d");
 		ctx3.font="30px Verdana";
-		var setGradient3=ctx3.createLinearGradient(0,0,canvas3.width,0);
+		var setGradient3=ctx3.createLinearGradient(0,0,100,100);
+		/*四个参数，渐变开始点的x坐标，渐变开始点的y坐标，渐变结束点的x坐标，渐变结束点的y坐标*/
 		setGradient3.addColorStop(0,"#0f0");
 		setGradient3.addColorStop(0.5,"blue");
 		setGradient3.addColorStop(1,"red");
 		ctx3.strokeStyle=setGradient3;
-		ctx3.strokeText("zhang qinghao",10,50);
+		ctx3.strokeText("张庆豪",10,50);
 
+
+		/*创建径向渐变：context.createRadialGradient(x0,y0,r0,x1,y1,r1);x0表示渐变的开始的圆的坐标，y0渐变的开始圆的y坐标，r0开始圆的半径；x1渐变结束圆的x坐标，y1渐变结束圆的y坐标，r1结束圆的半径*/
+		var canvas4=document.getElementById("canvas4");
+		var ctx4=canvas4.getContext("2d");
+		var setGradient4=ctx4.createRadialGradient(10,10,30,10,10,20);
+		setGradient4.addColorStop(0.4,"#f00");
+		// setGradient4.addColorStop(0.2,"#0f0");
+		setGradient4.addColorStop(0.8,"#00f");
+		setGradient4.addColorStop(0.9,"#ff0");
+		ctx4.fillStyle=setGradient4;
+		ctx4.fillRect(0,0,300,300);
 	</script>
 </body>
 </html>

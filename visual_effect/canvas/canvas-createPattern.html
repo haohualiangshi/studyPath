@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>createPattern</title>
+</head>
+
+<body>
+    <img src="./lamp.gif" id="img">
+    <canvas id="canvas" height="1000px" width="1000px">
+    </canvas>
+    <script type="text/javascript">
+    var canvas = document.getElementById("canvas");
+    var ctx = canvas.getContext("2d");
+    var getImg = document.getElementById("img");
+    //使用该方法必须确定图片已经加载完毕；否则createPattern返回null且canvas黑屏；
+    getImg.onload = function() {
+        var setPattern = ctx.createPattern(getImg, "repeat");
+        console.log(setPattern);
+        ctx.rect(0, 0, 150, 500);
+        ctx.fillStyle = setPattern;
+        ctx.fill();
+    }
+    </script>
+</body>
+
+</html>

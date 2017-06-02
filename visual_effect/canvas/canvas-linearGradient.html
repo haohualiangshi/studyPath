@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>createLinearGradient</title>
+	<style type="text/css">
+		canvas{
+			border: 1px solid #666;
+		}
+	</style>
+</head>
+<body>
+	<canvas id="canvas1" width="300px" height="300px"></canvas>
+	<canvas id="canvas2" width="300px" height="300px"></canvas>
+	<canvas id="canvas3" width="300px" height="300px"></canvas>
+	<canvas id="canvas4" width="300px" height="300px"></canvas>
+	<script type="text/javascript">
+		var canvas1=document.getElementById("canvas1");
+		var ctx1=canvas1.getContext("2d");
+		var setGradient1=ctx1.createLinearGradient(50,50,200,200);
+		setGradient1.addColorStop(0,"#f00");
+		setGradient1.addColorStop(1,"#0f0");
+		ctx1.fillStyle=setGradient1;
+		ctx1.fillRect(10,10,300,300);
+
+		var canvas2=document.getElementById("canvas2");
+		var ctx2=canvas2.getContext("2d");
+		var setGradient2=ctx2.createLinearGradient(0,0,0,170);
+		setGradient2.addColorStop(0,"#f00");
+		setGradient2.addColorStop(1,"#0f0");
+		ctx2.fillStyle=setGradient2;
+		ctx2.fillRect(10,10,200,200);
+		
+	</script>
+</body>
+</html>
