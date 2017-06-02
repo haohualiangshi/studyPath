@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>理解代码的解析过程-LHS和RSH</title>
+</head>
+
+<body>
+    <script type="text/javascript">
+    	function foo(a){
+    		var b=a;
+    		return a+b;
+    	}
+    	var c=foo(2);
+    	/*编译过程：
+    		变量c进行一次LHS查询，foo函数进行RHS查询，a隐式的进行LHS查询，
+    		b进行LRS查询；函数内的a进行RHS查询，然后分别对a和b进行RHS查询
+    	*/
+    </script>
+</body>
+
+</html>
