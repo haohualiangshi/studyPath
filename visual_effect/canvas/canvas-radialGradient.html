@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>createRadialGradient</title>
+    <style type="text/css">
+    * {
+        margin: 0;
+        padding: 0;
+    }
+    
+    canvas {
+        border: 1px solid #666;
+    }
+    </style>
+</head>
+
+<body>
+    <p>使用canvas时高度跟宽度不要在css文件里设置，否则使用画布时可能造成未知效果</p>
+    <canvas id="canvas1" width="300px" height="300px"></canvas>
+    <canvas id="canvas2" width="300px" height="300px"></canvas>
+    <canvas id="canvas3" width="300px" height="300px"></canvas>
+    <canvas id="canvas4" width="300px" height="300px"></canvas>
+    <canvas id="canvas5" width="300px" height="300px"></canvas>
+    <canvas id="canvas6" width="300px" height="300px"></canvas>
+    <canvas id="canvas7" width="300px" height="300px"></canvas>
+    <canvas id="canvas8" width="300px" height="300px"></canvas>
+    <script type="text/javascript">
+    var allCanvas = document.querySelectorAll("canvas");
+    var ctx1 = allCanvas[0].getContext("2d");
+    /*设置圆心位置和圆的半径会先显示不同的效果
+    	通过两圆的圆心距
+		当圆心距小于两圆半径之差时 两圆内含
+		当圆心距等于两圆半径之差时 两圆内切
+		当圆心距小于两圆半径之和 大于半径之差时 两圆相交
+		当圆心距等于两圆半径之和时 两圆外切
+		当圆心距大于两圆半径之和时 两圆外离*/
+
+    /*1.当圆心距小于两圆半径之差时 两圆内含且同心*/
+    var grd = ctx1.createRadialGradient(150, 150, 30, 150, 150, 50);
+    grd.addColorStop(0, "red");
+    grd.addColorStop(1, "#0F0");
+    ctx1.fillStyle = grd;
+    ctx1.fillRect(0, 0, 300, 300);
+     /*当圆心距小于两圆半径之差时 两圆内含不同心*/
+    var ctx2 = allCanvas[1].getContext("2d");
+    var grd2 = ctx2.createRadialGradient(150, 130,20, 150, 150, 50);
+    grd2.addColorStop(0, "red");
+    grd2.addColorStop(1, "#0F0");
+    ctx2.fillStyle = grd2;
+    ctx2.fillRect(0, 0, 300, 300);
+    /*当圆心距等于两圆半径之差时 两圆内切*/
+    var ctx3 = allCanvas[2].getContext("2d");
+    var grd3 = ctx3.createRadialGradient(150, 130, 30, 150, 150, 50);
+    grd3.addColorStop(0, "red");
+    grd3.addColorStop(1, "#0F0");
+    ctx3.fillStyle = grd3;
+    ctx3.fillRect(0, 0, 300, 300);
+    /*当圆心距小于两圆半径之和 大于半径之差时 两圆相交 成射线状*/
+    var ctx4 = allCanvas[3].getContext("2d");
+    var grd4 = ctx4.createRadialGradient(150, 130, 40, 150, 150, 50);
+    grd4.addColorStop(0, "red");
+    grd4.addColorStop(1, "#0F0");
+    ctx4.fillStyle = grd4;
+    ctx4.fillRect(0, 0, 300, 300);
+
+    /*当圆心距等于两圆半径之和时 两圆外切*/
+    var ctx5 = allCanvas[4].getContext("2d");
+    var grd5 = ctx5.createRadialGradient(150, 80, 45, 150, 150, 45);
+    grd5.addColorStop(0, "red");
+    grd5.addColorStop(1, "#0f0");
+    ctx5.fillStyle = grd5;
+    ctx5.fillRect(0, 0, 300, 300);
+
+    /*蒙蔽中。。。这个方法是如何绘制图形的*/
+    </script>
+</body>
+
+</html>
