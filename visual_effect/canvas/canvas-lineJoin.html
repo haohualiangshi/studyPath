@@ -16,8 +16,34 @@
 <canvas id="canvas4" width="300px" height="300px"></canvas>
 	<script type="text/javascript">
 		var allCanvas=document.querySelectorAll("canvas");
-		var ctx0=allCanvas.getContext("2d");
-		
+		var ctx0=allCanvas[0].getContext("2d");
+		ctx0.beginPath();
+		ctx0.lineJoin="round";/*圆角*/
+		ctx0.moveTo(20,20);
+		ctx0.lineTo(100,50);
+		ctx0.lineTo(20,150);
+		ctx0.lineWidth=30;
+		ctx0.stroke();
+
+		var ctx1=allCanvas[1].getContext("2d");
+		ctx1.beginPath();
+		ctx1.lineJoin="bevel";/*斜角。就像折纸*/
+		ctx1.moveTo(20,20);
+		ctx1.lineTo(100,50);
+		ctx1.lineTo(20,150);
+		ctx1.lineWidth=30;
+		ctx1.stroke();
+
+		var ctx2=allCanvas[2].getContext("2d");
+		ctx2.beginPath();
+		ctx2.lineJoin="miter";/*尖角，miter的值受miterLimit影响*/
+		ctx2.moveTo(30,30);
+		ctx2.lineTo(100,50);
+		ctx2.lineTo(30,150);
+		ctx2.lineWidth=30;
+		ctx2.stroke();
+
+
 	</script>
 </body>
 </html>

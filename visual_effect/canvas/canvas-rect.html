@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>rect()</title>
+	<style type="text/css">
+		canvas{
+			border: 1px solid #666;
+		}
+	</style>
+</head>
+<body>
+	<canvas id="canvas" height="300" width="300"></canvas>
+	<canvas id="canvas" height="300" width="300"></canvas>
+	<canvas id="canvas" height="300" width="300"></canvas>
+	<canvas id="canvas" height="300" width="300"></canvas>
+	<script type="text/javascript">
+		var allCanvas= document.querySelectorAll("canvas");
+		var ctx0=allCanvas[0].getContext("2d");
+		ctx0.rect(20,20,150,100);
+		ctx0.stroke();
+
+
+		var ctx1=allCanvas[1].getContext("2d");
+		ctx1.beginPath();
+		ctx1.lineWidth=10;
+		ctx1.strokeStyle="#f00";
+		ctx1.rect(20,20,260,200);
+		ctx1.stroke();
+
+		ctx1.beginPath();
+		ctx1.lineWidth=5;
+		ctx1.strokeStyle="#0f0";
+		ctx1.rect(40,40,150,100);
+		ctx1.stroke();
+
+		ctx1.beginPath();
+		ctx1.lineWidth=2;
+		ctx1.strokeStyle="#00f";
+		ctx1.rect(80,80,200,150);
+		ctx1.stroke();
+	</script>
+</body>
+</html>

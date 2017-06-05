@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>矩形</title>
+</head>
+<body>
+	<canvas id="canvas" width="300" height="300"></canvas>
+	<canvas id="canvas" width="300" height="300"></canvas>
+	<canvas id="canvas" width="300" height="300"></canvas>
+	<script type="text/javascript">
+		var allCanvas=document.querySelectorAll("canvas");
+		var ctx0=allCanvas[0].getContext("2d");
+		ctx0.fillRect(20,20,150,100);
+		ctx0.fillStyle="#0f0";
+		ctx0.fillRect(40,40,150,100);
+
+
+		var ctx1=canvas[1].getContext("2d");
+		ctx1.strokeStyle="#0f0";
+		ctx1.strokeRect(20,20,150,150);
+
+
+
+		var ctx2=canvas[2].getContext("2d");
+		ctx2.fillStyle="#f00";
+		ctx2.fillRect(20,20,150,150);
+		ctx2.clearRect(0,0,50,50);
+		ctx2.clearRect(100,100,50,50);
+
+	</script>
+</body>
+</html>

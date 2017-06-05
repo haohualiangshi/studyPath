@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>miterLimit</title>
+	<style type="text/css">
+		canvas{
+			border: 1px solid #555;
+		}
+	</style>
+</head>
+<body>
+	<canvas id="canvas" width="300" height="300"></canvas>
+	<canvas id="canvas" width="300" height="300"></canvas>
+
+	<script type="text/javascript">
+		var allCanvas=document.querySelectorAll("canvas");
+		var ctx0=allCanvas[0].getContext("2d");
+		ctx0.lineWidth=10;
+		ctx0.lineJoin="miter";
+		ctx0.miterLimit=6;
+		/*miterLimit设置或返回最大的斜角长度，即两条线交汇处的内角和外角之间的距离；只有在lineJoin的属性为miter时，miterLine才会有效；当斜角长度超过miterLimit的值时，边角会以lineJoin的“bebel”属性来显示*/
+		ctx0.moveTo(20,20);
+		ctx0.lineTo(50,27);
+		ctx0.lineTo(20,34);
+		ctx0.stroke();
+
+		var ctx1=canvas[1].getContext("2d");
+		ctx1.lineJoin="miter";
+		ctx1.miterLimit=4;
+		ctx1.lineWidth=10;
+		ctx1.moveTo(20,20);
+		ctx1.lineTo(50,27);
+		ctx1.lineTo(20,34);
+		ctx1.stroke();
+	</script>
+</body>
+</html>

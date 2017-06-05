@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>lineWidth</title>
+	<style type="text/css">
+		canvas{
+			border: 1px solid #666;
+		}
+	</style>
+</head>
+<body>
+	<canvas id="canvas" width="300" height="300"></canvas>
+	<canvas id="canvas" width="300" height="300"></canvas>
+	<canvas id="canvas" width="300" height="300"></canvas>
+	<script type="text/javascript">
+		var allCanvas=document.querySelectorAll("canvas");
+		var ctx0=allCanvas[0].getContext("2d");
+		ctx0.lineWidth=30;
+		ctx0.strokeRect(20,20,80,100);
+	</script>
+</body>
+</html>
