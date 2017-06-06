@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>stroke()</title>
+    <style type="text/css">
+    canvas {
+        border: 1px solid #777;
+    }
+    </style>
+</head>
+
+<body>
+    <canvas width="300" height="300"></canvas>
+    <canvas width="300" height="300"></canvas>
+    <canvas width="300" height="300"></canvas>
+    <canvas width="300" height="300"></canvas>
+    <canvas width="300" height="300"></canvas>
+    <script type="text/javascript">
+    var allCanvas = document.querySelectorAll("canvas");
+    var ctx0 = allCanvas[0].getContext("2d");
+    ctx0.beginPath();
+    ctx0.moveTo(20, 20);
+    ctx0.lineTo(20, 100);
+    ctx0.lineTo(70, 100);
+    ctx0.lineWidth = 20;
+    ctx0.strokeStyle = "#000";
+    ctx0.stroke();
+
+    var ctx1 = allCanvas[1].getContext("2d");
+    ctx1.beginPath();
+    ctx1.lineJoin = "miter";
+    ctx1.miterLimit = 5;
+    for (var i = 0; i < 5; i++) {
+        ctx1.lineTo(Math.cos((18 + i * 72) / 180 * Math.PI) * 100 + 100, -Math.sin((18 + i * 72) / 180 * Math.PI) * 100 + 100);
+        ctx1.lineTo(Math.cos((54 + i * 72) / 180 * Math.PI) * 30 + 100, -Math.sin((54 + i * 72) / 180 * Math.PI) * 30 + 100);
+    }
+    ctx1.closePath();
+    ctx1.lineWidth = 3;
+    ctx1.fillStyle = "#f6f152";
+    ctx1.strokeStyle = "#f00";
+    ctx1.fill();
+    ctx1.stroke();
+
+
+    /*下边的函数是封装好的画星函数*/
+    function drawStar(cxt, r, R, x, y, rot, borderWidth, borderStyle, fillStyle) {
+        cxt.beginPath();
+        for (var i = 0; i < 5; i++) {
+            cxt.lineTo(Math.cos((18 + 72 * i - rot) / 180 * Math.PI) * R + x, -Math.sin((18 + 72 * i - rot) / 180 * Math.PI) * R + y);
+            cxt.lineTo(Math.cos((54 + 72 * i - rot) / 180 * Math.PI) * r + x, -Math.sin((54 + 72 * i - rot) / 180 * Math.PI) * r + y);
+        }
+        cxt.closePath();
+
+        cxt.lineWidth = borderWidth;
+        cxt.strokeStyle = borderStyle;
+        cxt.fillStyle = fillStyle;
+
+        cxt.fill();
+        cxt.stroke();
+    }
+    </script>
+</body>
+
+</html>

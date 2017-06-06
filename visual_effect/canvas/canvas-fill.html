@@ -11,7 +11,11 @@
 	<canvas class="canvas" width="300" height="300"></canvas>
 	<script type="text/javascript">
 		var allCanvas=document.querySelectorAll("canvas");
-		
+		var ctx1=allCanvas[0].getContext("2d");
+		ctx1.rect(20,20,150,100);
+		ctx1.fillStyle="#0f0";
+		ctx1.fill();
+		/*如果路径未关闭，那么 fill() 方法会从路径结束点到开始点之间添加一条线，以关闭该路径，然后填充该路径。默认黑色*/
 	</script>
 </body>
 </html>
