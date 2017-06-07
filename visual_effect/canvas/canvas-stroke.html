@@ -33,8 +33,8 @@
     ctx1.lineJoin = "miter";
     ctx1.miterLimit = 5;
     for (var i = 0; i < 5; i++) {
-        ctx1.lineTo(Math.cos((18 + i * 72) / 180 * Math.PI) * 100 + 100, -Math.sin((18 + i * 72) / 180 * Math.PI) * 100 + 100);
-        ctx1.lineTo(Math.cos((54 + i * 72) / 180 * Math.PI) * 30 + 100, -Math.sin((54 + i * 72) / 180 * Math.PI) * 30 + 100);
+        ctx1.lineTo(Math.cos((18 + i * 72) / 180 * Math.PI) * 100 +140, -Math.sin((18 + i * 72) / 180 * Math.PI) * 100 + 140);
+        ctx1.lineTo(Math.cos((54 + i * 72) / 180 * Math.PI) * 35 + 140, -Math.sin((54 + i * 72) / 180 * Math.PI) * 35 + 140);
     }
     ctx1.closePath();
     ctx1.lineWidth = 3;
@@ -44,7 +44,8 @@
     ctx1.stroke();
 
 
-    /*下边的函数是封装好的画星函数*/
+    /*下边的函数是封装好的画星函数
+    *ctx，r是内切圆半径，R是外切圆；x和y是偏移量，rot是角度；borderWidth是边线宽度；borderStyle设置颜色；fillStyle设置填充样式*/
     function drawStar(cxt, r, R, x, y, rot, borderWidth, borderStyle, fillStyle) {
         cxt.beginPath();
         for (var i = 0; i < 5; i++) {
@@ -60,6 +61,7 @@
         cxt.fill();
         cxt.stroke();
     }
+
     </script>
 </body>
 

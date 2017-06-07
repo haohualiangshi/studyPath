@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>moveTo(),closePath()</title>
+	<style type="text/css">
+		canvas{
+			border: 1px solid #000;
+		}
+	</style>
+</head>
+<body>
+	<canvas width="300" height="300"></canvas>
+	<canvas width="300" height="300"></canvas>
+	<canvas width="300" height="300"></canvas>
+
+
+	<script type="text/javascript">
+		var allCanvas=document.querySelectorAll("canvas");
+		var ctx0=allCanvas[0].getContext("2d");
+		ctx0.beginPath();
+		ctx0.moveTo(0,0);
+		ctx0.lineTo(300,150);
+		ctx0.stroke();
+
+
+		var ctx1=allCanvas[1].getContext("2d");
+		ctx1.beginPath();
+		ctx1.moveTo(20,20);
+		ctx1.lineTo(20,100);
+		ctx1.lineTo(100,100);
+		ctx1.closePath();
+		ctx1.stroke();
+		ctx1.fillStyle="#0f0";
+		ctx1.fill()
+
+	</script>
+</body>
+</html>

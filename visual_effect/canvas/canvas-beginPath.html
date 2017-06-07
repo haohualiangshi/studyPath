@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>beginPath()</title>
+	<style type="text/css">
+		canvas{
+			border: 1px solid #060;
+		}
+	</style>
+</head>
+<body>
+	<canvas width="300" height="300"></canvas>
+	<canvas width="300" height="300"></canvas>
+	<canvas width="300" height="300"></canvas>
+	<canvas width="300" height="300"></canvas>
+
+	<script type="text/javascript">
+		var allCanvas=document.querySelectorAll("canvas");
+		var ctx0=allCanvas[0].getContext("2d");
+		ctx0.beginPath();
+		ctx0.lineWidth=5;
+		ctx0.strokeStyle="#f00";
+		ctx0.moveTo(0,72);
+		ctx0.lineTo(150,75);
+		ctx0.stroke();
+
+		ctx0.beginPath();
+		ctx0.lineWidth=10;
+		ctx0.strokeStyle="#0f0";
+		ctx0.moveTo(50,50);
+		ctx0.lineTo(20,200);
+		ctx0.stroke();
+		/*beginPath开始或者重置一条路径*/
+	</script>
+</body>
+</html>
