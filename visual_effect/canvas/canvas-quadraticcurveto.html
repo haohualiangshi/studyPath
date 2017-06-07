@@ -2,14 +2,15 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>beginPath()</title>
+	<title>quadraticCurveTo()</title>
 	<style type="text/css">
 		canvas{
-			border: 1px solid #060;
+			border: 1px solid red;
 		}
 	</style>
 </head>
 <body>
+	<canvas width="300" height="300"></canvas>
 	<canvas width="300" height="300"></canvas>
 	<canvas width="300" height="300"></canvas>
 	<canvas width="300" height="300"></canvas>
@@ -19,20 +20,23 @@
 		var allCanvas=document.querySelectorAll("canvas");
 		var ctx0=allCanvas[0].getContext("2d");
 		ctx0.beginPath();
+		ctx0.moveTo(20,20);
+		ctx0.quadraticCurveTo(20,100,200,20);
 		ctx0.lineWidth=5;
-		ctx0.strokeStyle="#f00";
-		ctx0.moveTo(0,72);
-		ctx0.lineTo(150,75);
-		ctx0.stroke();
-
-		ctx0.beginPath();
-		ctx0.lineWidth=10;
 		ctx0.strokeStyle="#0f0";
-		ctx0.moveTo(50,50);
-		ctx0.lineTo(20,200);
 		ctx0.stroke();
-		/*beginPath开始或者重置一条路径*/
+// quadraticCurveTo(cpx,cpy,x,y)  参数含义：贝塞尔控制点的 x 坐标;	贝塞尔控制点的 y 坐标;结束点的 x 坐标；	结束点的 y 坐标
 		
+
+		var ctx1=allCanvas[1].getContext("2d");
+		ctx1.beginPath();
+		ctx1.moveTo(90,20);
+		ctx1.quadraticCurveTo(40,200,280,20);
+		ctx1.lineWidth=4;
+		ctx1.strokeStyle="#F00";
+		ctx1.stroke();
+
+
 	</script>
 </body>
 </html>

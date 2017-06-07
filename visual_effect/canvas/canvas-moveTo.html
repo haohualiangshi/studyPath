@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>moveTo(),closePath()</title>
+	<title>moveTo(),closePath()。lineTo;clip()</title>
 	<style type="text/css">
 		canvas{
 			border: 1px solid #000;
@@ -32,7 +32,18 @@
 		ctx1.closePath();
 		ctx1.stroke();
 		ctx1.fillStyle="#0f0";
-		ctx1.fill()
+		ctx1.fill();
+
+
+
+		var ctx2=allCanvas[2].getContext("2d");
+		ctx2.rect(20,20,80,80);
+		ctx2.strokeStyle="#f00";
+		ctx2.stroke();
+		ctx2.clip();
+		ctx2.fillStyle="#0f0";
+		ctx2.fillRect(0,0,150,100);
+		/*一旦剪切了某个区域，则所有之后的绘图都会被限制在被剪切的区域内（不能访问画布上的其他区域）。您也可以在使用 clip() 方法前通过使用 save() 方法对当前画布区域进行保存，并在以后的任意时间对其进行恢复（通过 restore() 方法）*/
 
 	</script>
 </body>
