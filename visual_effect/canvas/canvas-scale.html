@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>scale(),rotate(),translate()</title>
+	<style type="text/css">
+		canvas{
+			border: 1px solid #f00;
+		}
+	</style>
+</head>
+<body>
+	<canvas width="300" height="300"></canvas>
+	<canvas width="300" height="300"></canvas>
+	<canvas width="300" height="300"></canvas>
+	<canvas width="300" height="300"></canvas>
+	<canvas width="300" height="300"></canvas>
+
+	<script type="text/javascript">
+		var allCanvas=document.querySelectorAll("canvas");
+		var ctx0=allCanvas[0].getContext("2d");
+		ctx0.strokeRect(5,5,25,15);
+		ctx0.scale(2,2);
+		ctx0.strokeRect(5,5,25,15);
+		ctx0.scale(2,2);
+		ctx0.strokeRect(5,5,25,15);
+		ctx0.scale(2,2);
+		ctx0.strokeRect(5,5,25,15);
+		/*如果您对绘图进行缩放，所有之后的绘图也会被缩放。定位也会被缩放。如果您 scale(2,2)，那么绘图将定位于距离画布左上角两倍远的位置。*/
+
+
+
+		var ctx1=allCanvas[1].getContext("2d");
+		ctx1.rotate(10*Math.PI/180);
+		ctx1.fillRect(10,20,100,50);
+		/*旋转当前的绘图；旋转角度，以弧度计。
+如需将角度转换为弧度，请使用 degrees*Math.PI/180 公式进行计算。*/
+
+
+		var ctx2=allCanvas[2].getContext("2d");
+		ctx2.fillRect(10,10,200,60);
+		ctx2.translate(70,70);
+		ctx2.fillRect(10,10,200,100);
+		/*将绘图位置移动context.translate(x,y);
+		x:添加到水平坐标的值；y:添加到垂直坐标的值*/
+
+
+		var ctx3=allCanvas[3].getContext("2d");
+		ctx3.fillStyle="yellow";
+		ctx3.fillRect(0,0,250,100);
+		/*context.transform(a,b,c,d,e,f);a:水平缩放绘图；b:是水平倾斜绘图；c:垂直倾斜绘图；d:垂直缩放绘图；e:水平移动绘图，f:垂直移动绘图*/
+		ctx3.transform(1,0,60*Math.PI/180,1,30,10);
+		ctx3.fillStyle="red";
+		ctx3.fillRect(0,0,250,100);
+
+	</script>
+</body>
+</html>

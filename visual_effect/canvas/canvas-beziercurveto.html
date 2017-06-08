@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>bezierCurveTo</title>
+	<style type="text/css">
+		canvas{
+			border: 1px solid red;
+		}
+	</style>
+</head>
+<body>
+	<canvas height="300" width="300"></canvas>
+	<canvas height="300" width="300"></canvas>
+	<canvas height="300" width="300"></canvas>
+	<canvas height="300" width="300"></canvas>
+
+	<script type="text/javascript">
+		var allCanvas=document.querySelectorAll("canvas");
+		var ctx0=allCanvas[0].getContext("2d");
+		ctx0.beginPath();
+		ctx0.moveTo(20,50);
+		ctx0.bezierCurveTo(20,100,200,100,200,50);
+		ctx0.strokeStyle="#0f0";
+		ctx0.stroke();
+		/*context.bezierCurveTo(cp1x,cp1y,cp2x,cp2y,x,y);
+		开始点：moveTo(20,20)
+		控制点 1：bezierCurveTo(20,100,200,100,200,20)
+		控制点 2：bezierCurveTo(20,100,200,100,200,20)
+		结束点：bezierCurveTo(20,100,200,100,200,20)*/
+
+	</script>
+</body>
+</html>

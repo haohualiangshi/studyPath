@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>isPointPath()</title>
+</head>
+<body>
+	<canvas width="300" hegiht="300" id="canvas"></canvas>
+	<script type="text/javascript">
+		var canvas=document.getElementById("canvas");
+		var ctx=canvas.getContext("2d");
+		ctx.rect(20,20,150,150);
+		ctx.fill();
+		if(ctx.isPointInPath(20,30)){
+			ctx.strokeStyle="#f00";
+			ctx.stroke();
+		}
+		console.log(ctx.isPointInPath(171,170));
+
+	</script>
+</body>
+</html>

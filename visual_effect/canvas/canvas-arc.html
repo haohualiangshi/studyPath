@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>arc() arcTo()</title>
+	<style type="text/css">
+		canvas{
+			border: 1px solid red;
+		}
+	</style>
+</head>
+<body>
+	<canvas width="300" height="300"></canvas>
+	<canvas width="300" height="300"></canvas>
+	<canvas width="300" height="300"></canvas>
+	<script type="text/javascript">
+		var allCanvas=document.querySelectorAll("canvas");
+		var ctx0=allCanvas[0].getContext("2d");
+		ctx0.arc(100,75,50,0,2*Math.PI);
+		ctx0.fill();
+		/*arc()方法创建圆弧或者曲线；如果通过arc()创建圆；请把起始角设置为0；结束角设置为2*Math.PI
+		中心：arc(100,75,50,0*Math.PI,1.5*Math.PI)
+		起始角：arc(100,75,50,0,1.5*Math.PI)
+		结束角：arc(100,75,50,0*Math.PI,1.5*Math.PI)*/
+
+		/*context.arc(x,y,r,sAngle,eAngle,counterclockwise);
+		x:圆的中心的x坐标
+		y:圆的中心的y坐标
+		r:圆的半径
+		sAngle:起始角；以弧度记
+		eAngle:结束角，以弧度记
+		counterclockwise：规定应该顺时针还是逆时针绘图*/
+
+		var ctx1=allCanvas[1].getContext("2d");
+		ctx1.arc(100,100,100,0.5*Math.PI,2*Math.PI);
+		ctx1.fill();
+
+
+		/*arcTo(x1,y1,x2,y2,r)创建介于两个切线之间的弧线
+		x1,y1是弧的起始位置坐标；x2,y2是弧的结束位置的坐标；r是弧的半径*/
+		var ctx2=allCanvas[2].getContext("2d");
+		ctx2.beginPath();
+
+		ctx2.moveTo(20,20);
+		ctx2.lineTo(100,20);
+		/*ctx2.beginPath();*/
+		ctx2.arcTo(150,20,120,100,20);
+		// ctx2.lineTo(150,120);
+		ctx2.stroke();
+		/*参考：http://blog.csdn.net/jearbilove/article/details/25539619*/
+	</script>
+</body>
+</html>
