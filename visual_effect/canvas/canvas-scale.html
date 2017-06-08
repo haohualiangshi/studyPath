@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>scale(),rotate(),translate()</title>
+	<title>scale(),rotate(),translate(),transform(),setTransform()</title>
 	<style type="text/css">
 		canvas{
 			border: 1px solid #f00;
@@ -15,6 +15,12 @@
 	<canvas width="300" height="300"></canvas>
 	<canvas width="300" height="300"></canvas>
 	<canvas width="300" height="300"></canvas>
+	<canvas width="300" height="300"></canvas>
+	<canvas width="300" height="300"></canvas>
+	<canvas width="300" height="300"></canvas>
+	<canvas width="300" height="300"></canvas>
+	<canvas width="300" height="300"></canvas>
+
 
 	<script type="text/javascript">
 		var allCanvas=document.querySelectorAll("canvas");
@@ -49,10 +55,38 @@
 		ctx3.fillStyle="yellow";
 		ctx3.fillRect(0,0,250,100);
 		/*context.transform(a,b,c,d,e,f);a:水平缩放绘图；b:是水平倾斜绘图；c:垂直倾斜绘图；d:垂直缩放绘图；e:水平移动绘图，f:垂直移动绘图*/
-		ctx3.transform(1,0,60*Math.PI/180,1,30,10);
+		ctx3.transform(1,0,Math.tan(60*Math.PI/180),1,30,10);
 		ctx3.fillStyle="red";
 		ctx3.fillRect(0,0,250,100);
 
+
+		var ctx4=allCanvas[4].getContext("2d");
+		/*注意顺序是变化；后画图的；倾斜相当于对角拉伸*/
+		ctx4.transform(1,Math.tan(30*Math.PI/180),0,1,0,0);
+		ctx4.arc(200,100,50,0,2*Math.PI);
+		ctx4.fillRect(10,10,50,50);
+		ctx4.stroke();
+
+		/*利用transform做旋转*/
+		var ctx5=allCanvas[5].getContext("2d");
+		var deg=Math.PI/180;
+		// ctx5.transform(Math.cos(30*deg),Math.sin(30*deg),-Math.sin(30*deg),Math.cos(30*deg),0,0)
+		ctx5.arc(200,50,20,0,Math.PI*2)
+		ctx5.fillRect(200,100,50,50);
+		ctx5.stroke();
+
+
+
+
+		var ctx6=allCanvas[6].getContext("2d");
+		ctx6.fillStyle="yellow";
+		ctx6.fillRect(0,0,250,100);
+		ctx6.setTransform(1,0.5,-0.5,1,0,0);
+		ctx6.fillStyle="#f00";
+		ctx6.fillRect(0,0,250,100);
+		ctx6.setTransform(1,0.6,-0.6,1,0,0);
+		ctx6.fillStyle="#0f0";
+		ctx6.fillRect(0,0,250,100);
 	</script>
 </body>
 </html>
