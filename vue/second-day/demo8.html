@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript" src="lib/vue.js"></script>
+</head>
+<body>
+	<div id="app">
+		
+	</div>
+	<script type="text/javascript">
+	var eventhub=new Vue({
+		data:{
+			todos:[]
+		},
+		create:function(){
+			this.on('add',this.addNewtext);
+			this.on("del",this.removeText);
+		},
+		beforeDestory:function(){
+			this.off("add",this.addNewtext);
+			this.off("del",this.removeText);
+		},
+		methods:{
+			addNewtext:function(text){
+				this.todos.push(text);
+			},
+			removeText:function(index){
+				this.todos.splice(index,1);
+			}
+		}
+	});
+	var todoText={
+		template:`<input v-model=`
+	}
+	</script>
+</body>
+</html>

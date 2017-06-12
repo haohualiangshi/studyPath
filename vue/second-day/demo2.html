@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>组件</title>
+	<script type="text/javascript" src="./lib/vue.js"></script>
+</head>
+<body>
+	<div id="app">
+		<p>总数：{{total}}</p>
+		<!-- <my-component></my-component> -->
+		<my_btn @add-tal="addTalFun"></my_btn>
+		<my_btn @add-tal="addTalFun"></my_btn>
+
+		<my_btn @add-tal="addTalFun"></my_btn>
+
+
+	</div>
+	<script type="text/javascript">
+	/*不可以使用下划线定义组件*/
+	var my_btn={
+		template:`
+		<button @click="add">{{counter}}</button>
+		`,
+		data:function(){
+			return {
+				counter:0
+			}
+		},
+		methods:{
+			add:function(){
+				this.counter+=1;
+				this.$emit('add-tal');
+			}
+		}
+	}
+	new Vue({
+		el:"#app",
+		data:{
+			total:0
+		},
+		methods:{
+			addTalFun:function(){
+				this.total+=1;
+			}
+		},
+		components:{
+			'my_btn':my_btn
+		}
+	})
+	</script>
+</body>
+</html>

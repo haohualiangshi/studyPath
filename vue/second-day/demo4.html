@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript" src="lib/vue.js"></script>
+</head>
+<body>
+	<div id="app">
+		<child v-for="(item,index) in msg" :message="item" :index="index" abc="world！"></child>
+	</div>
+	<script type="text/javascript">
+		var Vue({
+			
+		})
+	</script>
+</body>
+</html>
