@@ -19,7 +19,43 @@
 	<script type="text/javascript">
 		var allCanvas=document.querySelectorAll("canvas");
 		var ctx0=allCanvas[0].getContext("2d");
-		
+		ctx0.font="40px Arial";
+		ctx0.fillText("hello world",10,50);
+
+
+		var ctx1=allCanvas[1].getContext("2d");
+		ctx1.strokeStyle="blue";
+		ctx1.moveTo(150,20);
+		ctx1.lineTo(150,170);
+		ctx1.stroke();
+		ctx1.font="16px Arial";
+		ctx1.textAlign="start";
+		ctx1.fillText('textAlign=start',150,60);
+		ctx1.textAlign="end";
+		ctx1.fillText("textAlign=end",150,60);
+		ctx1.textAlign="center";
+		ctx1.fillText("textAlign=center",150,100);
+		ctx1.textAlign="left";
+		ctx1.fillText("textAlign=left",150,120);
+		ctx1.textAlign="right";
+		ctx1.fillText("textAlign=right",150,120);
+
+
+
+		/*textBaseline="alphabetic|top|hanging|middle|ideographic|bottom";*/
+		var ctx2=allCanvas[2].getContext("2d");
+		ctx2.strokeStyle="blue";
+		ctx2.moveTo(0,100);
+		ctx2.lineTo(300,100);
+		ctx2.stroke();
+		ctx2.font="20px Arial";
+		ctx2.textBaseline="top";
+		ctx2.fillText("top",5,100);
+		ctx2.textBaseline="bottom";
+		ctx2.fillText("bottom",5,100);
+
+
+
 	</script>
 </body>
 </html>
