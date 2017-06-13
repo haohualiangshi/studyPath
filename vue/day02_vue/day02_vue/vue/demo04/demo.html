@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script type="text/javascript" src="../libs/vue.min.js"></script>
+</head>
+<body>
+	<div id="app">
+		
+		<my-component>
+			<p>hello</p>
+		</my-component>
+	</div>
+	<script type="text/javascript">
+
+		
+		Vue.component('my-component',{
+			template:`
+				<div>
+					<h1>我是子组件的标题</h1>
+					<slot>
+						xxxxx
+					</slot>
+					<p>这是子组件的内容</p>
+				</div>
+			`
+		})
+
+		new Vue({
+			el:'#app'
+		})
+	</script>
+</body>
+</html>

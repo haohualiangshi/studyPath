@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script type="text/javascript" src="../libs/vue.min.js"></script>
+</head>
+<body>
+	<div id="app">
+		<p>总和:{{total}}</p>
+		<my-btn @increment='incrementFunc'></my-btn>
+		<my-btn1 @increment1='incrementFunc1'></my-btn1>
+		<my-btn @increment='incrementFunc'></my-btn>
+	</div>
+	<script type="text/javascript" src="mybtn.js"></script>
+	<script type="text/javascript">
+		
+		var my_btn1 = {
+			template:`
+				<button @click="add">{{counter}}</button>
+			`,
+			data:function(){
+				return {
+					counter:1.49
+				}
+			},
+			methods:{
+				add:function(){
+					this.counter+=1.49;
+					this.$emit('increment1');
+				}
+			}
+		};
+		
+		new Vue({
+			el:'#app',
+			data:{
+				total:0
+			},
+			methods:{
+				incrementFunc:function(){
+					this.total+=1;
+				},
+				incrementFunc1:function(){
+					this.total+=1.49;
+				}
+			},
+			components:{
+				my_btn,
+				'my-btn1':my_btn1
+			}
+		})
+	</script>
+</body>
+</html>

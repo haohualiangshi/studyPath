@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>todo app</title>
+	
+	<script type="text/javascript" src="../libs/vue.min.js"></script>
+	<script type="text/javascript" src="../libs/vue-bus.js"></script>
+</head>
+<body>
+	<div id="app">
+		<h1>todo app </h1>
+		<todo-text></todo-text>
+		<todo-list></todo-list>
+	</div>
+	<script type="text/javascript">
+
+
+		var eventhub = new Vue({
+			data(){
+				return {
+					todos:[]
+				}
+			},
+			created:function(){
+				this.$bus.on('add',this.addNewText);
+				this.$bus.on('del',this.removeText);
+			},		
+			beforeDestroy:function(){
+				this.$bus.off('add',this.addNewText);
+				this.$bus.off('del',this.removeText);
+			},
+			methods:{
+				addNewText:function(text){
+					
+					this.todos.push(text);
+
+				},
+				removeText:function(index){
+					this.todos.splice(index,1);
+				}
+			}
+		});
+
+		var todoText = {
+			template:`
+				<div>
+					<input  v-model="newTodoText"/>
+					<button @click="add">add</button>
+				</div>
+			`,
+			data(){
+				return {
+					newTodoText:''
+				}
+			},
+			methods:{
+				add:function(){
+
+					this.$bus.emit('add',this.newTodoText);
+					this.newTodoText = '';
+				}
+			}
+		};
+
+		var todoList = {
+			template:`
+				<ul>
+					<li v-for="(item,index) in lists">
+						{{item}}
+						<button @click="remove(index)">X</button>
+	          		</li>
+	          </ul>`,
+			data:function(){
+				return {
+					lists:eventhub.todos
+				}
+			},
+			methods:{
+				remove:function(index){
+					this.$bus.emit('del',index);
+				}
+			}
+		};
+
+		new Vue({
+			el:'#app',
+			components:{
+				'todoText':todoText,
+				'todoList':todoList
+			}
+		})
+	</script>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script type="text/javascript" src="../libs/vue.min.js"></script>
+</head>
+<body>
+<div id="app">
+	<app-layout>
+	  <h1 slot="header">这里可能是一个页面标题</h1>
+
+	  <div slot="content">
+	  	<p>主要内容的一个段落。</p>
+	  	<p>另一个主要段落。</p>
+	  </div>
+	  
+	  <p slot="footer">这里有一些联系信息</p>
+	
+	</app-layout>
+</div>
+<script type="text/javascript">
+	Vue.component("parent",{
+		template:`
+			<app-layout>
+
+			  <h1 slot="header">这里可能是一个页面标题</h1>
+
+			  <div slot="content">
+			  	<p>主要内容的一个段落。</p>
+			  	<p>另一个主要段落。</p>
+			  </div>
+			  <p slot="footer">这里有一些联系信息</p>
+			</app-layout>
+		`
+	});
+
+	Vue.component("app-layout",{
+		template:`
+			<div>
+				<h1>这个是一个测试</h1>
+				<slot name="header"></slot>
+				<slot name="content"></slot>
+				<slot name="footer"></slot>
+			</div>
+		`
+	});
+	
+
+	new Vue({
+		el:"#app"
+	})
+</script>
+</body>
+</html>

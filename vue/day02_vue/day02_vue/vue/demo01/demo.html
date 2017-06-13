@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script type="text/javascript" src="../libs/vue.min.js"></script>
+</head>
+<body>
+	<div id="app">
+		<my-component></my-component>
+	</div>
+	<script type="text/javascript">
+		Vue.component('my-component',{
+			template:`
+				<div> this is a first component!</div>
+			`
+		});
+
+		new Vue({
+			el:'#app'
+		})
+	</script>
+</body>
+</html>

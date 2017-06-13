@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script type="text/javascript" src="../libs/vue.min.js"></script>
+</head>
+<body>
+	<div id="app">
+		{{msg}}
+		<my-component></my-component>
+		
+	</div>
+	<script type="text/javascript">
+		var my_component = {
+			template:`
+				<div> this is a first component!{{test}}</div>
+			`,
+			data:function(){
+				return {
+					test:'this is a test!'
+				}
+			}
+		}
+
+		new Vue({
+			el:'#app',
+			data:{
+				msg:'hello,今天天气真好'
+			},
+			components:{
+				'my-component':my_component
+			}
+		})
+	</script>
+</body>
+</html>

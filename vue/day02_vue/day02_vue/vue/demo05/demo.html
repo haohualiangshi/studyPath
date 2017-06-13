@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>todo app</title>
+	<script type="text/javascript" src="../libs/vue.min.js"></script>
+</head>
+<body>
+	<div id="app">
+		<input @keyup.enter="add" v-model="newTodoText"><button @click="add">add</button>
+		<ul>
+			<todo-list v-for="(item,index) in todos" :text="item" :index="index" @del="delFunc"></todo-list>
+		</ul>
+	</div>
+	<script type="text/javascript">
+		Vue.component('todo-list',{
+			props:['text','index'],
+			template:`
+				<li>
+					{{text}}
+					<button @click="remove(index)">X</button>	
+				</li>
+			`,
+			methods:{
+				remove:function(index){
+					this.$emit('del',index);
+				}
+			}
+		});
+		new Vue({
+			el:'#app',
+			data:{
+				newTodoText:'',
+				todos:[]
+			},
+			methods:{
+				add:function(){
+					this.todos.push(this.newTodoText);
+					this.newTodoText = '';
+				},
+				delFunc:function(index){
+					this.todos.splice(index,1);
+				}
+			}
+		})
+	</script>
+</body>
+</html>
