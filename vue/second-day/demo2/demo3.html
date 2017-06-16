@@ -9,39 +9,44 @@
 
 <body>
     <div id="app">
-    <p>total:{{total}}</p>
+        <p>total:{{total}}</p>
         <my-btn @get-total="getTotalFun"></my-btn>
-        <my-btn @get-total="getTotalFun"></my-btn>
+        <my-btn1 @get-total1="getTotalFun1"></my-btn1>
         <my-btn @get-total="getTotalFun"></my-btn>
     </div>
+    <script type="text/javascript" src="mybtn.js"></script>
     <script type="text/javascript">
-    var my_btn = {
+    var my_btn1 = {
         template: `<button @click="add">{{counter}}</button>`,
         data: function() {
             return {
-                counter: 0
+                counter: 1.49
             }
         },
         methods: {
             add: function() {
-                this.counter += 1;
-                // 自定义函数不可以使用驼峰式方法：eg：getTotal是错的
-                this.$emit('get-total');
+                this.counter += 1.49;
+                // 自定义事件不可以使用驼峰式方法：eg：getTotal是错的；同级传值
+                this.$emit('get-total1');
             }
         }
-    }
+    };
     new Vue({
         el: "#app",
+        data: {
+            total: 0
+        },
+        methods: {
+            getTotalFun: function() {
+                this.total += 1;
+            },
+            getTotalFun1: function() {
+                this.total += 1.49;
+            }
+        },
         components: {
             "my-btn": my_btn,
-        },
-        data:{
-        	total:0
-        },
-        methods:{
-        	getTotalFun:function(){
-        		this.total+=1;
-        	}
+            "my-btn1": my_btn1
         }
 
     })

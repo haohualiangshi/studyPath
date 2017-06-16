@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script type="text/javascript" src="../lib/vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <child v-for="(item,index) in msg" :message="item" :index="index"></child>
+    </div>
+    <script type="text/javascript">
+    var child = {
+        template: `<div class="item">{{index+1}}->{{message.name}}</div>`,
+        props: ['message', 'index']
+    }
+    new Vue({
+        el: "#app",
+        data: {
+            msg: [{
+                name: 'xsl',
+                age: 29
+            }, {
+                name: 'teah',
+                age: 30
+            }, {
+                name: 'zhang',
+                age: 19
+            }]
+        },
+        components: {
+            'child': child
+        }
+    })
+    </script>
+</body>
+
+</html>
