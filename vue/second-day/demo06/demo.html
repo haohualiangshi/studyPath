@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>todo app</title>
+    <script type="text/javascript" src="../lib/vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+    </div>
+    <script type="text/javascript">
+    var evnethub = new Vue({
+        data: {
+            todos: []
+        },
+        create: function() {
+            this.on("add", this.addNewText);
+            this.on("del", this.removeText);
+        },
+        beforeDestroy: function() {
+            this.off("add", this.addNewText);
+            this.off("del", this.removeText);
+        }
+    })
+    </script>
+</body>
+
+</html>
