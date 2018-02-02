@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>background</title>
+    <style type="text/css">
+        .background-image {
+            width: 300px;
+            height: 100px;
+            margin: 30px;
+            border: 1px solid red;
+        }
+
+        .background-image-url {
+            background-image: url(./img/01.png);
+        }
+
+        .background-image-linear {
+            background-image: linear-gradient(left, #f00 30%, #00f);
+            /*background: -webkit-gradient(linear, top, bottom, from(#fff), to(#333));*/
+            /*background: -webkit-linear-gradient(#fff, #333);*/
+            /*background-image:-webkit-linear-gradient(top right,#f00 70px,#0f0 190px);*/
+            background-image: -webkit-linear-gradient(bottom left, #000 15%, #0f0 80%)
+        }
+
+        .background-image-radial {
+            /*background-image:radial-gradient(circle,#f00,#ff0,#0ff);*/
+            /*background-image:-webkit-radial-gradient(center center,circle cover,#f00,#ff0,#0ff);*/
+            background-image: -webkit-radial-gradient(center center, ellipse cover, #f00, #ff0, #0ff);
+        }
+
+        .background-image-repeating-linear {
+            background-image: repeating-linear-gradient(top, #f00, #0ff);
+            background-image: -webkit-repeating-linear-gradient(top, #f00 10%, #0ff 30%);
+        }
+
+        .background-repeat {
+            width: 300px;
+            height: 100px;
+            margin: 30px;
+            font-size: 30px;
+            border: 1px solid red;
+            background-image: url(./img/01.png);
+
+        }
+
+        .repeat {
+            background-repeat: repeat;
+        }
+
+        .repeat-x {
+            background-repeat: repeat-x;
+        }
+
+        .repeat-y {
+            background-repeat: repeat-y;
+        }
+
+        .no-repeat {
+            background-image: no-repeat;
+        }
+
+        .space {
+            background-repeat: space;
+        }
+
+        .round {
+            background-repeat: round;
+        }
+
+        .background-attachment {
+            width: 300px;
+            height: 100px;
+            margin: 30px;
+            font-size: 30px;
+            border: 1px solid red;
+            background-image: url(./img/01.png);
+            background-repeat: no-repeat;
+            /*background-attachment: fixed;*/
+            /*background-attachment:scroll;*/
+            background-attachment: local;
+        }
+        .background{
+            min-width: 300px;
+            padding:100px;
+            min-height: 100px;
+            margin: 30px;
+            font-size: 30px;
+            border: 1px solid red;
+            background-origin:border-box;
+
+            background-image: url(./img/01.png);
+            background-repeat: no-repeat;
+            border:30px solid transparent;
+            background-color:#aaa;
+        }
+        .border-box{
+            background-origin:border-box;
+        }
+        .padding-box{
+            background-origin:padding-box;
+
+        }
+        .content-box{
+            bockground-origin:content-box;
+        }
+        .clip-border-box{
+            background-clip:border-box;
+        }
+        .clip-padding-box{
+            background-clip:padding-box;
+        }
+        .clip-content-box{
+            background-clip:content-box;
+        }
+        .clip-text{
+            background-repeat:no-repeat;
+            background-attachment:local;
+            -webkit-background-clip:text;
+            -webkit-text-fill-color:transparent;
+            font-weight:bold;font-size:120px;
+            overflow: scroll;
+        }
+        .font-variant{
+            font-size:80px;
+            font-variant:small-caps;
+            text-transform: capitalize;
+            text-decoration:blink;
+
+        }
+    </style>
+</head>
+<body class="background-attachment">
+<h3>background-image</h3>
+<div class="background-image background-image-url">url</div>
+<div class="background-image background-image-linear">linear-gradient</div>
+<div class="background-image background-image-radial">radial-gradient</div>
+<div class="background-image background-image-repeating-linear">repeating-linear-gradient</div>
+<h3>background-repeat</h3>
+<div class="attachment-wrap">
+    <div class="background-repeat repeat">repeat</div>
+    <div class="background-repeat repeat-x">repeat-x</div>
+    <div class="background-repeat repeat-y">repeat-y</div>
+    <div class="background-repeat no-repeat">no-repeat</div>
+    <div class="background-repeat round">round</div>
+    <div class="background-repeat space">space</div>
+</div>
+<h3>background-attachment</h3>
+<p>使用body测试该属性</p>
+<h3>background-origin</h3>
+<div class="background border-box"></div>
+<div class="background padding-box"></div>
+<div class="background content-box"></div>
+<h3>background-clip</h3>
+<div class="background clip-border-box">background-clip:border-box;</div>
+<div class="background clip-padding-box">background-clip:padding-box;</div>
+<div class="background clip-content-box">background-clip:content-box;</div>
+<div class="background clip-text">background-clip:text</div>
+<h3>字体</h3>
+<p class="font-variant">this is a test page</p>
+</body>
+<script>
+    var countNum=0;
+    function getData(){
+        var h=e=0.4;
+        var g=[10,40,50];
+        var m=Math.random();
+        console.log(m);
+        var l="",f=0;
+
+        if(m<=h){
+//            console.log("m<=h");
+            console.count("百分之四十流量统计：");
+        }else{
+            for(var d=0;d< g.length;d++){
+                f=f+g[d];
+            }
+            for(var c=0;c< g.length;c++){
+                e+=(g[c]/f)*0.6
+                if(m<=e){
+                   switch(c){
+                       case 0:
+                           console.count("百分之六十中的百分之十流量统计：");
+                           break;
+                       case 1:
+                           console.count("百分之六十中的百分之四十流量统计：");
+                           break;
+                       case 2:
+                           console.count("百分之六十中的百分之五十流量统计：");
+                           break;
+                   }
+                    break;
+                }else{
+//                    console.log("m>e",m);
+                }
+
+            }
+        }
+    }
+    var clearTime=setInterval(function(){
+        if(countNum==1001){
+            console.log("总量：",countNum);
+            clearInterval(clearTime);
+            return false;
+        }
+        countNum++
+        getData();
+    },10)
+
+</script>
+</html>

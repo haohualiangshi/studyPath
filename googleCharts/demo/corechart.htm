@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>googleCharts-饼状图</title>
+    <style>
+        .charts{
+            border:1px solid red;
+
+        }
+    </style>
+</head>
+<body>
+    <h3>饼状图</h3>
+    <div class="charts chart1"></div>
+    <div class="charts chart2"></div>
+    <div class="charts chart3"></div>
+    <div class="charts chart4"></div>
+    <div class="charts chart5"></div>
+    <div class="charts"></div>
+    <div class="charts"></div>
+    <div class="charts"></div>
+    <div class="charts"></div>
+    <div class="charts"></div>
+    <div class="charts"></div>
+    <div class="charts"></div>
+    <div class="charts"></div>
+    <div class="charts"></div>
+    <div class="charts"></div>
+    <div class="charts"></div>
+    <div class="charts"></div>
+    <div class="charts"></div>
+    <div class="charts"></div>
+    <div class="charts"></div>
+    <div class="charts"></div>
+    <div class="charts"></div>
+    <div class="charts"></div>
+    <div class="charts"></div>
+    <div class="charts"></div>
+    <div class="charts"></div>
+    <div class="charts"></div>
+    <div class="charts"></div>
+    <div class="charts"></div>
+    <div class="charts"></div>
+    <div class="charts"></div>
+    <div class="charts"></div>
+    <div class="charts"></div>
+    <div class="charts"></div>
+    <div class="charts"></div>
+    <script src="../vendors/loader.js" type="text/javascript"></script>
+    <script>
+        var allCharts=document.getElementsByClassName("charts");
+        /*加载视图API,参数"current"是指的要加载的API版本
+        * 候选参数又"upcoming"既使用即将发布的版本
+        * @para packages；
+        * @para corechart：[bar,column,line,area,stepped area,bubble,pie,donut,combo,candlestick,histogram,scatter)
+        *
+        * */
+        google.charts.load("current",{'packages':['corechart']});
+        google.charts.setOnLoadCallback(drawChart);
+
+        function drawChart(){
+            /*创建一个数据表*/
+            var data=new google.visualization.DataTable();
+            data.addColumn('string','weeks');
+            data.addColumn('number','Hours');
+            data.addRows([['Mon',7.5],['Tus',7.9],['Wed',8.9],['Thu',7.4],['Fri',8.5],['Sat',6.8],['Sun',1.4]]);
+            var data1=new google.visualization.DataTable();
+            data1.addColumn('string','weeks');
+            data1.addColumn('number','Hours');
+            data1.addColumn('number','duration')
+            data1.addRows([['Mon',7.5,11],['Tus',7.9,10],['Wed',8.9,10],['Thu',7.4,18],['Fri',8.5,13],['Sat',6.8,12],['Sun',1.4,6]]);
+
+            var data2=new google.visualization.DataTable();
+            data2.addColumn('string','weeks');
+            data2.addColumn('number','Hours');
+            data2.addColumn('number','duration');
+            data2.addColumn('number','xiaolv');
+            data2.addColumn('number','date');
+
+            data2.addRows([['Mon', 20, 28, 38, 45],
+                ['Tue', 31, 38, 55, 66],
+                ['Wed', 50, 55, 77, 80],
+                ['Thu', 77, 77, 66, 50],
+                ['Fri', 68, 66, 22, 15] ]);
+
+//            /*配置参数*/
+            var options={
+                title:"my time for work",
+//                legend:'top',
+//                is3D:'true',
+                width:500,
+                height:400,
+                colors:['#f00','#0f0','#00f','#ff0','#0ff','#0ff','#6f9']
+            }
+            /*创建要绘制的图形；并选取要绘制的DOM元素*/
+            /*
+            * PieChart 饼状图
+            * BarChart 横向的柱状图
+            * ColumnChart 纵向柱状图
+            * LineChart 描线图
+            * AreaChart 区域填充图
+            * StepedAreaChart 阶梯式填充图；直方图
+            * ComboChart 连线图
+            * BubbleChart 气泡图；至少需要添加3个column
+            * CandlestickChart 烛台图；至少需要三个column
+            * Histogram 直方图
+            * ScatterChart 散列图
+            * */
+            var chart1=new google.visualization.PieChart(allCharts[0]);
+            var chart2=new google.visualization.BarChart(allCharts[1]);
+            var chart3=new google.visualization.ColumnChart(allCharts[2]);
+            var chart4=new google.visualization.LineChart(allCharts[3]);
+            var chart5=new google.visualization.AreaChart(allCharts[4]);
+            var chart6=new google.visualization.SteppedAreaChart(allCharts[5]);
+            var chart7=new google.visualization.BubbleChart(allCharts[6]);
+//            var chart8=new google.visualization.DonutChart(allCharts[7]);
+            var chart9=new google.visualization.ComboChart(allCharts[8]);
+            var chart10=new google.visualization.CandlestickChart(allCharts[9]);
+//            var chart11=new google.visualization.HistogramChart(allCharts[10]);
+            var chart12=new google.visualization.ScatterChart(allCharts[11]);
+
+
+            var chart1_1=new google.visualization.PieChart(allCharts[12]);
+            var chart2_1=new google.visualization.BarChart(allCharts[13]);
+            var chart3_1=new google.visualization.ColumnChart(allCharts[14]);
+            var chart4_1=new google.visualization.LineChart(allCharts[15]);
+            var chart5_1=new google.visualization.AreaChart(allCharts[16]);
+            var chart6_1=new google.visualization.SteppedAreaChart(allCharts[17]);
+            var chart7_1=new google.visualization.BubbleChart(allCharts[18]);
+//            var chart8=new google.visualization.DonutChart(allCharts[7]);
+            var chart9_1=new google.visualization.ComboChart(allCharts[19]);
+            var chart10_1=new google.visualization.CandlestickChart(allCharts[20]);
+            var chart11=new google.visualization.Histogram(allCharts[22]);
+            var chart12_1=new google.visualization.ScatterChart(allCharts[21]);
+
+            chart1.draw(data,options);
+            chart2.draw(data,options);
+            chart3.draw(data,options);
+            chart4.draw(data,options);
+            chart5.draw(data,options);
+            chart6.draw(data,options);
+            chart7.draw(data,options);
+//            chart8.draw(data,options);
+            chart9.draw(data,options);
+            chart10.draw(data,options);
+            chart11.draw(data,options);
+            chart12.draw(data,options);
+            /*
+            * 多列数据
+            * */
+            chart1_1.draw(data1,options);
+            chart2_1.draw(data1,options);
+            chart3_1.draw(data1,options);
+            chart4_1.draw(data1,options);
+            chart5_1.draw(data1,options);
+            chart6_1.draw(data1,options);
+            chart7_1.draw(data1,options);
+//            chart8_1.draw(data1,options);
+            chart9_1.draw(data1,options);
+            chart10_1.draw(data2,options);
+            chart12_1.draw(data1,options);
+
+        }
+
+    </script>
+</body>
+</html>

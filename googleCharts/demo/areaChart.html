@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>区域绘图</title>
+    <style>
+        .charts{
+            border:1px solid red;
+        }
+    </style>
+    <script src="../vendors/loader.js"></script>
+</head>
+<body>
+<div class="charts"></div>
+<div class="charts"></div>
+<div class="charts"></div>
+<div class="charts"></div>
+<div class="charts"></div>
+<div class="charts"></div>
+<div class="charts"></div>
+<div class="charts"></div>
+<div class="charts"></div>
+<div class="charts"></div>
+<script>
+    var chartsWrap=document.getElementsByClassName("charts");
+    google.charts.load('current', {'packages':['corechart']});
+    google.charts.setOnLoadCallback(drawChart);
+
+    function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+            ['Year', 'Sales', 'Expenses'],
+            ['2013',  1000,      400],
+            ['2014',  1170,      460],
+            ['2015',  660,       1120],
+            ['2016',  1030,      540]
+        ]);
+
+        var options = {
+            title: 'Company Performance',
+            hAxis: {title: 'Year',  titleTextStyle: {color: '#333'}},
+            vAxis: {minValue: 0}
+        };
+
+        var chart0 = new google.visualization.AreaChart(chartsWrap[0]);
+        chart0.draw(data, options);
+    }
+</script>
+</body>
+</html>
