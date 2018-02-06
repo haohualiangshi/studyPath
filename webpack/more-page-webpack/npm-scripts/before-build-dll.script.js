@@ -1,3 +1,6 @@
+/*
+* 删除dll的脚本
+* */
 var fs = require('fs');
 var rimraf = require('rimraf');
 var dirVars = require('../webpack-config/base/dir-vars.config.js');
