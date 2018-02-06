@@ -2,9 +2,55 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Document</title>
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>webpack的使用</title>
+    <link rel="stylesheet" href="../dist/css/bootstrap.css">
 </head>
 <body>
+<div class="container">
+    <h2>表格</h2>
+    <p>创建响应式表格：单元格颜色交替变化</p>
+    <div class="table-responsive">
+        <table class="table table-striped bordered">
+            <thead>
+            <tr>
+                <th>#</th>
+                <th>Name</th>
+                <th>Street</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>1</td>
+                <td>Anna Awesome</td>
+                <td>Broome street</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Debbie Dallas</td>
+                <td>Houston Street</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>John Done</td>
+                <td>Madison Street</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <h2>图像</h2>
+    <p>创建响应式的图片，以椭圆形展示</p>
+    <img src="../images/cinqueterre.jpg" alt="litu" class="img-responsive img-circle">
+    <h2>图标</h2>
+    <p>插入图标</p>
+    <p>云图标：<span class="glyphicon glyphicon-cloud"></span></p>
+    <p>信件图标：<span class="glyphicon glyphicon-envelope"></span></p>
+    <p>搜索图标：<span class="glyphicon glyphicon-search"></span></p>
+    <p>下载：<span class="glyphicon glyphicon-download"></span></p>
+</div>
 
+<script src="../dist/js/jquery.js"></script>
+<script src="../dist/js/bootstrap.js"></script>
 </body>
 </html>
