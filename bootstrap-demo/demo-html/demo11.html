@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>bootstrap下拉菜单</title>
+    <link rel="stylesheet" href="../dist/css/bootstrap.css">
+
+</head>
+<body>
+<h2>Bootstrap的下拉菜单</h2>
+<div class="dropdown">
+    <button class="btn dropdown-toggle" id="dropdownMenu1" data-toggle="dropdown">
+        主题
+        <span class="caret"></span>
+    </button>
+    <ul class="dropdown-menu" role="menu" aria-labelledby="drowdownMenu1">
+        <li role="presentation"><a href="#" role="menuitem" tabindex="-1">Java</a></li>
+        <li role="presentation"><a href="#" role="menuitem" tabindex="-1">数据挖掘</a></li>
+        <li role="presentation"><a href="#" role="menuitem" tabindex="-1">数据通信/网络</a></li>
+        <li role="presentation"><a href="#" role="menuitem" tabindex="-1">分离的链接</a></li>
+    </ul>
+</div>
+<h2>选项</h2>
+<h3>对齐</h3>
+<div class="dropdown">
+    <button class="btn dropdown-toggle" id="dropdownMenu2" data-toggle="dropdown">主题 <span class="caret"></span></button>
+    <ul class="dropdown-menu pull-right" role="menu" aria-labelledby="dropdownMenu2">
+        <li role="presentation"><a href="#" role="menuitem" tabindex="-1">Java</a></li>
+
+
+        <li role="presentation"><a href="#" role="menuitem" tabindex="-1">shuju wajue</a></li>
+
+        <li role="presentation"><a href="#" role="menuitem" tabindex="-1">shuju</a></li>
+
+        <li role="presentation"><a href="#" role="menuitem" tabindex="-1">fenli</a></li>
+    </ul>
+</div>
+<h3>标题</h3>
+<div class="dropdown">
+    <button class="btn dropdown-toggle" id="dropdownMenu3" data-toggle="dropdown">
+        主题
+        <span class="caret"></span>
+    </button>
+    <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu3">
+        <li role="presentation" class="dropdown-header">下拉菜单标题</li>
+        <li role="presentation"><a href="#" tabindex="-1" role="menuitem">java</a></li>
+        <li role="presentation"><a href="#" tabindex="-1" role="menuitem">html</a></li>
+        <li role="presentation"><a href="#" tabindex="-1" role="menuitem">php</a></li>
+        <li role="presentation"><a href="#" tabindex="-1" role="menuitem">python</a></li>
+        <li role="presentation" class="divider"></li>
+        <li role="presentation" class="dropdown-header">下拉菜单标题2</li>
+    </ul>
+</div>
+
+
+
+
+
+
+
+<script src="../dist/js/jquery.js"></script>
+<script src="../dist/js/bootstrap.js"></script>
+</body>
+</html>
