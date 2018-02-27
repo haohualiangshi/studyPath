@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>Boostrap的弹出框(popover)</title>
+    <link rel="stylesheet" href="../dist/css/bootstrap.css">
+    <script src="../dist/js/jquery.js"></script>
+    <script src="../dist/js/bootstrap.js"></script>
+</head>
+<body>
+<div class="container" style="padding:100px 50px 10px">
+    <button class="btn btn-default" title="Popover title" data-container="body" data-toggle="popover"
+            data-placement="left" data-content="左侧的 Popover中的一些内容">左侧的 Popover中的一些内容</button>
+    <button class="btn btn-primary" title="Popover title" data-container="body" data-toggle="popover" data-placement="top" data-content="顶部 Popover中的一些内容">顶部的 Popover中的一些内容</button>
+    <button class="btn btn-success" title="Popover title" data-container="body" data-toggle="popover" data-placement="bottom" data-content="底部的 Poppover 中的一些内容">底部的 Poppover 中的一些内容</button>
+    <button class="btn btn-danger" title="Popover title" data-container="body" data-toggle="popover" data-placement="right" data-content="右侧的 Popover中的一些内容">右侧的 Popover中的一些内容</button>
+
+    <script>
+        $(function(){
+            $("[data-toggle='popover']").popover();
+        })
+    </script>
+</div>
+</body>
+</html>
