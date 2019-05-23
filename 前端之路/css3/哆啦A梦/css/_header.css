@@ -1,0 +1,147 @@
+.amon-header{
+    height:505px;
+    position: relative;
+    margin:0 auto;
+    border:6px solid #000;
+    border-radius: 313px 324px 99px 99px/276px 276px 203px 203px; 
+    background: #00ffff;
+
+}
+.amon-face{
+    width:586px;
+    height:419px;
+    position: absolute;
+    bottom:0;
+    left:50%;
+    margin-left:-293px;
+    border:6px solid #000;
+    border-radius: 260px 280px 55px 46px/ 251px 251px 169px 169px;
+    background: #fff;
+}
+.eyes{
+    position: absolute;
+    top: -70px;
+    height:161px;
+    width:127px;
+    border:4px solid #000;
+    border-radius: 66px 61px 61px 66px/77px 77px 84px 84px;
+    background: #fff;
+}
+.eye-left{
+    left:153px;
+}
+.eye-right{
+    left:285px;
+}
+.eyeballs{
+    position: absolute;
+    top:47px;
+    width:58px;
+    height:81px;
+    border:4px solid #000;
+    border-radius: 30px/42px 42px 40px 40px;
+    background: #665253;
+}
+.eyeball-left{
+    right:8px; 
+}
+.eyeball-right{
+    left:8px;
+    
+}
+.pupils{
+    position: absolute;
+    top:30px;
+    width:31px;
+    height:35px;
+    background: #fff;
+    border:4px solid #000;
+    box-shadow: 0 0 5px 0 #000;
+    border-radius: 31px/35px;
+}
+.pupils-left{
+    right:9px;
+}
+.pupils-right{
+    left:9px;
+}
+.nose{
+    position: absolute;
+    width:100px;
+    height:100px;
+    top:78px;
+    left:50%;
+    margin-left:-59px;
+    border:4px solid #000;
+    background: #fe0000;
+    border-radius: 50%;
+}
+.lip{
+    position: absolute;
+    top:182px;
+    left:50%;
+    margin-left:-10px;
+    height: 160px;
+    width:8px;
+    background: #000;
+    transform-origin: left top;
+    transform: rotate(-2deg);
+}
+.mouth{
+    position: absolute;
+    bottom:0;
+    height:128px;
+    width:376px;
+    left:-190px;
+    border-radius: 54px 54px 190px 190px/ 6px 6px 128px 128px;
+    border:6px solid #000;
+    border-top-color:transparent;
+}
+.mustache{
+    position: absolute;
+    top:240px;
+    width:180px;
+    height:8px;
+    background:#000;
+    border-radius: 5px;
+}
+.mustache-left{
+    left:50px;
+}
+.mustache-right{
+    left:350px;
+}
+.mustache::before{
+    position: absolute;
+    top:-40px;
+    content:"";
+    height:100%;
+    width: 100%;
+    background: #000;
+    border-radius: 5px;
+}
+.mustache::after{
+    position: absolute;
+    top:40px;
+    content:"";
+    height:100%;
+    width: 100%;
+    background: #000;
+    border-radius: 5px;
+}
+.mustache-left::before{
+    transform-origin: right bottom;
+    transform: rotate(15deg);
+}
+.mustache-left::after{
+    transform-origin: right bottom;
+    transform: rotate(-15deg);
+}
+.mustache-right::before{
+    transform-origin: left bottom;
+    transform: rotate(-15deg);
+}
+.mustache-right::after{
+    transform-origin: left bottom;
+    transform: rotate(15deg);
+}
