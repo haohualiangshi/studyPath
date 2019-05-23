@@ -1,0 +1,15 @@
+body{
+    background: #fff;
+}
+.content-max-wrap{
+    width:1200px;
+    margin: 0 auto;
+}
+.nav{
+    position:fixed;
+    top:0;
+    left:0;
+    right:0;
+    height:65px;
+    background:transparent;
+}
