@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>Bootstrap按钮</title>
+    <link rel="stylesheet" href="../dist/css/bootstrap.css">
+    <script src="../dist/js/jquery.js"></script>
+    <script src="../dist/js/bootstrap.js"></script>
+</head>
+<body>
+<h2>加载状态</h2>
+<button id="fat-btn" class="btn btn-primary" data-loading-text="Loading..." type="button">
+    点击切换加载状态
+</button>
+<script>
+    $(function () {
+        $("#fat-btn").click(function () {
+            $(this).button('loading').delay(4000).queue(function () {
+                console.log("延时后要执行的函数");
+            })
+        })
+    })
+</script>
+<h2>单个切换</h2>
+<button type="button" class="btn btn-primary" data-toggle="button">点击效果切换</button>
+<h2>复选框</h2>
+<div class="btn-group" data-toggle="buttons"><label class="btn btn-primary"><input
+        type="checkbox">选项1</label><label class="btn btn-primary"><input type="checkbox">选项2</label><label
+        class="btn btn-primary"><input
+        type="checkbox">选项3</label></div>
+
+
+<h2>单选按钮</h2>
+<div class="btn-group" data-toggle="buttons"><label class="btn btn-primary"><input type="radio"
+                                                                                   name="options">选项1</label><label
+        class="btn btn-primary"><input type="radio" name="options">选项2</label><label
+        class="btn btn-primary"><input
+        type="radio" name="options">选项3</label></div>
+
+<h2>按钮的方法</h2>
+<h4>演示 .button("toggle") 方法</h4>
+<div id="myButtons1" class="bs-example">
+    <button class="btn btn-primary">原始</button>
+</div>
+<script>
+    $("#myButtons1").click(function(){
+        $(this).button('toggle');
+    })
+</script>
+</body>
+</html>
