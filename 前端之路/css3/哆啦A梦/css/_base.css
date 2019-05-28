@@ -97,8 +97,8 @@ label{
 .amon-wrap{
     position: relative;
     margin:0 auto;
-    height:966px;
-    width:684px;
+    /* height:966px;*/
+    width:684px; 
     border:1px solid #999;
     box-shadow: 0 0 25px 4px #ccc;
 

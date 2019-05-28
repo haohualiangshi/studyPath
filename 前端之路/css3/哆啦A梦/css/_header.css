@@ -269,7 +269,7 @@
 }
 
 .body-right-area {
-    position:relative;
+    /* position:relative; */
     width: 35px;
     right: 0;
 }
@@ -308,6 +308,8 @@
     height: 81px;
     width:35px;
     position:relative;
+    background: #00ffff;
+    border-radius:0 20px 20px 0/0 20px 20px 0;
 }
 .body-right-area .area-middle-top {
     height: 106px;
@@ -331,5 +333,80 @@
     border-bottom:4px solid #000;
     border-radius: 0 0 35px 0 / 0 0 159px 0;
     background: #00ffff;
-
+}
+.right-elbow{
+    position: absolute;
+    top:0;
+    left:0;
+    height:60px;
+    width:320px;
+    background:#0ff;
+    transform-origin: left bottom;
+    transform: rotate(-25deg);
+    /* z-index: 5; */
+}
+.right-hand{
+    position: absolute;
+    top:-50%;
+    left:300px;
+    height:80px;
+    margin-top:20px;
+    width:80px;
+    border-radius: 100%;
+    border: 2px solid #000;
+    background: #fff;
+    
+}
+.left-elbow{
+    position: absolute;
+    right:100%;
+    top:0;
+    width:76px;
+    height:222px;
+    border:4px solid #000;
+    background:#0ff;
+    border-right-color: transparent;
+    border-radius: 100% 0 0 100%/48% 0 0 48%;
+    transform-origin: right top;
+    transform: rotate(-0.25deg);
+}
+.left-leg{
+    position: absolute;
+    height: 24px;
+    width:208px;
+    background: #00ffff;
+    border:4px solid #000;
+    border-top-color: transparent;
+    border-radius: 0 0 63px 94px / 0 0 24px 24px;
+}
+.left-leg::after{
+    position: absolute;
+    bottom:14px;
+    left:202px;
+    height:65px;
+    content:"";
+    width:5px;
+    background: #000;
+    box-shadow: 0 0 5px 0 #000;
+    transform-origin: right bottom;
+    transform:rotate(-1deg);
+    z-index: 5;
+}
+.right-leg{
+    position: absolute;
+    left:208px;
+    height: 24px;
+    width:218px;
+    background: #00ffff;
+    border: 4px solid #000;
+    border-top: transparent;
+    border-radius: 0 0 94px 63px / 0 0 24px 24px;
+}
+.amon-footer{
+    position: relative;
+    top:-10px;
+    margin:0 auto;
+    width:520px;
+    height:80px;
+    /* border:1px solid #000; */
 }
