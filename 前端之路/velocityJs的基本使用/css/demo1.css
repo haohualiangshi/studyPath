@@ -1,0 +1,17 @@
+body{
+    width:90%;
+    font-weight:300;
+    letter-spacing: 2px;
+    margin:25px auto 0;
+    background:rgb(234,235,235);
+
+}
+div{
+    margin:0 auto;
+}
+h3{
+    background-color:rgb(125,125,125);
+    font-size:30px;
+    text-align: center;
+    margin-bottom: 20px;
+}
