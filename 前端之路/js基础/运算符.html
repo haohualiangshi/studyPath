@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>运算符</title>
+</head>
+
+<body>
+    <p>前增量/前减量/后增量/后减量对比</p>
+    <script>
+        var iNum1 = 2;
+        var iNum2 = 20;
+        var iNum3 = --iNum1 + iNum2; //等于 "22"
+        var iNum4 = iNum1 + iNum2; //等于 "22"
+        var iNum5 = iNum1-- + iNum2;
+        var iNum6 = iNum1 + iNum2;
+        console.log("iNum3=",iNum3);
+        console.log("iNum4=",iNum4);
+        console.log("iNum5=",iNum5);
+        console.log("iNum6=",iNum6);
+    </script>
+</body>
+
+</html>
