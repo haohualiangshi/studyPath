@@ -1,0 +1,2 @@
+def printB():
+    print("B")
