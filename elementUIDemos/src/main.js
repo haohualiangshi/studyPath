@@ -22,7 +22,8 @@ const elementDemo1 = require("./elementUIDemos/demo.vue");
 const elementDemo2 = require("./elementUIDemos/elementContainerDemo.vue");
 const elementDemo3 = require("./elementUIDemos/elementButtonDemo.vue");
 const elementDemo4 = require("./elementUIDemos/elementLinkDemo.vue");
-const elementDemo5=require("./elementUIDemos/elementRadioDemoo.vue");
+const elementDemo5 = require("./elementUIDemos/elementRadioDemoo.vue");
+const elementDemo6 = require("./elementUIDemos/elementCheckboxDemo.vue");
 
 // 2. 定义路由
 // 每个路由应该映射一个组件。 其中"component" 可以是
@@ -74,9 +75,14 @@ const routes = [
         name: "elementDemo4"
       },
       {
-        path:"/elementUIDemos/demo5",
-        components:elementDemo5,
-        name:"elementDemo5"
+        path: "/elementUIDemos/demo5",
+        components: elementDemo5,
+        name: "elementDemo5"
+      },
+      {
+        path:"/elementUIDemos/demo6",
+        components:elementDemo6,
+        name:"elementDemo6"
       }
     ]
   }
