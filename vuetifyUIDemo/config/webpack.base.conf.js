@@ -2,6 +2,7 @@ const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const VueLoaderPlugin = require("vue-loader/lib/plugin");
 const resolve = dir => path.resolve(__dirname, dir);
+const VuetifyLoaderPlugin = require('vuetify-loader/lib/plugin')
 module.exports = {
   entry: {
     boundle: path.resolve(__dirname, "../src/main.js")
@@ -67,7 +68,8 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, "../public/index.html")
     }),
-    new VueLoaderPlugin()
+    new VueLoaderPlugin(),
+    new VuetifyLoaderPlugin()
   ],
   resolve: {
     extensions: [".js", ".vue", ".json", ".styl"],
