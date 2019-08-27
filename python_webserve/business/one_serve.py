@@ -1,14 +1,23 @@
 from flask import Flask
 from global_env import getRootPath
 from flask import make_response
+from flask_cors import CORS
+from flask import request
 import random
 
 import os
 
 app = Flask(__name__)
-
+CORS(app, supports_credentials=True)
 
 def operateFile(filePath):
+    print("*********get args***************")
+    print(request.args)
+    print("***********form data************")
+    print(request.form)
+    print("***********post paras**********")
+    print(request.json)
+
     file_object = open(filePath)
     try:
         result_text = file_object.read()
@@ -58,13 +67,13 @@ def result():
 
 
 # 网红注册邮箱验证
-@app.route('/user/getCodeByEmail',methods=['GET'])
+@app.route('/user/getCodeByEmail',methods=['GET','POST'])
 def verifyEmailResult():
     rootPath = getRootPath()
     verifyEmailJsonArr = ['verifyEmailFail.json','verifyEmailSuccess.json']
     jsonFilrIndex = random.randint(0,len(verifyEmailJsonArr)-1)
     #
-    print(jsonFilrIndex)
+
     filePath = os.path.join(rootPath, "data_json", verifyEmailJsonArr[jsonFilrIndex])
     print(filePath)
     return operateFile(filePath)
