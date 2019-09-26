@@ -1,0 +1,32 @@
+{
+    "message":"success",
+    "code":200,
+    "data":{
+        "channelType":1,
+        "authPhotoUrl":"https://s3-sa-east-1.amazonaws.com/influubucket/auth/373/AUTH_373_selfAutnenticate.png?1532069857185",
+        "anchorPhotoList":[
+            {
+                "photoUrl":"https://s3-sa-east-1.amazonaws.com/influubucket/photo/373/PL_373_315a4225c206cdf2801cee60b1090177.png?1532069856677",
+                "photoMd5":"315a4225c206cdf2801cee60b1090177",
+                "isValid":11,
+                "auditState":1,
+                "createDate":"123456789766",
+                "userId": 555
+            },
+            {
+                "photoUrl":"https://s3-sa-east-1.amazonaws.com/influubucket/photo/373/PL_373_315a4225c206cdf2801cee60b1090177.png?1532069856677",
+                "photoMd5":"315a4225c206cdf2801cee60b1090177",
+                "isValid":1,
+                "auditState":1,
+                "createDate":"123456789766"
+            },
+            {
+                "photoUrl":"https://s3-sa-east-1.amazonaws.com/influubucket/photo/373/PL_373_315a4225c206cdf2801cee60b1090177.png?1532069856677",
+                "photoMd5":"315a4225c206cdf2801cee60b1090177",
+                "isValid":1,
+                "auditState":1,
+                "createDate":"123456789766"
+            }
+        ]
+    }
+}

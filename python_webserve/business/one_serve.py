@@ -67,7 +67,7 @@ def result():
 
 
 # 网红注册邮箱验证
-@app.route('/user/getCodeByEmail',methods=['GET','POST'])
+@app.route('/sso/user/getCodeByEmail',methods=['GET','POST'])
 def verifyEmailResult():
     rootPath = getRootPath()
     verifyEmailJsonArr = ['verifyEmailFail.json','verifyEmailSuccess.json']
@@ -78,7 +78,7 @@ def verifyEmailResult():
     print(filePath)
     return operateFile(filePath)
 # 网红注册
-@app.route('/user/register',methods=['POST',"GET"])
+@app.route('/sso/user/register',methods=['POST',"GET"])
 def influuRegister():
     rootPath = getRootPath()
     verifyEmailJsonArr = ['emailAlreadyHas.json','registerFail.json',"registeSuccess.json","userNameAlreadyHas.json"]
@@ -90,7 +90,7 @@ def influuRegister():
     return operateFile(filePath)
 
 # 网红登录认证
-@app.route('/authentication/form',methods=['POST',"GET"])
+@app.route('/sso/authentication/form',methods=['POST',"GET"])
 def user_author():
     rootPath = getRootPath()
     verifyEmailJsonArr = ['author_success.json','author_times_than_three.json',"email_or_pwd_fail.json"]
@@ -102,16 +102,118 @@ def user_author():
     return operateFile(filePath)
 
 # 网红登录token
-@app.route('/oauth/token',methods=['POST',"GET"])
+@app.route('/sso/oauth/token',methods=['POST',"GET"])
 def user_token():
     rootPath = getRootPath()
-    verifyEmailJsonArr = ['author_token_success.json',"login_success.json"]
+    verifyEmailJsonArr = ['author_token_success.json']
     jsonFilrIndex = random.randint(0,len(verifyEmailJsonArr)-1)
     #
     print(jsonFilrIndex)
     filePath = os.path.join(rootPath, "data_json","author_token", verifyEmailJsonArr[jsonFilrIndex])
     print(filePath)
     return operateFile(filePath)
+
+
+# 功能导航列表获取按钮
+@app.route('/admin/menu/userMenu',methods=['POST',"GET"])
+def user_nabigation_lists():
+    rootPath = getRootPath()
+    verifyEmailJsonArr = ["item_success_2.json"]
+    jsonFilrIndex = random.randint(0,len(verifyEmailJsonArr)-1)
+    #
+    print(jsonFilrIndex)
+    filePath = os.path.join(rootPath, "data_json","function_item_json", verifyEmailJsonArr[jsonFilrIndex])
+    print(filePath)
+    return operateFile(filePath)
+
+# 获取用户数据的接口
+@app.route('/user/profile/data',methods=['POST',"GET"])
+def user_profile_data():
+    rootPath = getRootPath()
+    verifyEmailJsonArr = ['data.json']
+    jsonFilrIndex = random.randint(0,len(verifyEmailJsonArr)-1)
+    #
+    print(jsonFilrIndex)
+    filePath = os.path.join(rootPath, "data_json","profile", verifyEmailJsonArr[jsonFilrIndex])
+    print(filePath)
+    return operateFile(filePath)
+
+
+# influu后台的接口
+# 功能导航列表获取按钮
+@app.route('/menu/userMenu',methods=['POST',"GET"])
+def admin_nabigation_lists():
+    rootPath = getRootPath()
+    verifyEmailJsonArr = ["admin_item_success.json"]
+    jsonFilrIndex = random.randint(0,len(verifyEmailJsonArr)-1)
+    #
+    print(jsonFilrIndex)
+    filePath = os.path.join(rootPath, "data_json","function_item_json", verifyEmailJsonArr[jsonFilrIndex])
+    print(filePath)
+    return operateFile(filePath)
+
+
+# 上传用户头像图片
+@app.route('/user/profile/data/avatar',methods=['POST',"GET"])
+def user_profile_data_avatar():
+    rootPath = getRootPath()
+    verifyEmailJsonArr = ['data.json']
+    jsonFilrIndex = random.randint(0,len(verifyEmailJsonArr)-1)
+    #
+    print(jsonFilrIndex)
+    filePath = os.path.join(rootPath, "data_json","profile", verifyEmailJsonArr[jsonFilrIndex])
+    print(filePath)
+    return operateFile(filePath)
+
+# 测试后台数据接口
+# 主播认证资料
+# @app.route('/getAnchorAuthMessage',methods=['POST',"GET"])
+# def happy_backstage_getAnchorAuthMessage():
+#     rootPath = getRootPath()
+#     verifyEmailJsonArr = ['getAnchorAuthMessage.json']
+#     jsonFilrIndex = random.randint(0,len(verifyEmailJsonArr)-1)
+#     #
+#     print(jsonFilrIndex)
+#     filePath = os.path.join(rootPath, "happy_backage", verifyEmailJsonArr[jsonFilrIndex])
+#     print(filePath)
+#     return operateFile(filePath)
+#
+# # 主播认证资料提交
+# @app.route('/submitAnchorAuth',methods=['POST',"GET"])
+# def happy_backstage_submitAnchorAuth():
+#     rootPath = getRootPath()
+#     verifyEmailJsonArr = ['submitAnchorAuth.json']
+#     jsonFilrIndex = random.randint(0,len(verifyEmailJsonArr)-1)
+#     #
+#     print(jsonFilrIndex)
+#     filePath = os.path.join(rootPath, "happy_backage", verifyEmailJsonArr[jsonFilrIndex])
+#     print(filePath)
+#     return operateFile(filePath)
+#
+#
+# # 主播信息拉取
+# @app.route('/getAnchorDataMessage',methods=['POST',"GET"])
+# def happy_backstage_getAnchorDataMessage():
+#     rootPath = getRootPath()
+#     verifyEmailJsonArr = ['getAnchorDataMessage.json']
+#     jsonFilrIndex = random.randint(0,len(verifyEmailJsonArr)-1)
+#     #
+#     print(jsonFilrIndex)
+#     filePath = os.path.join(rootPath, "happy_backage", verifyEmailJsonArr[jsonFilrIndex])
+#     print(filePath)
+#     return operateFile(filePath)
+#
+# # 主播信息提交
+# @app.route('/submitAnchorData',methods=['POST',"GET"])
+# def happy_backstage_submitAnchorData():
+#     rootPath = getRootPath()
+#     verifyEmailJsonArr = ['submitAnchorAuth.json']
+#     jsonFilrIndex = random.randint(0,len(verifyEmailJsonArr)-1)
+#     #
+#     print(jsonFilrIndex)
+#     filePath = os.path.join(rootPath, "happy_backage", verifyEmailJsonArr[jsonFilrIndex])
+#     print(filePath)
+#     return operateFile(filePath)
 
 
 

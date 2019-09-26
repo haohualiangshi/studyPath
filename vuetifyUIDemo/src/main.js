@@ -1,23 +1,18 @@
 import Vue from "vue";
-import "../plugins/vuetify";
+import vuetify from "./plugins/vuetify_plugin";
 import Router from "vue-router";
 import App from "./app";
-
-import Demo1 from "./components/bgAndColorDemo";
-import Layout from "./components/layout/layout";
-import CardDemo from "./components/layout/CardDemo";
+import routeModule from "./components/route";
 
 Vue.use(Router);
-const routes = [
-  { path: "/", redirect: { name: "layout" } },
-  { path: "/layout", name: "layout", component: Layout,redirect:{name:"cardDemo"}, children: [
-      {path:"/layout/cardDemo",name:"cardDemo",component:CardDemo}
-  ] }
-];
+const routes = [...routeModule];
+
 const router = new Router({
-  routes
+  routes // (缩写) 相当于 routes: routes
 });
 const app = new Vue({
-  router, // (缩写) 相当于 routes: routes
-  render: h => h(App)
+  router, 
+  vuetify,
+  render: h => h(App),
+  
 }).$mount("#app");

@@ -2,7 +2,7 @@ const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const VueLoaderPlugin = require("vue-loader/lib/plugin");
 const resolve = dir => path.resolve(__dirname, dir);
-const VuetifyLoaderPlugin = require('vuetify-loader/lib/plugin')
+const VuetifyLoaderPlugin = require("vuetify-loader/lib/plugin");
 module.exports = {
   entry: {
     boundle: path.resolve(__dirname, "../src/main.js")
@@ -42,15 +42,29 @@ module.exports = {
       {
         test: /\.scss$/,
         use: [
+          // Creates `style` nodes from JS strings
           "style-loader",
+          // Translates CSS into CommonJS
           "css-loader",
-          {
-            loader: "postcss-loader",
-            options: {
-              sourceMap: true
-            }
-          },
+          // Compiles Sass to CSS
           "sass-loader"
+        ]
+      },
+      {
+        test: /\.sass$/,
+        use: [
+          {
+            loader: "style-loader"
+          },
+          {
+            loader: "css-loader"
+          },
+          {
+            loader: "sass-loader",
+            options: {
+              implementation: require("sass")
+            }
+          }
         ]
       },
       {
@@ -72,9 +86,9 @@ module.exports = {
     new VuetifyLoaderPlugin()
   ],
   resolve: {
-    extensions: [".js", ".vue", ".json", ".styl"],
+    extensions: [".js", ".vue", ".json", ".styl", ".sass", ".scss"],
     alias: {
-      vue$:"vue/dist/vue.js",
+      vue$: "vue/dist/vue.js",
       "@vueDemos": "../src/vueDemos/",
       "@vueRoutersDemo": "../src/vueRouterDemos/",
       "vue-router$": "vue-router/dist/vue-router.common.js"

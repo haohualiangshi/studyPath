@@ -1,0 +1,98 @@
+{
+    "msg":"成功",
+    "data":[
+        {
+            "id":"002",
+            "parentId":"-2",
+            "children":[
+                {
+                    "id":"10000002",
+                    "parentId":"002",
+                    "children":[
+                        {
+                            "id":"1000000201",
+                            "parentId":"10000002",
+                            "children":[
+
+                            ],
+                            "name":"权限管理",
+                            "spread":false,
+                            "type":"0",
+                            "sort":21,
+                            "label":"权限管理",
+                            "routeName": "app.profile.data",
+                            "icon":"mdi-account-circle",
+                            "operateAuthorization":{
+                                "addList":1,//统指不同页面的新增功能
+                                "editList":0,//统指不同页面中列表的编辑
+                                "delLlst":1,//统指不同页面中列表的删除
+                            }
+                        },
+                        {
+                            "id":"1000000202",
+                            "parentId":"10000002",
+                            "children":[
+
+                            ],
+                            "name":"员工账号",
+                            "spread":false,
+                            "type":"0",
+                            "sort":22,
+                            "label":"员工账号",
+                            "routeName": "app.profile.social",
+                            "icon":"mdi-account-circle",
+                            "operateAuthorization":{
+                                "addList":1,//统指不同页面的新增功能
+                                "editList":0,//统指不同页面中列表的编辑
+                                "delLlst":1,//统指不同页面中列表的删除
+                                "resetPwd":1
+                            }
+                        },
+                        {
+                            "id":"1000000203",
+                            "parentId":"10000002",
+                            "children":[
+
+                            ],
+                            "name":"网红账号",
+                            "spread":false,
+                            "type":"0",
+                            "sort":22,
+                            "label":"网红账号",
+                            "routeName": "app.profile.social",
+                            "icon":"mdi-account-circle",
+                            "operateAuthorization":{
+                                "addList":1,//统指不同页面的新增功能
+                                "editList":0,//统指不同页面中列表的编辑
+                                "delLlst":1,//统指不同页面中列表的删除
+                                "resetPwd":1,
+                                "author":0,
+                                "freeze": 1
+                            }
+                        }
+                    ],
+                    "name":"账号管理",
+                    "spread":false,
+                    "type":"0",
+                    "sort":20,
+                    "label":"账号管理",
+                    "routeName": "app.profile.data",
+                    "icon":"mdi-account-circle",
+                    "operateAuthorization":{
+                      //有子元素默认拿第一个子元素的权限；无子元素则显示默认页面的权限
+                        "addList":1,//统指不同页面的新增功能
+                        "editList":0,//统指不同页面中列表的编辑
+                        "delLlst":1,//统指不同页面中列表的删除
+                    }
+                }
+            ],
+            "name":"网红前台",
+            "spread":false,
+            "type":"0",
+            "sort":0,
+            "label":"网红前台",
+
+        }
+    ],
+    "code":20000
+}

@@ -1,0 +1,76 @@
+{
+  "select_items": [
+    {
+      "name": "账号管理",
+      "is_display": 1,
+      "children_select": [
+        {
+          "name": "权限管理",
+          "isDisplay": 1,
+          "select_authority": {
+            "addList": 1,
+            "editList": 0,
+            "delLlst": 1
+          }
+        },
+        {
+          "name": "员工账号",
+          "isDisplay": 1,
+          "select_authority": {
+            "addList": 1,
+            "editList": 0,
+            "delLlst": 1,
+            "resetPwd": 1
+          }
+        },
+        {
+          "name": "网红账号",
+          "isDisplay": 1,
+          "select_authority": {
+            "addList": 1,
+            "editList": 0,
+            "delLlst": 1,
+            "resetPwd": 1,
+            "author": 0,
+            "freeze": 1
+          }
+        }
+      ],
+      "select_authority": {
+        "addList": 1,
+        "editList": 0,
+        "delLlst": 1
+      }
+    },
+    {
+      "name": "客户中心",
+      "is_display": 1,
+      "children_select": [
+        {
+          "name": "广告商列表",
+          "isDisplay": 1,
+          "select_authority": {
+            "addList": 1,
+            "editList": 0,
+            "delLlst": 1,
+            "audit": 1
+          }
+        },
+        {
+          "name": "网红列表",
+          "isDisplay": 1,
+          "select_authority": {
+            "addList": 1,
+            "editList": 0,
+            "delLlst": 1
+          }
+        }
+      ],
+      "select_authority": {
+        "addList": 1,
+        "editList": 0,
+        "delLlst": 1
+      }
+    }
+  ]
+}

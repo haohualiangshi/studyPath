@@ -1,0 +1,277 @@
+{
+  "msg": "成功",
+  "data": [
+    {
+      "id": "002",
+      "parentId": "-2",
+      "children": [
+        {
+          "id": "10000002",
+          "parentId": "002",
+          "children": [
+            {
+              "id": "1000000201",
+              "parentId": "10000002",
+              "children": [
+              ],
+              "name": "权限管理",
+              "spread": false,
+              "type": "0",
+              "sort": 23,
+              "label": "权限管理",
+              "routeName": "account.auth",
+              "icon": "mdi-account-circle"
+            },
+            {
+              "id": "1000000202",
+              "parentId": "10000002",
+              "children": [
+              ],
+              "name": "员工账号",
+              "spread": false,
+              "type": "0",
+              "sort": 22,
+              "label": "员工账号",
+              "routeName": "account.workerAccount",
+              "icon": "mdi-account-circle"
+            },
+            {
+              "id": "1000000202",
+              "parentId": "10000002",
+              "children": [
+              ],
+              "name": "网红账号",
+              "spread": false,
+              "type": "0",
+              "sort": 20,
+              "label": "网红账号",
+              "routeName": "account.celebrity",
+              "icon": "mdi-account-circle"
+            }
+          ],
+          "name": "账号管理",
+          "spread": false,
+          "type": "0",
+          "sort": 20,
+          "label": "账号管理",
+          "routeName": "account",
+          "icon": "lock"
+        },
+        {
+          "id": "10000003",
+          "parentId": "002",
+          "children": [
+            {
+              "id": "1000000301",
+              "parentId": "10000003",
+              "children": [
+              ],
+              "name": "广告商列表",
+              "spread": false,
+              "type": "0",
+              "sort": 41,
+              "label": "广告商列表",
+              "routeName": "client.advertiser",
+              "icon": "mdi-account-circle"
+            },
+            {
+              "id": "1000000302",
+              "parentId": "10000003",
+              "children": [
+              ],
+              "name": "网红列表",
+              "spread": false,
+              "type": "0",
+              "sort": 42,
+              "label": "网红列表",
+              "routeName": "client.celebrity",
+              "icon": "mdi-account-circle"
+            }
+          ],
+          "name": "客户中心",
+          "spread": false,
+          "type": "0",
+          "sort": 40,
+          "label": "客户中心",
+          "routeName": "client",
+          "icon": "mdi-speedometer"
+        },
+        {
+          "id": "10000004",
+          "parentId": "002",
+          "children": [
+            {
+              "id": "1000000401",
+              "parentId": "10000004",
+              "children": [
+              ],
+              "name": "待发布订单",
+              "spread": false,
+              "type": "0",
+              "sort": 61,
+              "label": "待发布订单",
+              "routeName": "order.waitPublish",
+              "icon": "mdi-account-circle"
+            },
+            {
+              "id": "1000000402",
+              "parentId": "10000004",
+              "children": [
+              ],
+              "name": "新建订单",
+              "spread": false,
+              "type": "0",
+              "sort": 62,
+              "label": "新建订单",
+              "routeName": "order.alredyPublish.newOrder",
+              "icon": "mdi-account-circle"
+            },
+            {
+              "id": "1000000403",
+              "parentId": "10000004",
+              "children": [
+              ],
+              "name": "查看订单详情",
+              "spread": false,
+              "type": "0",
+              "sort": 63,
+              "label": "查看订单详情",
+              "routeName": "order.alredyPublish.detail",
+              "icon": "mdi-account-circle"
+            },
+            {
+              "id": "1000000403",
+              "parentId": "10000004",
+              "children": [
+              ],
+              "name": "已发布订单",
+              "spread": false,
+              "type": "0",
+              "sort": 63,
+              "label": "已发布订单",
+              "routeName": "order.alredyPublish",
+              "icon": "mdi-account-circle"
+            },
+            {
+              "id": "1000000403",
+              "parentId": "10000004",
+              "children": [
+              ],
+              "name": "查看订单详情",
+              "spread": false,
+              "type": "0",
+              "sort": 63,
+              "label": "查看订单详情",
+              "routeName": "order.alredyPublish.detail",
+              "icon": "mdi-account-circle"
+            },
+            {
+              "id": "1000000403",
+              "parentId": "10000004",
+              "children": [
+              ],
+              "name": "跟进订单",
+              "spread": false,
+              "type": "0",
+              "sort": 63,
+              "label": "跟进订单",
+              "routeName": "order.followUpOrder",
+              "icon": "mdi-account-circle"
+            },
+            {
+              "id": "1000000403",
+              "parentId": "10000004",
+              "children": [
+              ],
+              "name": "历史订单",
+              "spread": false,
+              "type": "0",
+              "sort": 63,
+              "label": "历史订单",
+              "routeName": "order.historyOrder",
+              "icon": "mdi-account-circle"
+            },
+            {
+              "id": "1000000403",
+              "parentId": "10000004",
+              "children": [
+              ],
+              "name": "历史订单详情",
+              "spread": false,
+              "type": "0",
+              "sort": 63,
+              "label": "历史订单详情",
+              "routeName": "order.historyOrder.detail",
+              "icon": "mdi-account-circle"
+            }
+          ],
+          "name": "订单中心",
+          "spread": false,
+          "type": "0",
+          "sort": 60,
+          "label": "订单中心",
+          "routeName": "indent",
+          "icon": "mdi-currency-usd"
+        },
+        {
+          "id": "10000005",
+          "parentId": "002",
+          "children": [
+          ],
+          "name": "消息通知",
+          "spread": false,
+          "type": "0",
+          "sort": 80,
+          "label": "消息通知",
+          "routeName": "message",
+          "icon": "mdi-bell"
+        },
+        {
+          "id": "10000005",
+          "parentId": "002",
+          "children": [
+            {
+              "id": "10000005",
+              "parentId": "002",
+              "children": [
+              ],
+              "name": "网红提现列表",
+              "spread": false,
+              "type": "0",
+              "sort": 80,
+              "label": "网红提现列表",
+              "routeName": "financial.celebriteWithdraw",
+              "icon": "mdi-bell"
+            },
+            {
+              "id": "10000005",
+              "parentId": "002",
+              "children": [
+              ],
+              "name": "广告商充值",
+              "spread": false,
+              "type": "0",
+              "sort": 80,
+              "label": "广告商充值",
+              "routeName": "financial.advertiserRecharge",
+              "icon": "mdi-bell"
+            }
+          ],
+          "name": "财务管理",
+          "spread": false,
+          "type": "0",
+          "sort": 81,
+          "label": "财务管理",
+          "routeName": "financial",
+          "icon": "mdi-bell"
+        }
+      ],
+      "name": "网红前台",
+      "spread": false,
+      "type": "0",
+      "sort": 0,
+      "label": "网红前台"
+    }
+  ],
+  "code": 20000
+}
