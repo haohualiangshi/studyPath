@@ -25,24 +25,14 @@
       </span>
     </el-tree>
     <!-- {{filterTextComputed}} -->
+    <el-checkbox :checked="checked" :label="checked"></el-checkbox>
+    <el-button @click="changeChecked()" type="primary">{{checked}}</el-button>
   </div>
 </template>
 
 
 <script>
 export default {
-  //   watch: {
-  //     filterText(val) {
-  //       this.$refs.tree2.filter(val);
-  //     }
-  //   },
-  //   computed: {
-  //     filterTextComputed() {
-  //       console.log(this.filterText);
-  //       this.$refs.tree2.filter(this.filterText);
-  //     //   return this.filterText;
-  //     }
-  //   },
 
   methods: {
     //不会返回匹配的node的子节点
@@ -50,6 +40,10 @@ export default {
       console.log(value, data);
       if (!value) return true;
       return data.type == "0";
+    },
+    changeChecked() {
+      console.log(this.checked);
+      this.checked = !this.checked;
     }
   },
 
@@ -119,7 +113,8 @@ export default {
       defaultProps: {
         children: "children",
         type: "type"
-      }
+      },
+      checked: true
     };
   },
   mounted: function() {

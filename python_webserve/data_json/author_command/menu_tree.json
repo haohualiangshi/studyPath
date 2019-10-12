@@ -1,0 +1,401 @@
+{
+  "msg": "成功",
+  "data": [
+    {
+      "id": "001",
+      "parentId": "-1",
+      "children": [
+        {
+          "id": "1001",
+          "parentId": "001",
+          "children": [],
+          "name": "系统设置",
+          "spread": false,
+          "component": "1",
+          "type": "0",
+          "sort": 1,
+          "label": "系统设置",
+          "tag": 0
+        },
+        {
+          "id": "2001",
+          "parentId": "001",
+          "children": [
+            {
+              "id": "200101",
+              "parentId": "2001",
+              "children": [
+                {
+                  "id": "2001011",
+                  "parentId": "200101",
+                  "children": [
+                    {
+                      "id": "2001011001",
+                      "parentId": "2001011",
+                      "children": [],
+                      "icon": "",
+                      "name": "角色添加",
+                      "url": "/admin/role/*",
+                      "spread": false,
+                      "path": "",
+                      "component": "1",
+                      "code": "role_add",
+                      "type": "1",
+                      "sort": 143,
+                      "label": "角色添加",
+                      "tag": 0
+                    },
+                    {
+                      "id": "2001011002",
+                      "parentId": "2001011",
+                      "children": [],
+                      "icon": "",
+                      "name": "角色删除",
+                      "url": "/admin/role/*",
+                      "spread": false,
+                      "path": "",
+                      "component": "1",
+                      "code": "role_delete",
+                      "type": "1",
+                      "sort": 144,
+                      "label": "角色删除",
+                      "tag": 0
+                    }
+                  ],
+                  "name": "权限管理\r\n",
+                  "url": "/admin/user/*",
+                  "spread": false,
+                  "component": "1",
+                  "type": "0",
+                  "sort": 110,
+                  "label": "权限管理\r\n",
+                  "tag": 0
+                },
+                {
+                  "id": "2001012",
+                  "parentId": "200101",
+                  "children": [
+                    {
+                      "id": "2001012002",
+                      "parentId": "2001012",
+                      "children": [],
+                      "name": "冻结员工",
+                      "url": "/admin/user/*",
+                      "spread": false,
+                      "component": "1",
+                      "type": "1",
+                      "sort": 121,
+                      "label": "冻结员工",
+                      "tag": 0
+                    },
+                    {
+                      "id": "2001012003",
+                      "parentId": "2001012",
+                      "children": [],
+                      "name": "重置密码",
+                      "url": "/admin/user/*",
+                      "spread": false,
+                      "component": "1",
+                      "type": "1",
+                      "sort": 122,
+                      "label": "重置密码",
+                      "tag": 0
+                    },
+                    {
+                      "id": "2001012001",
+                      "parentId": "2001012",
+                      "children": [],
+                      "icon": "",
+                      "name": "新增员工",
+                      "url": "/admin/user/*",
+                      "spread": false,
+                      "path": "",
+                      "component": "1",
+                      "code": "user_add",
+                      "type": "1",
+                      "sort": 132,
+                      "label": "新增员工",
+                      "tag": 0
+                    }
+                  ],
+                  "name": "员工账号\r\n",
+                  "url": "/admin/user/*",
+                  "spread": false,
+                  "component": "1",
+                  "type": "0",
+                  "sort": 120,
+                  "label": "员工账号\r\n",
+                  "tag": 0
+                },
+                {
+                  "id": "2001013",
+                  "parentId": "200101",
+                  "children": [
+                    {
+                      "id": "2001013001",
+                      "parentId": "2001013",
+                      "children": [],
+                      "name": "冻结账号",
+                      "url": "/admin/user/*",
+                      "spread": false,
+                      "component": "1",
+                      "type": "1",
+                      "sort": 123,
+                      "label": "冻结账号",
+                      "tag": 0
+                    }
+                  ],
+                  "name": "网红账号\r\n",
+                  "url": "/admin/user/*",
+                  "spread": false,
+                  "component": "1",
+                  "type": "0",
+                  "sort": 130,
+                  "label": "网红账号\r\n",
+                  "tag": 0
+                }
+              ],
+              "name": "账号管理\r\n",
+              "spread": false,
+              "component": "1",
+              "type": "0",
+              "sort": 100,
+              "label": "账号管理\r\n",
+              "tag": 0
+            },
+            {
+              "id": "300101",
+              "parentId": "2001",
+              "children": [
+                {
+                  "id": "3001011",
+                  "parentId": "300101",
+                  "children": [
+                    {
+                      "id": "3001011001",
+                      "parentId": "3001011",
+                      "children": [],
+                      "name": "新增广告商",
+                      "url": "/admin/user/*",
+                      "spread": false,
+                      "component": "1",
+                      "type": "1",
+                      "sort": 211,
+                      "label": "新增广告商",
+                      "tag": 0
+                    },
+                    {
+                      "id": "3001011002",
+                      "parentId": "3001011",
+                      "children": [],
+                      "name": "审核广告商",
+                      "url": "/admin/user/*",
+                      "spread": false,
+                      "component": "1",
+                      "type": "1",
+                      "sort": 212,
+                      "label": "审核广告商",
+                      "tag": 0
+                    }
+                  ],
+                  "name": "广告商列表\r\n",
+                  "spread": false,
+                  "component": "1",
+                  "type": "0",
+                  "sort": 210,
+                  "label": "广告商列表\r\n",
+                  "tag": 0
+                }
+              ],
+              "name": "客户中心\r\n",
+              "spread": false,
+              "component": "1",
+              "type": "0",
+              "sort": 200,
+              "label": "客户中心\r\n",
+              "tag": 0
+            },
+            {
+              "id": "300102",
+              "parentId": "2001",
+              "children": [
+                {
+                  "id": "3001021",
+                  "parentId": "300102",
+                  "children": [
+                    {
+                      "id": "3001021002",
+                      "parentId": "3001021",
+                      "children": [],
+                      "name": "订单新增",
+                      "spread": false,
+                      "component": "1",
+                      "type": "2",
+                      "sort": 411,
+                      "label": "订单新增",
+                      "tag": 0
+                    },
+                    {
+                      "id": "3001021001",
+                      "parentId": "3001021",
+                      "children": [],
+                      "name": "订单审核",
+                      "spread": false,
+                      "component": "1",
+                      "type": "2",
+                      "sort": 412,
+                      "label": "订单审核",
+                      "tag": 0
+                    }
+                  ],
+                  "name": "待发布订单\r\n",
+                  "spread": false,
+                  "component": "1",
+                  "type": "0",
+                  "sort": 410,
+                  "label": "待发布订单\r\n",
+                  "tag": 0
+                },
+                {
+                  "id": "3001022",
+                  "parentId": "300102",
+                  "children": [
+                    {
+                      "id": "3001022001",
+                      "parentId": "3001022",
+                      "children": [],
+                      "name": "取消订单",
+                      "url": "/admin/user/*",
+                      "spread": false,
+                      "component": "1",
+                      "type": "2",
+                      "sort": 421,
+                      "label": "取消订单",
+                      "tag": 0
+                    }
+                  ],
+                  "name": "已发布订单\r\n",
+                  "spread": false,
+                  "component": "1",
+                  "type": "0",
+                  "sort": 420,
+                  "label": "已发布订单\r\n",
+                  "tag": 0
+                },
+                {
+                  "id": "3001023",
+                  "parentId": "300102",
+                  "children": [
+                    {
+                      "id": "3001023001",
+                      "parentId": "3001023",
+                      "children": [],
+                      "name": "申请审核",
+                      "url": "/admin/user/*",
+                      "spread": false,
+                      "component": "1",
+                      "type": "2",
+                      "sort": 431,
+                      "label": "申请审核",
+                      "tag": 0
+                    }
+                  ],
+                  "name": "跟进订单",
+                  "spread": false,
+                  "component": "1",
+                  "type": "0",
+                  "sort": 430,
+                  "label": "跟进订单",
+                  "tag": 0
+                },
+                {
+                  "id": "3001024",
+                  "parentId": "300102",
+                  "children": [],
+                  "name": "历史订单",
+                  "spread": false,
+                  "component": "1",
+                  "type": "0",
+                  "sort": 440,
+                  "label": "历史订单",
+                  "tag": 0
+                }
+              ],
+              "name": "订单中心",
+              "spread": false,
+              "component": "1",
+              "type": "0",
+              "sort": 400,
+              "label": "订单中心",
+              "tag": 0
+            },
+            {
+              "id": "30013",
+              "parentId": "2001",
+              "children": [
+                {
+                  "id": "300131",
+                  "parentId": "30013",
+                  "children": [],
+                  "name": "账单流水\r\n",
+                  "spread": false,
+                  "component": "1",
+                  "type": "0",
+                  "sort": 510,
+                  "label": "账单流水\r\n",
+                  "tag": 0
+                },
+                {
+                  "id": "300132",
+                  "parentId": "30013",
+                  "children": [],
+                  "name": "网红提现列表\r\n",
+                  "spread": false,
+                  "component": "1",
+                  "type": "0",
+                  "sort": 520,
+                  "label": "网红提现列表\r\n",
+                  "tag": 0
+                },
+                {
+                  "id": "300133",
+                  "parentId": "30013",
+                  "children": [],
+                  "name": "广告商充值\r\n",
+                  "spread": false,
+                  "component": "1",
+                  "type": "0",
+                  "sort": 530,
+                  "label": "广告商充值\r\n",
+                  "tag": 0
+                }
+              ],
+              "name": "财务管理",
+              "spread": false,
+              "component": "1",
+              "type": "0",
+              "sort": 500,
+              "label": "财务管理",
+              "tag": 0
+            }
+          ],
+          "name": "后台管理",
+          "spread": false,
+          "component": "1",
+          "type": "0",
+          "sort": 10,
+          "label": "后台管理",
+          "tag": 0
+        }
+      ],
+      "name": "网红后台",
+      "spread": false,
+      "component": "1",
+      "type": "0",
+      "sort": 0,
+      "label": "网红后台",
+      "tag": 0
+    }
+  ],
+  "code": 20000
+}

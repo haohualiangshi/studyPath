@@ -1,0 +1,66 @@
+{
+  "msg": "成功",
+  "data": {
+    "number": 0,
+    "totalElements": 3,
+    "totalPages": 1,
+    "size": 10,
+    "content": [
+      {
+        "id": "0001",
+        "roleName": "超级管理员",
+        "roleCode": "ROLE_ADMIN",
+        "roleDesc": "超级管理员",
+        "parentId": "001",
+        "createDttm": {
+          "epochSecond": 1509291951,
+          "nano": 0
+        },
+        "updateDttm": {
+          "epochSecond": 1517143603,
+          "nano": 0
+        },
+        "createUser": "",
+        "updateUser": "",
+        "delFlag": "0"
+      },
+      {
+        "id": "0002",
+        "roleName": "管理员",
+        "roleCode": "ROLE_MANAGER",
+        "roleDesc": "管理员",
+        "parentId": "001",
+        "createDttm": {
+          "epochSecond": 1526394724,
+          "nano": 0
+        },
+        "updateDttm": {
+          "epochSecond": 1526394724,
+          "nano": 0
+        },
+        "createUser": "",
+        "updateUser": "",
+        "delFlag": "0"
+      },
+      {
+        "id": "1001",
+        "roleName": "网红",
+        "roleCode": "ROLE_USER",
+        "roleDesc": "网红",
+        "parentId": "002",
+        "createDttm": {
+          "epochSecond": 1526396703,
+          "nano": 0
+        },
+        "updateDttm": {
+          "epochSecond": 1526396707,
+          "nano": 0
+        },
+        "createUser": "",
+        "updateUser": "",
+        "delFlag": "0"
+      }
+    ]
+  },
+  "code": 20000
+}
