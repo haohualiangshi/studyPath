@@ -8,6 +8,7 @@
     <router-link to="/elementDemo/demo6">多选框</router-link>
     <router-link to="/elementDemo/demo7">table表格</router-link>
     <router-link to="/elementDemo/demo8">tree表格</router-link>
+    <router-link to="/elementDemo/mock">mockJs</router-link>
     <router-view></router-view>
   </div>
 </template>
