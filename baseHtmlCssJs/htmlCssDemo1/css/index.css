@@ -144,3 +144,53 @@ body {
   background: url(../images/logo.png) no-repeat center center;
   background-size: 100%;
 }
+.seach-wrap {
+  height: 33px;
+  width: 294px;
+  background: url(../images/search.png) no-repeat center center;
+  background-size: 100%;
+  position: absolute;
+  top: 33px;
+  right: 0;
+  border-radius: 10px;
+  overflow: hidden;
+}
+.search-input {
+  height: 100%;
+  width: 250px;
+  border: none;
+  outline: none;
+  background: transparent;
+  display: inline-block;
+}
+.search-btn {
+  display: inline-block;
+  height: 100%;
+  width: 34px;
+  background: transparent;
+}
+
+.nav-wrap {
+  width: 960px;
+  margin: 0 auto;
+  padding: 8px 0 0;
+}
+.nav-item {
+  float: left;
+
+  text-align: center;
+  height: 25px;
+  /* width: 88px; */
+  line-height: 25px;
+  padding: 0 20px;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+.nav-item a {
+  color: #fff;
+  text-decoration: none;
+}
+.nav-active {
+  background: url(../images/nav_active_bg.png) repeat-x 0 -56px;
+  background-size: 114px 500px;
+}
