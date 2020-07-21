@@ -150,3 +150,176 @@ git push -f //强制版本推送；该方法会把上个版本指针永久删除
 * git log –graph –pretty=oneline 查看分支图
 * git remote add [origin][git address]：添加远程仓库，将本地仓库链接到git address对应的远程仓库，然后就可以push本地内容到git远程仓库了；
 * git remote -v 查看远程仓库信息
+
+### 使用分支工作
+
+##### 列出分支
+
+`git branch --list`:列出本地分支
+
+`git branch --all`:列出所有的分支
+
+`git branch --remotes`：获得可用的远程分支名的列表；
+
+`git fetch`：获取更新的列表和所有远程分支的内容
+
+##### 使用分支
+
+使用checkout命令切换分支
+
+`git checkout --track origin/video-lessons`:检出远程分支到本地
+
+创建一个新的开发分支
+
+`git checkout master`:首先签出你希望作为起点使用的分支
+
+`git branch name`:创建一个新的分支
+
+`git checkout name`:签出新分支
+
+从主分支创建一个新的开发分支
+
+`git checkout -b name`:从主分支创建一个新的开发分支
+
+##### 添加更改
+
+使用`git add `添加更改的文件
+
+`git add <directory_name>/*`:添加某一个文件夹下的所有文件
+
+`git add .`/`git add --update`:暂存所有的更改
+
+使用`git commit`命令将暂存的更改提交至仓库
+
+##### 将选中的修改交互式地添加到你的Git仓库
+
+`git add --patch filename`:
+
+y - stage this hunk
+n - do not stage this hunk
+q - quit; do not stage this hunk or any of the remaining ones
+a - stage this hunk and all later hunks in the file
+d - do not stage this hunk or any of the later hunks in the file
+e - manually edit the current hunk
+? - print help
+
+##### 从暂存去移除文件
+
+`git reset HEAD fileName`:从暂存区移除提交的文件
+
+##### 提交文件
+
+`git commit -m "message content"`:暂存后的文件提交到本地仓库
+
+##### 忽略文件
+
+`git config --global core.excludesfile ~/.gitignore`：运行下边的命令来告诉Git忽略文件的列表存放在什么位置
+
+#### 使用标签
+
+标签用于定位指定的提交
+
+`git tag tagName fa04c30（提交记录）`:为某个提交对象添加一个新的标签
+
+`git tag`:列出所有标签
+
+`git show tagName`:查看标签提交的内容
+
+`git push --set-upstream my_gitlab 1-process_notes`:在上传本地分支时设置上游分支
+
+#### 基本的git命令
+
+`git clone URL`:下载一份远程仓库的副本
+
+`git init`:将当前目录转换成一个新的git仓库
+
+`git status`:获取仓库状态
+
+`git add --all`/`git add .`将所有修改过的文件和新文件添加至暂存区
+
+`git commit -m "message"`:将所有的暂存的文件提交至本地仓库
+
+`git log --oneline`:查看压缩过的项目历史
+
+`git log`:查看项目历史
+
+`git branch --list`:列出所有本地分支
+
+`git branch --all`:列出本地和远程分支
+
+`git branch --remotes`:列出所有远程分支
+
+`git checkout --track remote_name/branch`:创建远程分支的副本，在本地使用
+
+`git checkout branch branchName`:切换到另外一个本地分支
+
+`git checkout -b branch branch_parent`:从指定分支创建一个新的分支
+
+`git reset HEAD filename`：从暂存区移除提交的文件
+
+`git commit --amend`:使用当前暂存的修改更新之前的提交；并提供一个新的提交信息
+
+`git show commit`:输出某个提交的详细信息
+
+`git tag tagName commit`:为某个提交对象打上标签
+
+`git tag`:列出所有标签
+
+`git show tag`:输出所有带标签提交的详细信息
+
+`git remote add remote_name URL`:创建一个指向远程仓库的引用
+
+`git push`:将当前分支上的修改传至远程仓库
+
+`git remote --verbose`:列出所有可用远程连接中fetch和push命令使用的URL
+
+`git push --set-upstream remote_name branch_local_branch_remote`:将本地分支的副本推送至远程服务器
+
+`git merge branch`:将当前存储在另一个分支的提交并入当前分支
+
+`git push --delete remote_name branch_remote`:在远程仓库中移除指定名称的分支
+
+#### 回滚/还原/重置和变基
+
+##### 选择正确的撤销方式
+
+`git checkout --filename`:舍弃工作目录中未被暂存或提交的文件
+
+`git reset --hard`:舍弃工作目录中所有已暂存但未被提交的文件
+
+`git reset commit`:合并与某个特定提交（不包含该提交）之间的多个提交
+
+`git clean -fd`:移除所有未提交的变更；包含未跟踪文件
+
+`git reset --hard commit`:移除所有已暂存的变更和在某个提交之前的变更；但不移除工作目录中的新文件
+
+`git revert commit`:移除之前的工作；但保留提交历史记录
+
+`git rebase --interactive commit`:从分支历史记录中移除一个单独的提交
+
+`git checkout -b branch`:创建一个名为branch的分支
+
+`git checkout branch`:切换到指定分支
+
+`git merge branch`:将branch中的提交并入当前分支
+
+`git branch --delete`:移除本地分支
+
+`git brach -D`:移除不包含并入其他分支的提交的本地分支
+
+`git cherry-pick commit`:将提交从一个分支复制到另一个分支
+
+`git reset --merge ORIG_HEAD`:移除当前分支中所有在最近一次合并中引入的提交
+
+
+
+
+
+
+
+
+
+
+
+
+
