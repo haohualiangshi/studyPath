@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>closure</title>
+  </head>
+  <body>
+    <script>
+      // function power(power) {
+      //   return function (number) {
+      //     return Math.pow(number, power);
+      //   };
+      // }
+      // let power2 = power(2);
+      // let power3 = power(3);
+      // console.log(power2(2));
+      // console.log(power2(3));
+      // console.log(power3(3));
+
+      function makeSalary(base) {
+        return function (performance) {
+          return base + performance;
+        };
+      }
+
+      const salaryLevel1 = makeSalary(1200);
+      const salaryLevel2 = makeSalary(15000);
+      console.log(salaryLevel1(3000))
+    </script>
+  </body>
+</html>
