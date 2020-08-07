@@ -2,7 +2,7 @@
  * @Author: ahao 
  * @Date: 2020-08-06 14:34:59 
  * @Last Modified by: ahao
- * @Last Modified time: 2020-08-07 16:25:44
+ * @Last Modified time: 2020-08-07 20:56:47
  * 柯里化
  */
 const { log } = console;
@@ -99,3 +99,70 @@ log(f(strArr));
 
 // 函数组合要满足结合律
 
+
+/****
+ * pointfree:我们可以把数据处理的过程定义成与数据无关和合成运算；不需要用到代表数据的那个参数；
+ * 只要把简单的运算步骤合成到一起；在使用这种模式之前我们需要定义一些辅助的基本运算函数
+ * 
+ */
+const fp = require('lodash/fp');
+
+const f1 = fp.flowRight(fp.replace(/\s+/g, "_"), fp.toLower);
+log(f1('HELLO     WORLD'));
+
+
+// const firstLeterToUpper = fp.flowRight(fp.join('. '), fp.map(fp.first), fp.map(fp.toUpper), fp.split(' '));
+const firstLeterToUpper = fp.flowRight(fp.join('. '), fp.map(fp.flowRight(fp.first, fp.toUpper)), fp.split(' '))
+log(firstLeterToUpper('world wild web'));
+
+
+/****
+ * functor 函子
+ * 容器：包含值和值的变形关系（这个变形关系就是函数）
+ * 函子：是一个特殊的容器；通过一个普通的对象来实现；该对象具有map方法；map方法可以运行一个函数对值进行处理
+ *
+ */
+
+// class Container {
+//   constructor(val) {
+//     this._val = val;
+//   }
+//   map (fn) {
+//     return new Container(fn(this._val));
+//   }
+// }
+// let r = new Container(5).map(x => x + 1).map(x => x * x);
+// log(r);
+
+// 避免多次使用new
+class Container {
+  static of (val) {
+    return new Container(val);
+  }
+  constructor(val) {
+    this._val = val;
+  }
+  map (fn) {
+    return Container.of(fn(this._val));
+  }
+}
+
+const r = Container.of(5).map(x => x + 1).map(x => x * x);
+log(r);
+
+/****
+ * 函子总结
+ * 函数式编程的运算不直接操作值；而是由函子完成
+ * 函子就死机一个实现了map契约的对象
+ * 我们可以把函子想象成一个盒子；这个盒子里封装一个值
+ * 想要处理盒子中的值；我们需要给盒子的map方法场地一个处理值的函数（纯函数）；由这个函数对值进行处理
+ * 最终map方法返回一个包含新值的盒子（函子）
+ */
+
+// 演示函子里传入null或者undefined的问题；MayBe函子
+
+class MayBe{
+  static of(val){
+    return new MayBe(val);
+  }
+}
