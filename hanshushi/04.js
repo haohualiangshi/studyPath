@@ -2,7 +2,7 @@
  * @Author: ahao 
  * @Date: 2020-08-06 14:34:59 
  * @Last Modified by: ahao
- * @Last Modified time: 2020-08-07 20:56:47
+ * @Last Modified time: 2020-08-10 15:01:47
  * 柯里化
  */
 const { log } = console;
@@ -161,8 +161,85 @@ log(r);
 
 // 演示函子里传入null或者undefined的问题；MayBe函子
 
-class MayBe{
-  static of(val){
+class MayBe {
+  static of (val) {
     return new MayBe(val);
   }
+  constructor(val) {
+    this._val = val;
+  }
+  map (fn) {
+    return this.isNothing() ? MayBe.of(null) : MayBe.of(fn(this._val));
+  }
+  isNothing () {
+    return this._val === null || this._val === undefined;
+  }
 }
+
+const r1 = MayBe.of('zhang hao')
+  .map(x => x.toUpperCase());
+log(r1);
+
+// Either函子
+class Left {
+  static of (val) {
+    return new Left(val);
+  }
+  constructor(val) {
+    this._val = val;
+  }
+
+  map (fn) {
+    return this;
+  }
+}
+class Right {
+  static of (val) {
+    return new Right(val);
+  }
+  constructor(val) {
+    this._val = val;
+  }
+  map (fn) {
+    return Right.of(fn(this._val));
+  }
+}
+
+// const left = Left.of(12).map(x => x + 2);
+// const right = Right.of(12).map(x => x + 2);
+// log(left, right);
+
+const parseJSON = str => {
+  try {
+    return Right.of(JSON.parse(str))
+  } catch (e) {
+    return Left.of({ error: e.message })
+  }
+}
+const parse1 = parseJSON('{"message":"zh"}');
+const parse2 = parseJSON('{"message":error}')
+log(parse1);
+log(parse2);
+
+// IO函子
+/****
+ * IO函子中的_value是一个函数；这里把函数作为值来处理
+ * IO函子可以把不纯的动作存储到_value中；延迟执行这个不纯的操作（惰性执行）
+ * 把不纯的操作交给调用来处理
+ */
+
+class IO {
+  static of (val) {
+    return new IO(function () {
+      return val;
+    })
+  }
+  constructor(fn) {
+    this._val = fn;
+  }
+  map (fn) {
+    return new IO(fp.flowRight(fn, this._val));
+  }
+}
+const io1 = IO.of(process).map(p => p.execPath);
+log(io1._val());
