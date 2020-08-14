@@ -2,7 +2,7 @@
  * @Author: ahao 
  * @Date: 2020-08-11 13:58:26 
  * @Last Modified by: ahao
- * @Last Modified time: 2020-08-12 10:44:30
+ * @Last Modified time: 2020-08-13 15:33:56
  * es6函数式编程入门经典
  * 数学函数关键点：
  *  函数必须总是接受一个参数
@@ -11,6 +11,8 @@
  *  对于一个给定的x；只会输出唯一的y
  * 
  */
+
+const { unary } = require("lodash");
 
 const { log } = console;
 //  demo1 计税函数
@@ -39,3 +41,7 @@ const factorial = val => {
 log(factorial(5));
 
 log(Math.max(2, 3, 4, 5, 6));
+
+const arr = ["1", "2", "3"];
+log(arr.map(parseInt));
+log(arr.map(unary(parseInt)));
