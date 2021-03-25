@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>使用Promise封装ajax</title>
+  </head>
+  <body>
+    <script>
+      // 使用Promis封装ajax
+
+      // 创建ajax
+      const promise = new Promise((resolve, reject) => {
+        const xhr = new XMLHttpRequest();
+        // 初始化
+        xhr.open("GET", "https://api.apiopen.top/getJok");
+        // 发送请求
+        xhr.send();
+
+        // 添加事件监听
+        xhr.addEventListener("readystatechange", function (ev) {
+          if (xhr.readyState === 4) {
+            // console.log(ev.target.response);
+            if (xhr.status >= 200 && xhr.status < 300) {
+              resolve(xhr.response);
+            } else {
+              reject(xhr.status);
+            }
+          }
+        });
+      });
+      promise.then(
+        (data) => {
+          console.log(data);
+        },
+        (reason) => {
+          console.log(reason);
+        }
+      );
+    </script>
+  </body>
+</html>
