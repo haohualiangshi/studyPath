@@ -59,7 +59,7 @@
     "webpack-merge": "^4.2.1"
   },
   "dependencies": {
-    "axios": "^0.18.1",
+    "axios": "^0.21.1",
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "core-js": "^2.6.9",
     "epic-spinners": "^1.1.0",
