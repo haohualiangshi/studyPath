@@ -1,0 +1,22 @@
+{
+  "name": "studypath",
+  "version": "1.0.0",
+  "description": "** 1. webstorm使用指南 **",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/haohualiangshi/studyPath.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/haohualiangshi/studyPath/issues"
+  },
+  "homepage": "https://github.com/haohualiangshi/studyPath#readme",
+  "dependencies": {
+    "lodash": "^4.17.15"
+  }
+}
