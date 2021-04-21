@@ -12,11 +12,11 @@
  */
 const { log } = console;
 
-function makeFn () {
-  const msg = 'hello world';
-  return function () {
-    log(msg);
-  }
+function makeFn() {
+    const msg = 'hello world';
+    return function() {
+        log(msg);
+    }
 }
 const fn1 = makeFn();
 fn1();
@@ -29,7 +29,7 @@ log(arr.slice(0, 3));
 log(arr.slice(0, 3));
 log(arr.slice(0, 3));
 log(arr);
-// 不纯的函数
+// 不纯的函数，会修改原数组
 log(arr.splice(0, 3));
 log(arr);
 log(arr.splice(0, 3));
