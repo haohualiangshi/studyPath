@@ -13,11 +13,11 @@
         <td colspan="3" title="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.128 Safari/537.36">Browser: Chrome 89.0.4389.128 (Windows 10)</td>
       </tr>
       <tr class="overview">
-        <td colspan="3">Timestamp: 2021/4/23 下午4:43:36</td>
+        <td colspan="3">Timestamp: 2021/4/23 下午7:35:46</td>
       </tr>
       <tr>
         <td colspan="3">
-          9 tests / 
+          13 tests / 
           0 errors / 
           0 failures / 
           0 skipped / 
@@ -51,6 +51,26 @@
       </tr>
       <tr class="pass">
         <td>Passed in 0s</td>
+        <td>isArray([1,3,4]) return true</td>
+        <td>isArray test</td>
+      </tr>
+      <tr class="pass">
+        <td>Passed in 0.001s</td>
+        <td>isArray(document.body.children) return false</td>
+        <td>isArray test</td>
+      </tr>
+      <tr class="pass">
+        <td>Passed in 0s</td>
+        <td>isArrayLike([1,3,4,5]) return false</td>
+        <td>isArrayLike test</td>
+      </tr>
+      <tr class="pass">
+        <td>Passed in 0s</td>
+        <td>isArrayLike(Function) return false</td>
+        <td>isArrayLike test</td>
+      </tr>
+      <tr class="pass">
+        <td>Passed in 0s</td>
         <td>isSymbol({}) return value is false</td>
         <td>isSymbol test</td>
       </tr>
@@ -65,7 +85,7 @@
         <td>toFinite test</td>
       </tr>
       <tr class="pass">
-        <td>Passed in 0.001s</td>
+        <td>Passed in 0s</td>
         <td>toNumber("3.14") return 3.14</td>
         <td>toNumber test</td>
       </tr>

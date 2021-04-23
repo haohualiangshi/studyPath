@@ -4,7 +4,7 @@
  * @Author: ahao
  * @Date: 2021-04-22 16:13:18
  * @LastEditors: ahao
- * @LastEditTime: 2021-04-23 16:43:35
+ * @LastEditTime: 2021-04-23 19:35:45
  */
 
 
@@ -15,6 +15,8 @@ import isObjectLike from '../../lib/base/isObjectLike';
 import isSymbol from "../../lib/symbol/isSymbol";
 import isObject from "../../lib/object/isObject";
 import isArguments from '../../lib/base/isArguments';
+import isArray from '../../lib/base/isArray';
+import isArrayLike from '../../lib/base/isArrayLike';
 import toFinite from '../../lib/number/toFinite';
 import toNumber from '../../lib/number/toNumber';
 import toInteger from '../../lib/number/toInteger';
@@ -39,6 +41,24 @@ describe('isArguments test', () => {
     })
     it('isArguments([1,3,4]) return false', () => {
         expect(isArguments([1, 3, 4])).to.equal(false)
+    })
+})
+
+describe('isArray test', () => {
+    it('isArray([1,3,4]) return true', () => {
+        expect(isArray([1, 3, 4])).to.equal(true);
+    })
+    it('isArray(document.body.children) return false', () => {
+        expect(isArray(document.body.children)).to.equal(false);
+    })
+})
+
+describe('isArrayLike test', () => {
+    it('isArrayLike([1,3,4,5]) return false', () => {
+        expect(isArrayLike([1, 3, 4, 5])).to.equal(true)
+    })
+    it('isArrayLike(Function) return false', () => {
+        expect(isArrayLike(Function)).to.equal(false)
     })
 })
 
