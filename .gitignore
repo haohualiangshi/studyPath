@@ -1,6 +1,6 @@
 
 
-*/node_modules/
+*/node_modules/*
 */build/
 webpack/new_webpack/assets/
 */*.zip
@@ -13,3 +13,4 @@ pythonStudy/venv
 python_webserve/__pycache__
 python_webserve/publish
 python_webserve/venv
+**/node_modules/*
