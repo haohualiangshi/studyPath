@@ -4,10 +4,10 @@
  * @Author: ahao
  * @Date: 2021-04-17 22:17:58
  * @LastEditors: ahao
- * @LastEditTime: 2021-04-17 22:30:58
+ * @LastEditTime: 2021-04-23 15:59:01
  */
 
-import getTag from '../../base/getTag';
+import getTag from '../base/getTag';
 
 const isSymbol = (val) => {
     const type = typeof val;

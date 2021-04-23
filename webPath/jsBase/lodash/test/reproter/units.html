@@ -13,11 +13,11 @@
         <td colspan="3" title="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.128 Safari/537.36">Browser: Chrome 89.0.4389.128 (Windows 10)</td>
       </tr>
       <tr class="overview">
-        <td colspan="3">Timestamp: 2021/4/23 下午2:54:51</td>
+        <td colspan="3">Timestamp: 2021/4/23 下午4:43:36</td>
       </tr>
       <tr>
         <td colspan="3">
-          1 tests / 
+          9 tests / 
           0 errors / 
           0 failures / 
           0 skipped / 
@@ -30,12 +30,62 @@
         <td>Suite / Results</td>
       </tr>
       <tr class="pass">
-        <td>Passed in 0.003s</td>
+        <td>Passed in 0.001s</td>
         <td>should [object Array] when getTag([1,2,3]) return</td>
         <td>getTag test</td>
       </tr>
+      <tr class="pass">
+        <td>Passed in 0s</td>
+        <td>isObjectLike({}) return true</td>
+        <td>isObjectLike test</td>
+      </tr>
+      <tr class="pass">
+        <td>Passed in 0s</td>
+        <td>isArguments(function(){return arguments}()) return true</td>
+        <td>isArguments test</td>
+      </tr>
+      <tr class="pass">
+        <td>Passed in 0s</td>
+        <td>isArguments([1,3,4]) return false</td>
+        <td>isArguments test</td>
+      </tr>
+      <tr class="pass">
+        <td>Passed in 0s</td>
+        <td>isSymbol({}) return value is false</td>
+        <td>isSymbol test</td>
+      </tr>
+      <tr class="pass">
+        <td>Passed in 0.001s</td>
+        <td>isObject test</td>
+        <td>isObject test</td>
+      </tr>
+      <tr class="pass">
+        <td>Passed in 0s</td>
+        <td>toFinite(888888888888) return value is 888888888888</td>
+        <td>toFinite test</td>
+      </tr>
+      <tr class="pass">
+        <td>Passed in 0.001s</td>
+        <td>toNumber("3.14") return 3.14</td>
+        <td>toNumber test</td>
+      </tr>
+      <tr class="pass">
+        <td>Passed in 0s</td>
+        <td>toInteger("3.3333") return 3</td>
+        <td>toInteger test</td>
+      </tr>
       <tr class="system-out">
         <td colspan="3"><strong>System output:</strong><br />Chrome 89.0.4389.128 (Windows 10) LOG: '[object Array]'
+<br />Chrome 89.0.4389.128 (Windows 10) LOG: false
+<br />Chrome 89.0.4389.128 (Windows 10) LOG: 'isObject({}) return ', true
+<br />Chrome 89.0.4389.128 (Windows 10) LOG: 'isObject([1,3] return ', true
+<br />Chrome 89.0.4389.128 (Windows 10) LOG: 'isObject(1) return ', false
+<br />Chrome 89.0.4389.128 (Windows 10) LOG: 'toFinite(Infinity)', 1.7976931348623157e+308
+<br />Chrome 89.0.4389.128 (Windows 10) LOG: 'toNumber(0x10)=', 16
+<br />Chrome 89.0.4389.128 (Windows 10) LOG: 'toNumber(0b10)=', 2
+<br />Chrome 89.0.4389.128 (Windows 10) LOG: 'toNumber(0o10)=', 8
+<br />Chrome 89.0.4389.128 (Windows 10) LOG: 'toNumber(function(){return 30}=', NaN
+<br />Chrome 89.0.4389.128 (Windows 10) LOG: 'toInteger(3.3333)', 3
 </td>
       </tr>
     </table>

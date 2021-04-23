@@ -4,7 +4,7 @@
  * @Author: ahao
  * @Date: 2021-04-22 15:54:30
  * @LastEditors: ahao
- * @LastEditTime: 2021-04-23 14:54:30
+ * @LastEditTime: 2021-04-23 15:59:26
  */
 module.exports = function(config) {
     config.set({
@@ -24,8 +24,7 @@ module.exports = function(config) {
         // 将文件提供给浏览器之前，进行预处理
         preprocessors: {
             // 匹配源文件，并使用 webpack 进行预处理
-            '../base/*.js': ['webpack'],
-            '../base/**/*.js': ['webpack'],
+            '../lib/**/*.js': ['webpack'],
             // 匹配测试文件，并使用 webpack 进行预处理
             "./unit-test/*.js": ['webpack']
         },
