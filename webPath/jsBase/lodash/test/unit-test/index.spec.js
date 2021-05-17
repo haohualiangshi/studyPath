@@ -4,7 +4,7 @@
  * @Author: ahao
  * @Date: 2021-04-22 16:13:18
  * @LastEditors: ahao
- * @LastEditTime: 2021-04-23 19:35:45
+ * @LastEditTime: 2021-04-25 20:04:26
  */
 
 
@@ -17,6 +17,8 @@ import isObject from "../../lib/object/isObject";
 import isArguments from '../../lib/base/isArguments';
 import isArray from '../../lib/base/isArray';
 import isArrayLike from '../../lib/base/isArrayLike';
+import isArrayLikeObject from '../../lib/base/isArrayLikeObject';
+import isBoolean from '../../lib/base/isBoolean';
 import toFinite from '../../lib/number/toFinite';
 import toNumber from '../../lib/number/toNumber';
 import toInteger from '../../lib/number/toInteger';
@@ -61,6 +63,7 @@ describe('isArrayLike test', () => {
         expect(isArrayLike(Function)).to.equal(false)
     })
 })
+
 
 
 describe('isSymbol test', () => {
