@@ -20,20 +20,26 @@ log('\x7a' === 'z');
 log('\u007a' === 'z');
 log('\u{7a}' === 'z');
 
-for(let codePoint of 'zhan'){
-  log(codePoint);
+for (let codePoint of 'zhan') {
+    log(codePoint);
 }
 // for ...of 遍历最大的优点可以识别大于oxffff的码点
 const text = String.fromCodePoint(0x20bb7);
-for(let i =0;i<text.length;i++){
-  log(i,text[i])
+for (let i = 0; i < text.length; i++) {
+    log(i, text[i])
 }
-for(let i of text){
-  log(i)
+for (let i of text) {
+    log(i)
 }
 // 反引号的模版字符串
 log(`zhang
 qing 
 hao`)
 const addr = "heNan";
-log(`home is ${addr}`)
+// log(`home is ${addr}`)
+// console.log `home is ${addr} ,and .`
+function myTagFun(strings, addrVal) {
+    console.log(strings);
+    console.log(addrVal)
+}
+myTagFun `this is ${addr}.`;
