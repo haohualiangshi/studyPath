@@ -1,0 +1,68 @@
+<!--
+ * @Descripttion: 节流函数
+ * @version: 
+ * @Author: ahao
+ * @Date: 2021-09-11 16:49:37
+ * @LastEditors: ahao
+ * @LastEditTime: 2021-09-13 10:37:48
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>节流函数实现</title>
+    <style>
+        body {
+            height: 1500px;
+        }
+    </style>
+</head>
+
+<body>
+    <script>
+        // 节流是指在自定义的一段时间内让事件进行触发
+        function myThrottle(handle, wait) {
+            if (typeof handle !== 'function') {
+                throw new Error('handle para must be an function');
+            }
+            if (typeof wait === undefined) {
+                wait = 400;
+            }
+            let previous = 0;
+            let timer = null;
+
+            return function porxy(...args) {
+                let now = new Date();
+                let self = this;
+                let interval = wait - (now - previous);
+                if (interval <= 0) {
+                    clearTimeout(timer);
+                    timer = null;
+                    handle.call(self, ...args);
+                    previous = new Date();
+                } else if (!timer) {
+                    timer = setTimeout(() => {
+                        clearTimeout(timer);
+                        timer = null;
+                        handle.call(self, ...args);
+                        previous = new Date();
+                    }, interval)
+                }
+            }
+
+        }
+
+        function bodyScroll() {
+            console.log('body scroll');
+        }
+        window.onscroll = myThrottle(bodyScroll, 800);
+    </script>
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,59 @@
+<!--
+ * @Descripttion: 防抖函数实现
+ * @version: 
+ * @Author: ahao
+ * @Date: 2021-09-11 16:04:44
+ * @LastEditors: ahao
+ * @LastEditTime: 2021-09-11 16:48:24
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>防抖函数实现</title>
+</head>
+
+<body>
+    <button id="btn">点击</button>
+    <script>
+        const btn = document.querySelector('#btn');
+        btn.onclick = myDebounce(btnClick,500,true);
+        /**
+         * handle 需要执行的函数
+         * wait 需要执行函数的延时
+         * immediate 需要执行的第一次还是最有一次
+         */
+        function myDebounce(handle, wait, immediate) {
+            // console.log('myDebounce');
+            if (typeof handle !== 'function') throw new Error('handle must be an function');
+            if (typeof wait === 'undefined') wait = 300;
+            if (typeof wait === 'boolean') {
+                immediate = wait;
+                wait = 300;
+            }
+            if (typeof immediate !== 'boolean') immediate = false;
+            let timer = null;
+            return function proxy(...args) {
+                const self = this;
+                let init = immediate && !timer;
+                clearTimeout(timer);
+                timer = setTimeout(() => {
+                    timer = null;
+                    !immediate ? handle.call(self, ...args) : null;
+                }, wait)
+                init ? handle.call(this, ...args) : null;
+            }
+
+        }
+
+        function btnClick(ev) {
+            console.log('btn click', this, ev);
+        }
+    </script>
+
+</body>
+
+</html>
