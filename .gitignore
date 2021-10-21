@@ -16,3 +16,4 @@ python_webserve/venv
 **/node_modules/*
 typeScript/flow/dist/*
 typeScript/demo/dist/*
+Gulp/dist/**
