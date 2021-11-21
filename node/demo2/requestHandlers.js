@@ -4,7 +4,7 @@
  * @Author: ahao
  * @Date: 2021-11-11 14:05:44
  * @LastEditors: ahao
- * @LastEditTime: 2021-11-11 23:16:55
+ * @LastEditTime: 2021-11-19 18:54:22
  */
 const exec = require('child_process').exec;
 const queryString = require('querystring');
@@ -58,7 +58,7 @@ function upload(response, request) {
     console.log(form);
     form.parse(request, function (error, fields, files) {
         console.log(files);
-        fs.renameSync(files.upload.filepath,"C:\\Users\\ee\\AppData\\Local\\Temp\\test.png");
+        fs.renameSync(files.upload.filepath, "C:\\Users\\ee\\AppData\\Local\\Temp\\test.png");
         response.writeHead(200, { "Content-Type": "text/html" });
         response.write("received image:<br/>");
         response.write("<img src='/show' />");
@@ -81,6 +81,38 @@ function show(response, request) {
     })
 }
 
+function chatOperate(response, request) {
+    console.log('request chatoperate');
+    var body = "";
+    request.on('data', function (buffer) {
+        body += buffer;
+    })
+    request.on('end', function () {
+        const paraObj = JSON.parse(body);
+        const { Chatbot } = require("@chatopera/sdk");
+        //  let client = new Chatbot(clientId, secret);
+        var chatbot = new Chatbot(
+            "6195c0ff2d1765001375482b",
+            "cade4bdaec29c7b249a06c1289f32144"
+        );
+        chatbot.conversation(paraObj.name, paraObj.answer).then(
+            // 返回值为 Promise 类型
+            (resp) => {
+                console.log(resp);
+                response.write(JSON.stringify(resp));
+                response.end();
+            },
+            (err) => {
+                console.log(err); // 异常返回
+                response.end();
+            }
+        );
+    })
+
+
+}
+
 exports.start = start;
 exports.upload = upload;
 exports.show = show;
+exports.chatOperate = chatOperate;
