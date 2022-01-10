@@ -1,0 +1,40 @@
+<!--
+ * @Descripttion: 
+ * @version: 
+ * @Author: ahao
+ * @Date: 2021-12-21 15:20:24
+ * @LastEditors: ahao
+ * @LastEditTime: 2021-12-21 15:23:48
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>何为数据代理</title>
+</head>
+
+<body>
+    <!-- 通过一个对象 对另一个对象的属性进行操作 -->
+    <script>
+        const obj1 = {
+            x: 1
+        }
+        const obj2 = {
+            y: 2
+        }
+        Object.defineProperty(obj2, 'x', {
+            get() {
+                return obj1.x
+            },
+            set(val) {
+                obj1.x = val;
+            }
+        })
+    </script>
+
+</body>
+
+</html>

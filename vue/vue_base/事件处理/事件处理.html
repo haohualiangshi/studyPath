@@ -1,0 +1,60 @@
+<!--
+ * @Descripttion: 
+ * @version: 
+ * @Author: ahao
+ * @Date: 2021-12-23 10:14:13
+ * @LastEditors: ahao
+ * @LastEditTime: 2021-12-23 10:31:05
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../vue.js"></script>
+</head>
+
+<body>
+    <div id="root">
+        <button v-on:click="click1">点我</button>
+        <button @click="addOne($event,1)">加1</button>
+        <div>
+           number的值是 {{number}}
+        </div>
+        <h2>6个事件修饰符</h2>
+        <ul>
+            <li>.stop：等同于在事件函数里添加ev.stopPropagation</li>
+            <li>.prevent:等同于在事件函数里ev.preventDefault;</li>
+            <li>.once:触发一次事件</li>
+            <li>.capture:使用事件捕获模式</li>
+            <li>.self:只有事件target等于当前元素自身时触发处理函数</li>
+            <li>.passive</li>
+        </ul>
+
+    </div>
+
+
+    <script>
+        const vm = new Vue({
+            el: '#root',
+            data: {
+                number: 1
+            },
+            methods: {
+                click1() {
+                    console.log('click1')
+                },
+                addOne(e,num) {
+                    this.number += num;
+                   
+
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>
