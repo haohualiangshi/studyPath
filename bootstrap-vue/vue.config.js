@@ -1,17 +1,17 @@
+const bootstrapSassAbstractsImports = require('vue-cli-plugin-bootstrap-vue/sassAbstractsImports.js')
 /*
  * @Descripttion: 
  * @version: 
  * @Author: ahao
  * @Date: 2021-10-25 14:18:19
  * @LastEditors: ahao
- * @LastEditTime: 2022-01-07 16:18:48
+ * @LastEditTime: 2022-01-10 17:57:28
  */
 const name = 'bootstrap-vue' // page title
 const path = require('path');
 function resolve(dir) {
     return path.join(__dirname, dir)
 }
-const bootstrapSassAbstractsImports = require('vue-cli-plugin-bootstrap-vue/sassAbstractsImports.js')
 module.exports = {
     publicPath: './',
     outputDir: 'official',

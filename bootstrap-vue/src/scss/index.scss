@@ -1,0 +1,13 @@
+body{
+    background: #fbfbfb;
+}
+.list-wrap{
+    display: flex;
+    flex-direction: row;
+
+    li{
+        color:#0a1a72;
+        cursor: pointer;
+        // flex-direction: ;
+    }
+}

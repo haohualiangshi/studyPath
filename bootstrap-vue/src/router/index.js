@@ -4,7 +4,7 @@
  * @Author: ahao
  * @Date: 2022-01-10 15:21:23
  * @LastEditors: ahao
- * @LastEditTime: 2022-01-10 15:53:43
+ * @LastEditTime: 2022-01-10 16:10:23
  */
 import Vue from 'vue';
 import Router from 'vue-router';
@@ -14,11 +14,19 @@ export const constantRoutes = [
         path: '/',
         redirect: '/home',
         component: () => import("../layout/layout.vue"),
-        children:[
+        children: [
             {
-                name:'home',
-                path:'/home',
-                component:()=>import('../components/Home.vue')
+                name: 'home',
+                path: '/home',
+                component: () => import('../components/Home.vue'),
+                children: [
+                    {
+                        name: 'b-alert',
+                        path: '/home/b-alert',
+                        component: () => import("../components/BAlert.vue")
+                    }
+
+                ]
             }
         ]
     },
