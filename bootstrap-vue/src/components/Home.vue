@@ -4,7 +4,7 @@
  * @Author: ahao
  * @Date: 2022-01-10 15:41:25
  * @LastEditors: ahao
- * @LastEditTime: 2022-01-10 19:19:09
+ * @LastEditTime: 2022-01-10 20:36:57
 -->
 <template>
   <div>
@@ -29,6 +29,10 @@ export default {
         {
           name: "b-alert",
           path: "/home/b-alert",
+        },
+        {
+          name: "b-aspect",
+          path: "/home/b-aspect",
         },
       ],
     };

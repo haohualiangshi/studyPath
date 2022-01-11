@@ -4,7 +4,7 @@
  * @Author: ahao
  * @Date: 2022-01-10 15:21:23
  * @LastEditors: ahao
- * @LastEditTime: 2022-01-10 16:10:23
+ * @LastEditTime: 2022-01-10 20:36:36
  */
 import Vue from 'vue';
 import Router from 'vue-router';
@@ -24,7 +24,12 @@ export const constantRoutes = [
                         name: 'b-alert',
                         path: '/home/b-alert',
                         component: () => import("../components/BAlert.vue")
-                    }
+                    },
+                    {
+                        name: 'b-aspect',
+                        path: '/home/b-aspect',
+                        component: () => import("../components/Aspect.vue")
+                    },
 
                 ]
             }
