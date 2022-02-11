@@ -4,7 +4,7 @@
  * @Author: ahao
  * @Date: 2022-01-10 15:21:23
  * @LastEditors: ahao
- * @LastEditTime: 2022-01-10 20:36:36
+ * @LastEditTime: 2022-01-11 15:31:45
  */
 import Vue from 'vue';
 import Router from 'vue-router';
@@ -29,6 +29,11 @@ export const constantRoutes = [
                         name: 'b-aspect',
                         path: '/home/b-aspect',
                         component: () => import("../components/Aspect.vue")
+                    },
+                    {
+                        name: 'b-avatar',
+                        path: '/home/b-avatar',
+                        component: () => import("../components/Avatar.vue")
                     },
 
                 ]

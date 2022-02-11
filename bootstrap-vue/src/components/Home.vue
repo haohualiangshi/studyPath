@@ -4,7 +4,7 @@
  * @Author: ahao
  * @Date: 2022-01-10 15:41:25
  * @LastEditors: ahao
- * @LastEditTime: 2022-01-10 20:36:57
+ * @LastEditTime: 2022-01-11 15:32:19
 -->
 <template>
   <div>
@@ -33,6 +33,10 @@ export default {
         {
           name: "b-aspect",
           path: "/home/b-aspect",
+        },
+        {
+          name: "b-avatar",
+          path: "/home/b-avatar",
         },
       ],
     };

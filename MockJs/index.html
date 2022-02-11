@@ -1,0 +1,360 @@
+<!--
+ * @Descripttion: 
+ * @version: 
+ * @Author: ahao
+ * @Date: 2022-02-10 14:24:15
+ * @LastEditors: ahao
+ * @LastEditTime: 2022-02-11 00:00:31
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mock使用规范</title>
+    <!-- <script src="https://cdn.bootcdn.net/ajax/libs/Mock.js/1.0.1-beta3/mock.js"></script> -->
+    <script src="./../node_modules/mockjs/dist/mock.js"></script>
+</head>
+
+<body>
+    <h1>Mock.js语法规范</h1>
+    <ul>
+        <li>数据模板定义规范</li>
+        <li>数据占位符定义规范</li>
+    </ul>
+    <h2>数据模板定义规范</h2>
+    <script>
+        // name|min-max': value
+        console.log("name|min-max': value")
+        console.log('value is string ', Mock.mock({
+            "string|1-10": '$'
+        }))
+        console.log('value is Number', Mock.mock({
+            'number|1-100': 1
+        }))
+        console.log('value is Boolean', Mock.mock({
+            'boolean|1-10': true
+        }))
+        console.log('value is Object', Mock.mock({
+            'object|1-5': {
+                a: 1,
+                b: 2,
+                c: 3,
+                d: 4,
+                e: 5
+            }
+        }))
+        console.log('value is Array', Mock.mock({
+            'array|1-5': [1, 2, 3]
+        }))
+        console.log('value is function', Mock.mock({
+            'function|1-5': function () {
+                return 10;
+            }
+        }))
+
+        console.log('value is RegExp ', Mock.mock({
+            'regExp|1-5': /[a-z][A-Z][0-9]/
+        }))
+
+        console.log('value is path', Mock.mock({
+            "foo": "Hello",
+            "nested": {
+                "a": {
+                    "b": {
+                        "c": "Mock.js"
+                    }
+                }
+            },
+            'absolutePath|1-5': "@/foo @/nested/a/b/c",
+            'relativePath|1-5': "@./foo @./nested/a/b/c"
+        }))
+
+        // name|count:value
+        console.log('name|count:value')
+        console.log('value is string ', Mock.mock({
+            "string|2": '$'
+        }))
+        console.log('value is Number', Mock.mock({
+            'number|3': 1
+        }))
+        console.log('value is Boolean', Mock.mock({
+            'boolean|3': true
+        }))
+        console.log('value is Object', Mock.mock({
+            'object|3': {
+                a: 1,
+                b: 2,
+                c: 3,
+                d: 4,
+                e: 5
+            }
+        }))
+        console.log('value is Array', Mock.mock({
+            'array|3': [1, 2, 3]
+        }))
+        console.log('value is function', Mock.mock({
+            'function|3': function () {
+                return 10;
+            }
+        }))
+
+        console.log('value is RegExp ', Mock.mock({
+            'regExp|3': /[a-z][A-Z][0-9]/
+        }))
+
+        console.log('value is path', Mock.mock({
+            "foo": "Hello",
+            "nested": {
+                "a": {
+                    "b": {
+                        "c": "Mock.js"
+                    }
+                }
+            },
+            'absolutePath|3': "@/foo @/nested/a/b/c",
+            'relativePath|3': "@./foo @./nested/a/b/c"
+        }))
+
+
+        // name|min-max.dmin-dmax:value
+        console.log('name|min-max.dmin-dmax:value')
+        console.log('value is string ', Mock.mock({
+            "string|1-5.2-4": '$'
+        }))
+        console.log('value is Number', Mock.mock({
+            'number|1-5.2-4': 1
+        }))
+        console.log('value is Boolean', Mock.mock({
+            'boolean|1-5.2-4': true
+        }))
+        console.log('value is Object', Mock.mock({
+            'object|1-5.2-4': {
+                a: 1,
+                b: 2,
+                c: 3,
+                d: 4,
+                e: 5
+            }
+        }))
+        console.log('value is Array', Mock.mock({
+            'array|1-5.2-4': [1, 2, 3]
+        }))
+        console.log('value is function', Mock.mock({
+            'function|1-5.2-4': function () {
+                return 10;
+            }
+        }))
+
+        console.log('value is RegExp ', Mock.mock({
+            'regExp|1-5.2-4': /[a-z][A-Z][0-9]/
+        }))
+
+        console.log('value is path', Mock.mock({
+            "foo": "Hello",
+            "nested": {
+                "a": {
+                    "b": {
+                        "c": "Mock.js"
+                    }
+                }
+            },
+            'absolutePath|1-5.2-4': "@/foo @/nested/a/b/c",
+            'relativePath|1-5.2-4': "@./foo @./nested/a/b/c"
+        }))
+
+
+
+        // name|min-max.dcount
+        console.log('name|min-max.dcount')
+        console.log('value is string ', Mock.mock({
+            "string|1-5.2": '$'
+        }))
+        console.log('value is Number', Mock.mock({
+            'number|1-5.2': 1
+        }))
+        console.log('value is Boolean', Mock.mock({
+            'boolean|1-5.2': true
+        }))
+        console.log('value is Object', Mock.mock({
+            'object|1-5.2': {
+                a: 1,
+                b: 2,
+                c: 3,
+                d: 4,
+                e: 5
+            }
+        }))
+        console.log('value is Array', Mock.mock({
+            'array|1-5.2': [1, 2, 3]
+        }))
+        console.log('value is function', Mock.mock({
+            'function|1-5.2': function () {
+                return 10;
+            }
+        }))
+
+        console.log('value is RegExp ', Mock.mock({
+            'regExp|1-5.2': /[a-z][A-Z][0-9]/
+        }))
+
+        console.log('value is path', Mock.mock({
+            "foo": "Hello",
+            "nested": {
+                "a": {
+                    "b": {
+                        "c": "Mock.js"
+                    }
+                }
+            },
+            'absolutePath|1-5.2': "@/foo @/nested/a/b/c",
+            'relativePath|1-5.2': "@./foo @./nested/a/b/c"
+        }))
+
+
+
+
+        // name|count.dcount
+        console.log('name|count.dcount')
+        console.log('value is string ', Mock.mock({
+            "string|1.2": '$'
+        }))
+        console.log('value is Number', Mock.mock({
+            'number|1.2': 1
+        }))
+        console.log('value is Boolean', Mock.mock({
+            'boolean|1.2': true
+        }))
+        console.log('value is Object', Mock.mock({
+            'object|1.2': {
+                a: 1,
+                b: 2,
+                c: 3,
+                d: 4,
+                e: 5
+            }
+        }))
+        console.log('value is Array', Mock.mock({
+            'array|1.2': [1, 2, 3]
+        }))
+        console.log('value is function', Mock.mock({
+            'function|1.2': function () {
+                return 10;
+            }
+        }))
+
+        console.log('value is RegExp ', Mock.mock({
+            'regExp|1.2': /[a-z][A-Z][0-9]/
+        }))
+
+        console.log('value is path', Mock.mock({
+            "foo": "Hello",
+            "nested": {
+                "a": {
+                    "b": {
+                        "c": "Mock.js"
+                    }
+                }
+            },
+            'absolutePath|1.2': "@/foo @/nested/a/b/c",
+            'relativePath|1.2': "@./foo @./nested/a/b/c"
+        }))
+
+
+
+        // name|+step
+        console.log('name|+step')
+        console.log('value is string ', Mock.mock({
+            "string|+3": '$'
+        }))
+        let a = 5
+        const name = Mock.mock({
+            'number|+1': a,
+            'name': '@./number'
+        })
+        console.log('value is Number', name)
+        console.log('value is Boolean', Mock.mock({
+            'boolean|+3': true
+        }))
+        console.log('value is Object', Mock.mock({
+            'object|+3': {
+                a: 1,
+                b: 2,
+                c: 3,
+                d: 4,
+                e: 5
+            }
+        }))
+        console.log('value is Array', Mock.mock({
+            'array|+3': [1, 2, 3]
+        }))
+        console.log('value is function', Mock.mock({
+            'function|+3': function () {
+                return 10;
+            }
+        }))
+
+        console.log('value is RegExp ', Mock.mock({
+            'regExp|+3': /[a-z][A-Z][0-9]/
+        }))
+
+        console.log('value is path', Mock.mock({
+            "foo": "Hello",
+            "nested": {
+                "a": {
+                    "b": {
+                        "c": "Mock.js"
+                    }
+                }
+            },
+            'absolutePath|+3': "@/foo @/nested/a/b/c",
+            'relativePath|+3': "@./foo @./nested/a/b/c"
+        }))
+    </script>
+
+    <script>
+        console.log("数据占位符")
+        const name1 = Mock.mock({
+            name: {
+                first: "@FIRST",
+                mid: "@FIRST",
+                last: "@LAST",
+                full: "@first @mid @last"
+            }
+        })
+        console.log('数据占位符@', name)
+        console.log('数据占位符Basic');
+        console.log("Random.boolean()")
+        console.log('Mock.Random.bool()', Mock.Random.bool())
+        console.log('Mock.Random.boolean()', Mock.Random.boolean())
+        console.log('Mock.Random.boolean(1, 9, false)', Mock.Random.boolean(1, 9, false))
+        console.log('Mock.mock("@boolean")', Mock.mock("@boolean"))
+        console.log('Mock.mock("@boolean()")', Mock.mock("@boolean()"))
+
+
+        console.log('Random.natural()')
+        console.log('Random.natural()', Mock.Random.natural())
+        console.log('Random.natural(100)', Mock.Random.natural(100))
+        console.log('Mock.mock("@natural")', Mock.mock("@natural"))
+
+        console.log("Random.integet()")
+        console.log('Mock.Random.integer()',Mock.Random.integer())
+        console.log('Mock.Random.integer(1)',Mock.Random.integer(1));
+        console.log('Mock.Random.integer(1,10)',Mock.Random.integer(1,10))
+        console.log('Mock.mock(@integer)',Mock.mock('@integer'))
+        console.log('Mock.mock("@integer(10,20)")',Mock.mock("@integer(10,20)"))
+
+        console.log("Mock.mock('@float')",Mock.mock('@float'))
+        console.log("Mock.mock('@float(0)')",Mock.mock('@float(0)'))
+        console.log("Mock.mock('@float(0,2)')",Mock.mock('@float(0,2)'))
+        console.log("Mock.mock('@float(0,2,1)')",Mock.mock('@float(0,2,1)'))
+        console.log("Mock.mock('@float(0,2,1,5)')",Mock.mock('@float(0,2,1,5)'))
+
+
+    </script>
+
+</body>
+
+</html>
