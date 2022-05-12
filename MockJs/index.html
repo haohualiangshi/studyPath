@@ -4,7 +4,7 @@
  * @Author: ahao
  * @Date: 2022-02-10 14:24:15
  * @LastEditors: ahao
- * @LastEditTime: 2022-02-11 00:00:31
+ * @LastEditTime: 2022-02-14 12:19:15
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -340,19 +340,39 @@
         console.log('Mock.mock("@natural")', Mock.mock("@natural"))
 
         console.log("Random.integet()")
-        console.log('Mock.Random.integer()',Mock.Random.integer())
-        console.log('Mock.Random.integer(1)',Mock.Random.integer(1));
-        console.log('Mock.Random.integer(1,10)',Mock.Random.integer(1,10))
-        console.log('Mock.mock(@integer)',Mock.mock('@integer'))
-        console.log('Mock.mock("@integer(10,20)")',Mock.mock("@integer(10,20)"))
+        console.log('Mock.Random.integer()', Mock.Random.integer())
+        console.log('Mock.Random.integer(1)', Mock.Random.integer(1));
+        console.log('Mock.Random.integer(1,10)', Mock.Random.integer(1, 10))
+        console.log('Mock.mock(@integer)', Mock.mock('@integer'))
+        console.log('Mock.mock("@integer(10,20)")', Mock.mock("@integer(10,20)"))
 
-        console.log("Mock.mock('@float')",Mock.mock('@float'))
-        console.log("Mock.mock('@float(0)')",Mock.mock('@float(0)'))
-        console.log("Mock.mock('@float(0,2)')",Mock.mock('@float(0,2)'))
-        console.log("Mock.mock('@float(0,2,1)')",Mock.mock('@float(0,2,1)'))
-        console.log("Mock.mock('@float(0,2,1,5)')",Mock.mock('@float(0,2,1,5)'))
+        console.log("Mock.mock('@float')", Mock.mock('@float'))
+        console.log("Mock.mock('@float(0)')", Mock.mock('@float(0)'))
+        console.log("Mock.mock('@float(0,2)')", Mock.mock('@float(0,2)'))
+        console.log("Mock.mock('@float(0,2,1)')", Mock.mock('@float(0,2,1)'))
+        console.log("Mock.mock('@float(0,2,1,5)')", Mock.mock('@float(0,2,1,5)'))
+
+        console.log('Mock.mock("@character")')
+        console.log('Mock.mock("@character")', Mock.mock("@character"));
+        console.log('Mock.mock("@character(\'lower\')")', Mock.mock("@character('lower')"))
+        console.log('Mock.mock("@character(\'upper\')")', Mock.mock("@character('upper')"))
+        console.log('Mock.mock("@character(\'number\')")', Mock.mock("@character('number')"))
+        console.log('Mock.mock("@character(\'symbol\')")', Mock.mock("@character('symbol')"))
+        console.log('Mock.mock("@character(\'abcda\')")', Mock.mock("@character('abcda')"))
 
 
+        console.log('Mock.mock("@string")')
+        console.log('Mock.mock("@string")', Mock.mock("@string"));
+        console.log('Mock.mock("@string(\'lower\')")', Mock.mock("@string('lower',5)"))
+        console.log('Mock.mock("@string(\'upper\')")', Mock.mock("@string('upper',5)"))
+        console.log('Mock.mock("@string(\'number\')")', Mock.mock("@string('number',5,10)"))
+        console.log('Mock.mock("@string(\'symbol\')")', Mock.mock("@string('symbol',5)"))
+        console.log('Mock.mock("@string(\'abcda\')")', Mock.mock("@string('abcda',1,4)"))
+
+        console.log('Mock.mock("@range")')
+        console.log('Mock.mock("@string")', Mock.mock("@range(10)"));
+        console.log('Mock.mock("@string")', Mock.mock("@range(5,10)"));
+        console.log('Mock.mock("@string")', Mock.mock("@range(1,10,2)"));
     </script>
 
 </body>
